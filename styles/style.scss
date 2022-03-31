@@ -143,6 +143,16 @@ body{
     align-items: center;
     color: white;
     padding-top: 5%;
+
+    .social{
+        a{
+            .icons{
+                font-size: 30px;
+                margin: 10px;
+            }
+        }
+    }
+
     .container{
         width: 100%;
         display: flex;
@@ -168,6 +178,50 @@ body{
                 cursor: pointer;
                 &:hover{
                     background-color: transparent;
+                }
+            }
+        }
+        .contact{
+            width: 40%;
+            h2{
+                text-align: center;
+            }
+            form{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                input{
+                    outline: none;
+                    border-bottom: 2px solid white;
+                    border-top: 0;
+                    border-left: 0;
+                    border-right: 0;
+                    width: 280px;
+                    height: 40px;
+                    padding: 5px;
+                    color: white;
+                    background-color: transparent;
+                    font-size: 16px;
+                    font-family: "Poppins";
+                    transition: .5s;
+                    &:focus{
+                        border-bottom: 2px solid #6e68a8;
+                    }
+                }
+                button{
+                    border: 2px solid #6e68a8;
+                    outline: 0;
+                    color: white;
+                    background-color: #6e68a8;
+                    width: 150px;
+                    height: 40px;
+                    cursor: pointer;
+                    font-size: 15px;
+                    &:hover{
+                        border: 3px solid #6e68a8;
+                    }
                 }
             }
         }
