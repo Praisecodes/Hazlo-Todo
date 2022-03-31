@@ -65,6 +65,7 @@ body{
             outline: 0;
             font-size: 18px;
             cursor: pointer;
+            font-family: "Poppins";
             transition: .5s;
         }
         p{
@@ -117,6 +118,7 @@ body{
             font-size: 18px;
             cursor: pointer;
             transition: .5s;
+            font-family: "Poppins";
             .fa-circle-plus{
                 font-size: 23px;
             }
@@ -175,6 +177,7 @@ body{
                 transition: .5s;
                 background-color: #6e68a8;
                 color: white;
+                font-family: "Poppins";
                 cursor: pointer;
                 &:hover{
                     background-color: transparent;
@@ -219,8 +222,11 @@ body{
                     height: 40px;
                     cursor: pointer;
                     font-size: 15px;
+                    font-family: "Poppins";
+                    transition: .5s;
                     &:hover{
-                        border: 3px solid #6e68a8;
+                        border: 2px solid #9c8eee;
+                        background-color: #9c8eee;
                     }
                 }
             }
