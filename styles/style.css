@@ -8,6 +8,117 @@
   margin: 0;
 }
 
+@-webkit-keyframes moveInright {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(50%);
+            transform: translateX(50%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes moveInright {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(50%);
+            transform: translateX(50%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes moveInleft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes moveInleft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes moveInup {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@keyframes moveInup {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+.MoveInright {
+  -webkit-animation: moveInright 1s;
+          animation: moveInright 1s;
+}
+
+.MoveInleft {
+  -webkit-animation: moveInleft 1s;
+          animation: moveInleft 1s;
+}
+
+.MoveInup {
+  -webkit-animation: moveInup 1s;
+          animation: moveInup 1s;
+}
+
+.Showright {
+  opacity: 0;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+}
+
+.Showleft {
+  opacity: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.Showdown {
+  opacity: 0;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+}
+
 body {
   font-size: 16px;
   overflow-x: hidden;
@@ -306,6 +417,12 @@ body {
 
 .contact-and-info .container .contact form input:focus {
   border-bottom: 2px solid #6e68a8;
+}
+
+.contact-and-info .container .contact form label {
+  color: red;
+  font-family: "Poppins";
+  font-size: 15px;
 }
 
 .contact-and-info .container .contact form button {

@@ -8,6 +8,66 @@
     margin: 0;
 }
 
+@keyframes moveInright{
+    0%{
+        opacity: 0;
+        transform: translateX(50%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes moveInleft{
+    0%{
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes moveInup{
+    0%{
+        opacity: 0;
+        transform: translateY(50%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+.MoveInright{
+    animation: moveInright 1s;
+}
+
+.MoveInleft{
+    animation: moveInleft 1s;
+}
+
+.MoveInup{
+    animation:  moveInup 1s;
+}
+
+.Showright{
+    opacity: 0;
+    transform: translateX(50%);
+}
+
+.Showleft{
+    opacity: 0;
+    transform: translateX(-50%);
+}
+
+.Showdown{
+    opacity: 0;
+    transform: translateY(50%);
+}
+
 body{
     font-size: 16px;
     overflow-x: hidden;
@@ -212,6 +272,11 @@ body{
                     &:focus{
                         border-bottom: 2px solid #6e68a8;
                     }
+                }
+                label{
+                    color: red;
+                    font-family: "Poppins";
+                    font-size: 15px;
                 }
                 button{
                     border: 2px solid #6e68a8;
