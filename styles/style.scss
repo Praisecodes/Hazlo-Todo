@@ -8,51 +8,138 @@
     margin: 0;
 }
 
+@keyframes changeImages{
+    0%{
+        background-image: url("../images/Notepad.png");
+    }
+    100%{
+        background-image: url("../images/Notepad 2.png");
+    }
+}
+
 body{
     font-size: 16px;
     overflow-x: hidden;
-}
-
-@keyframes wordAnimate{
-    0%{
-        width: 16rem;
-    }
-    50%{
-        width: 0;
-        &::after{
-            content: "Be Organized";
-            display: block;
-            color: #324953;
-            width: 16rem;
-            height: 4rem;
-        }
-    }
-    100%{
-        width: 16rem;
-    }
+    color: #324953;
+    font-family: "Poppins";
 }
 
 .topper{
-    width: 100%;
-    height: 80px;
+    width: 100vw;
+    height: 90px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    overflow: hidden;
-    h1{
+    .logo{
         color: #324953;
-        background-color: transparent;
         font-family: "Poppins";
-        font-size: 2.8rem;
-        margin: 20px;
-        width: 15.5rem;
-        height: 4rem;
-        border-left: 8px solid #9c8eee;
-        border-top-left-radius: 20px;
-        border-bottom-left-radius: 20px;
-        overflow: hidden;
-        transition: .5s;
-        // animation: wordAnimate 13s infinite;
+        font-size: 250%;
+        margin-left: 20px;
+    }
+    .menu{
+        list-style-type: none;
+        width: 400px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 3%;
+        li{
+            color: #324953;
+            font-family: "Poppins";
+            font-size: 20px;
+            margin-left: 16px;
+            float: left;
+            cursor: pointer;
+            transition: .2s;
+            border-bottom: 0px;
+            &:hover{
+                border-bottom: 3px solid #324953;
+            }
+        }
+    }
+    .buttons{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        width: 340px;
+        height: 100%;
+        align-items: center;
+        margin-left: 20%;
+        button{
+            border: 2px solid #6e68a8;
+            width: 140px;
+            height: 50px;
+            outline: 0;
+            font-size: 20px;
+            cursor: pointer;
+            transition: .5s;
+        }
+        p{
+            font-size: 40px;
+        }
+        .login{
+            background-color: transparent;
+            &:hover{
+                background-color: #6e68a8;
+                color: white;
+            }
+        }
+        .signUp{
+            background-color: #6e68a8;
+            color: white;
+            &:hover{
+                background-color: transparent;
+                color: #324953;
+            }
+        }
+    }
+}
+
+.landing{
+    width: 100%;
+    height: calc(100vh - 90px);
+    // background-color: blue;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    .writeUp{
+        height: 100%;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 2%;
+        h1{
+            font-size: 440%;
+        }
+        h3{
+            font-size: 180%;
+        }
+        button{
+            border: 2px solid #6e68a8;
+            color: white;
+            background-color: #6e68a8;
+            width: 300px;
+            height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: .5s;
+            .fa-circle-plus{
+                font-size: 25px;
+            }
+            &:hover{
+                background-color: white;
+                color: #324953;
+            }
+        }
+    }
+    .images{
+        background-image: url("../images/Notepad 2.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 50%;
     }
 }

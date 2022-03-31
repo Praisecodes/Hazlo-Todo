@@ -8,52 +8,34 @@
   margin: 0;
 }
 
+@-webkit-keyframes changeImages {
+  0% {
+    background-image: url("../images/Notepad.png");
+  }
+  100% {
+    background-image: url("../images/Notepad 2.png");
+  }
+}
+
+@keyframes changeImages {
+  0% {
+    background-image: url("../images/Notepad.png");
+  }
+  100% {
+    background-image: url("../images/Notepad 2.png");
+  }
+}
+
 body {
   font-size: 16px;
   overflow-x: hidden;
-}
-
-@-webkit-keyframes wordAnimate {
-  0% {
-    width: 16rem;
-  }
-  50% {
-    width: 0;
-    ::after {
-      content: "Be Organized";
-      display: block;
-      color: #324953;
-      width: 16rem;
-      height: 4rem;
-    }
-  }
-  100% {
-    width: 16rem;
-  }
-}
-
-@keyframes wordAnimate {
-  0% {
-    width: 16rem;
-  }
-  50% {
-    width: 0;
-    ::after {
-      content: "Be Organized";
-      display: block;
-      color: #324953;
-      width: 16rem;
-      height: 4rem;
-    }
-  }
-  100% {
-    width: 16rem;
-  }
+  color: #324953;
+  font-family: "Poppins";
 }
 
 .topper {
-  width: 100%;
-  height: 80px;
+  width: 100vw;
+  height: 90px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -61,28 +43,168 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  overflow: hidden;
 }
 
-.topper h1 {
+.topper .logo {
   color: #324953;
-  background-color: transparent;
   font-family: "Poppins";
-  font-size: 2.8rem;
-  margin: 20px;
-  width: 15.5rem;
-  height: 4rem;
-  border-left: 8px solid #9c8eee;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  overflow: hidden;
+  font-size: 250%;
+  margin-left: 20px;
+}
+
+.topper .menu {
+  list-style-type: none;
+  width: 400px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 3%;
+}
+
+.topper .menu li {
+  color: #324953;
+  font-family: "Poppins";
+  font-size: 20px;
+  margin-left: 16px;
+  float: left;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+  border-bottom: 0px;
+}
+
+.topper .menu li:hover {
+  border-bottom: 3px solid #324953;
+}
+
+.topper .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 340px;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 20%;
+}
+
+.topper .buttons button {
+  border: 2px solid #6e68a8;
+  width: 140px;
+  height: 50px;
+  outline: 0;
+  font-size: 20px;
+  cursor: pointer;
   -webkit-transition: .5s;
   transition: .5s;
+}
+
+.topper .buttons p {
+  font-size: 40px;
+}
+
+.topper .buttons .login {
+  background-color: transparent;
+}
+
+.topper .buttons .login:hover {
+  background-color: #6e68a8;
+  color: white;
+}
+
+.topper .buttons .signUp {
+  background-color: #6e68a8;
+  color: white;
+}
+
+.topper .buttons .signUp:hover {
+  background-color: transparent;
+  color: #324953;
+}
+
+.landing {
+  width: 100%;
+  height: calc(100vh - 90px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.landing .writeUp {
+  height: 100%;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-left: 2%;
+}
+
+.landing .writeUp h1 {
+  font-size: 440%;
+}
+
+.landing .writeUp h3 {
+  font-size: 180%;
+}
+
+.landing .writeUp button {
+  border: 2px solid #6e68a8;
+  color: white;
+  background-color: #6e68a8;
+  width: 300px;
+  height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.landing .writeUp button .fa-circle-plus {
+  font-size: 25px;
+}
+
+.landing .writeUp button:hover {
+  background-color: white;
+  color: #324953;
+}
+
+.landing .images {
+  background-image: url("../images/Notepad 2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 50%;
 }
 /*# sourceMappingURL=style.css.map */
