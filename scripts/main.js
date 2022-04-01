@@ -10,6 +10,18 @@ var typed = new Typed("#catchPhrases", {
     loop: true
 });
 
+var typer = new Typed("#loginPhrase", {
+    strings: [
+        "Get Started With Hazlo Todo",
+        "Check On Your Activities",
+        "View Your Activities",
+        "Organize Your Activities"
+    ],
+    typeSpeed: 50,
+    backSpeed: 50,
+    loop: true
+});
+
 const Info = document.querySelector(".info");
 const form = document.querySelector(".contact");
 const socials = document.querySelector(".social");
