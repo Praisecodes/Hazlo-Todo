@@ -75,6 +75,35 @@ body{
     font-family: "Poppins";
 }
 
+.modalContainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff33;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .loginModal{
+        position: relative;
+        display: none;
+        width: 60%;
+        height: 80%;
+        background-color: white;
+        border-radius: 10px;
+    }
+    .signUpModal{
+        position: relative;
+        // display: none;
+        width: 60%;
+        height: 80%;
+        background-color: white;
+        border-radius: 10px;
+    }
+}
+
 .topper{
     width: 100vw;
     height: 90px;
