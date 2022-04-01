@@ -8,6 +8,28 @@
     margin: 0;
 }
 
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+        transform: scale(0%);
+    }
+    100%{
+        opacity: 100%;
+        transform: scale(100%);
+    }
+}
+
+@keyframes fadeOut{
+    0%{
+        opacity: 1;
+        transform: scale(100%);
+    }
+    100%{
+        opacity: 0;
+        transform: scale(0%);
+    }
+}
+
 @keyframes moveInright{
     0%{
         opacity: 0;
@@ -68,6 +90,14 @@
     transform: translateY(50%);
 }
 
+.FadeIn{
+    animation: fadeIn .5s;
+}
+
+.FadeOut{
+    animation: fadeOut .5s;
+}
+
 body{
     font-size: 16px;
     overflow-x: hidden;
@@ -87,21 +117,34 @@ body{
     justify-content: center;
     display: none;
     align-items: center;
-    .loginModal{
+    .loginModal, .signUpModal{
         position: relative;
+        display: flex;
+        flex-direction: column;
         display: none;
-        width: 60%;
-        height: 80%;
+        width: 60vw;
+        height: 80vh;
         background-image: linear-gradient(75deg, #fff, #ddd);
         border-radius: 10px;
-    }
-    .signUpModal{
-        position: relative;
-        display: none;
-        width: 60%;
-        height: 80%;
-        background-color: rgb(133, 128, 128);
-        border-radius: 10px;
+        .closeLogin, .closeSignUp{
+            outline: 0;
+            background-color: #6e68a8;
+            width: 50px;
+            height: 48px;
+            border-radius: 50px;
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            top: 2px;
+            right: 3px;
+            border: 2px solid #6e68a8;
+            cursor: pointer;
+            transition: .5s;
+            &:hover{
+                background-color: transparent;
+                color: #324953;
+            }
+        }
     }
 }
 

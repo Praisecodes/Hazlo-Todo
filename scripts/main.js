@@ -21,6 +21,12 @@ const support = document.querySelector(".support");
 const contactTop = document.querySelector(".contact-top");
 const LoginBtn = document.querySelector(".login");
 const SignUpBtn = document.querySelector(".signUp");
+const CloseLogin = document.querySelector(".closeLogin");
+const CloseSignUp = document.querySelector(".closeSignUp");
+const LoginModal = document.querySelector(".loginModal");
+const SignUpModal = document.querySelector(".signUpModal");
+const landingSignUp = document.querySelector(".landingSignUp");
+const infoSignUp = document.querySelector(".infoSignUp");
 
 const validEmail = /[a-zA-Z0-9\.\-_]+[@][a-z]{2,}[\.][a-z]{2,}/
 
@@ -68,12 +74,42 @@ contactTop.addEventListener('click', (e)=>{
     });
 });
 
+const OpenSignUp = () =>{
+    document.querySelector(".modalContainer").style.display = "flex";
+    SignUpModal.style.display = "flex";
+    document.body.style.overflowY = "hidden";
+}
+
 LoginBtn.addEventListener('click', (e)=>{
     document.querySelector(".modalContainer").style.display = "flex";
-    document.querySelector(".loginModal").style.display = "flex";
+    LoginModal.style.display = "flex";
+    document.body.style.overflowY = "hidden";
 });
 
-SignUpBtn.addEventListener('click', (e)=>{
-    document.querySelector(".modalContainer").style.display = "flex";
-    document.querySelector(".signUpModal").style.display = "flex";
+SignUpBtn.addEventListener('click', OpenSignUp);
+landingSignUp.addEventListener('click', OpenSignUp);
+infoSignUp.addEventListener('click', OpenSignUp);
+
+CloseLogin.addEventListener('click', (e)=>{
+    LoginModal.classList.remove("FadeIn");
+    LoginModal.classList.add("FadeOut");
+    setTimeout(()=>{
+        LoginModal.style.display = "none";
+        document.querySelector(".modalContainer").style.display = "none";
+        LoginModal.classList.remove("FadeOut");
+        LoginModal.classList.add("FadeIn");
+        document.body.style.overflowY = "auto";
+    }, 500);
+});
+
+CloseSignUp.addEventListener('click', (e)=>{
+    SignUpModal.classList.remove("FadeIn");
+    SignUpModal.classList.add("FadeOut");
+    setTimeout(()=>{
+        SignUpModal.style.display = "none";
+        document.querySelector(".modalContainer").style.display = "none";
+        SignUpModal.classList.remove("FadeOut");
+        SignUpModal.classList.add("FadeIn");
+        document.body.style.overflowY = "auto";
+    }, 500);
 });
