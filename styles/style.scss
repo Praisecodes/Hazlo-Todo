@@ -129,7 +129,8 @@ body{
             transition: .5s;
         }
         p{
-            font-size: 40px;
+            font-size: 30px;
+            font-family: 'arial narrow';
         }
         .login{
             background-color: transparent;
@@ -165,9 +166,11 @@ body{
         background-color: transparent;
         h1{
             font-size: 440%;
+            background-color: transparent;
         }
         h3{
             font-size: 180%;
+            background-color: transparent;
         }
         button{
             border: 2px solid #6e68a8;
@@ -192,6 +195,7 @@ body{
         background-image: url("../images/Notepad 2.png");
         background-position: center;
         background-repeat: no-repeat;
+        background-size: contain;
         height: 100%;
         width: 50%;
     }
