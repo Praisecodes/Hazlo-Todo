@@ -15,6 +15,10 @@ const form = document.querySelector(".contact");
 const socials = document.querySelector(".social");
 const mailingListEmail = document.querySelector(".mailingListEmail");
 const mailingListEmailLabel = document.querySelector(".mailListLabel");
+const home = document.querySelector(".home");
+const about = document.querySelector(".about");
+const support = document.querySelector(".support");
+const contactTop = document.querySelector(".contact-top");
 
 const validEmail = /[a-zA-Z0-9\.\-_]+[@][a-z]{2,}[\.][a-z]{2,}/
 
@@ -48,4 +52,16 @@ mailingListEmail.addEventListener('keyup', (e)=>{
         mailingListEmailLabel.textContent = "Invalid Email Address";
         mailingListEmail.style.borderBottom = "2px solid #f00";
     }
-})
+});
+
+about.addEventListener('click', (e)=>{
+    Info.scrollIntoView({
+        behavior: 'smooth'
+    });
+});
+
+contactTop.addEventListener('click', (e)=>{
+    socials.scrollIntoView({
+        behavior: 'smooth'
+    });
+});
