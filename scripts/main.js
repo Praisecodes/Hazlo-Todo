@@ -48,7 +48,7 @@ mailingListEmail.addEventListener('keyup', (e)=>{
     }
     else if(mailingListEmailValue == ""){
         mailingListEmailLabel.textContent = ""
-        mailingListEmail.style.borderBottom = "2px solid #6e68a8";
+        mailingListEmail.style.borderBottom = "2px solid white";
     }
     else{
         mailingListEmailLabel.textContent = "Invalid Email Address";
