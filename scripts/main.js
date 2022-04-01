@@ -19,6 +19,8 @@ const home = document.querySelector(".home");
 const about = document.querySelector(".about");
 const support = document.querySelector(".support");
 const contactTop = document.querySelector(".contact-top");
+const LoginBtn = document.querySelector(".login");
+const SignUpBtn = document.querySelector(".signUp");
 
 const validEmail = /[a-zA-Z0-9\.\-_]+[@][a-z]{2,}[\.][a-z]{2,}/
 
@@ -64,4 +66,14 @@ contactTop.addEventListener('click', (e)=>{
     socials.scrollIntoView({
         behavior: 'smooth'
     });
+});
+
+LoginBtn.addEventListener('click', (e)=>{
+    document.querySelector(".modalContainer").style.display = "flex";
+    document.querySelector(".loginModal").style.display = "flex";
+});
+
+SignUpBtn.addEventListener('click', (e)=>{
+    document.querySelector(".modalContainer").style.display = "flex";
+    document.querySelector(".signUpModal").style.display = "flex";
 });

@@ -140,6 +140,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  display: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -156,6 +157,7 @@ body {
 
 .modalContainer .signUpModal {
   position: relative;
+  display: none;
   width: 60%;
   height: 80%;
   background-color: white;
