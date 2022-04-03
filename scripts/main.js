@@ -39,8 +39,16 @@ const LoginModal = document.querySelector(".loginModal");
 const SignUpModal = document.querySelector(".signUpModal");
 const landingSignUp = document.querySelector(".landingSignUp");
 const infoSignUp = document.querySelector(".infoSignUp");
+const usernameLogin = document.querySelector(".usernameLogin");
+const emailLogin = document.querySelector(".emailLogin");
+const passwordLogin = document.querySelector(".passwordLogin");
+const passwordLabelLogin = document.querySelector(".passwordLabelLogin");
+const emailLabelLogin = document.querySelector(".emailLabelLogin");
+const nameLabelLogin = document.querySelector(".nameLabelLogin");
 
 const validEmail = /[a-zA-Z0-9\.\-_]+[@][a-z]{2,}[\.][a-z]{2,}/
+const validUsername = /^[a-zA-Z]+$/
+const validPassword = /(?=.*[_\.\-@]+)(?=.*[0-9]+)[a-zA-Z]{8,}/
 
 
 window.onscroll = () =>{
@@ -125,3 +133,50 @@ CloseSignUp.addEventListener('click', (e)=>{
         document.body.style.overflowY = "auto";
     }, 500);
 });
+
+usernameLogin.addEventListener('keyup', (e)=>{
+    let usernameLoginVal = usernameLogin.value;
+
+    if(validUsername.test(usernameLoginVal)){
+        usernameLogin.style.borderBottom = "2px solid #0f0";
+        nameLabelLogin.textContent = "";
+    }
+    else if(usernameLoginVal == ""){
+        nameLabelLogin.textContent = "This Field Cannot Be Empty";
+        usernameLogin.style.borderBottom = "2px solid #f00";
+    }
+    else{
+        nameLabelLogin.textContent = "Username Cannot Contain Digits Or Symbols And Spaces";
+        usernameLogin.style.borderBottom = "2px solid #f00";
+    }
+});
+
+emailLogin.addEventListener('keyup', (e)=>{
+    let emailLoginVal = emailLogin.value;
+
+    if(validEmail.test(emailLoginVal)){
+        emailLogin.style.borderBottom = "2px solid #0f0";
+        emailLabelLogin.textContent = "";
+    }
+    else if(emailLoginVal == ""){
+        emailLabelLogin.textContent = "This Field Cannot Be Empty";
+        emailLogin.style.borderBottom = "2px solid #f00";
+    }
+    else{
+        emailLabelLogin.textContent = "Invalid Email Format";
+        emailLogin.style.borderBottom = "2px solid #f00";
+    }
+});
+
+passwordLogin.addEventListener('keyup', (e)=>{
+    let passwordLoginVal = passwordLogin.value;
+
+    if(passwordLoginVal == ""){
+        passwordLabelLogin.textContent = "Cannot Be Left Empty";
+        passwordLogin.style.borderBottom = "2px solid #f00";
+    }
+    else{
+        passwordLabelLogin.textContent = "";
+        passwordLogin.style.borderBottom = "2px solid #0f0";
+    }
+})
