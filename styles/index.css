@@ -331,6 +331,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .topper .logo {
@@ -353,7 +356,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: 3%;
 }
 
 .topper .menu li {
@@ -389,7 +391,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: 20%;
 }
 
 .topper .buttons button {
@@ -639,4 +640,4 @@ body {
   border: 2px solid #9c8eee;
   background-color: #9c8eee;
 }
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=index.css.map */
