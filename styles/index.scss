@@ -121,6 +121,8 @@ body{
         position: relative;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         display: none;
         width: 60vw;
         height: 80vh;

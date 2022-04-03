@@ -20,12 +20,14 @@
         <div class="loginModal FadeIn">
             <button class="closeLogin">
                 <i class="fa fa-x"></i>
-            </button><br/><br/>
+            </button><br/>
+
+            <h1>
+                Login And <span id="loginPhrase"></span>
+            </h1>
 
             <div class="mainForm">
-                <h1>
-                    Login And <span id="loginPhrase"></span>
-                </h1>
+                
                 <br/>
                 <form method="post">
                     <input type="text" placeholder="Enter Your Username" class="usernameLogin" name="usernameLogin">
@@ -48,8 +50,18 @@
             </button>
 
             <div class="mainForm">
-                <form>
-                    
+                <form method="post">
+                    <input type="text" name="FirstName" placeholder="Enter Your First Name">
+                    <input type="text" class="LastName" placeholder="Enter Your Last Name">
+                    <input type="text" class="OtherNames" placeholder="Enter Your Other Names">
+                    <input type="text" class="usernameSignup" placeholder="Choose A Username">
+                    <input type="text" class="emailSignup" placeholder="Enter Your Email">
+                    <input type="text" class="passwordSignup" placeholder="Choose A Password">
+                    <input type="text" class="confirmPassword" placeholder="Confirm The Password">
+                    <input type="text" class="gender" placeholder="Male Or Female">
+                    <button class="submitSignup" type="submit">
+                        Create Account
+                    </button>
                 </form>
             </div>
         </div>

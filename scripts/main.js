@@ -120,6 +120,15 @@ CloseLogin.addEventListener('click', (e)=>{
         LoginModal.classList.add("FadeIn");
         document.body.style.overflowY = "auto";
     }, 500);
+    usernameLogin.value = "";
+    usernameLogin.style.borderBottom = "2px solid #324953";
+    emailLogin.value = "";
+    emailLogin.style.borderBottom = "2px solid #324953";
+    passwordLogin.value = "";
+    passwordLogin.style.borderBottom = "2px solid #324953";
+    nameLabelLogin.textContent = "";
+    emailLabelLogin.textContent = "";
+    passwordLabelLogin.textContent = "";
 });
 
 CloseSignUp.addEventListener('click', (e)=>{
