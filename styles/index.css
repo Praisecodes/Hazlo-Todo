@@ -754,7 +754,7 @@ body {
   overflow-x: hidden;
 }
 
-.infoDiv h1 {
+.infoDiv h3 {
   text-align: center;
 }
 
@@ -925,8 +925,8 @@ body {
 
 @media screen and (max-width: 680px) {
   .infoDiv {
-    width: 95vw;
-    left: 2.5vw;
+    width: 98vw;
+    left: 1vw;
   }
   .landing .writeUp h1 {
     font-size: 400%;
@@ -994,6 +994,10 @@ body {
   }
   .landing .writeUp button {
     width: 250px;
+  }
+  .modalContainer .loginModal, .modalContainer .signUpModal {
+    width: 95vw;
+    height: 90vh;
   }
 }
 /*# sourceMappingURL=index.css.map */
