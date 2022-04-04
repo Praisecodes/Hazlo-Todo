@@ -29,7 +29,7 @@
             <div class="mainForm">
                 
                 <br/>
-                <form method="post">
+                <form method="post" action="validations/login.php">
                     <input type="text" placeholder="Enter Your Username" class="usernameLogin" name="usernameLogin">
                     <label class="nameLabelLogin"></label>
                     <input type="text" placeholder="Enter Your Email" class="emailLogin" name="emailLogin">
@@ -54,7 +54,7 @@
             </h1>
 
             <div class="mainForm">
-                <form method="post">
+                <form method="post" action="validations/signup.php">
                     <input type="text" class="Firstname" name="Firstname" placeholder="Enter Your First Name">
                     <input type="text" class="LastName" name="LastName" placeholder="Enter Your Last Name">
                     <input type="text" class="OtherNames" name="OtherNames" placeholder="Enter Your Other Names">

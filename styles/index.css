@@ -1000,4 +1000,124 @@ body {
     height: 90vh;
   }
 }
+
+.top {
+  width: 100vw;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  overflow-x: hidden;
+  border: 0;
+  border-bottom: 1px solid #324953;
+}
+
+.top .logo {
+  color: #324953;
+  font-family: "Poppins";
+  font-size: 230%;
+  margin-left: 20px;
+}
+
+.mainBodyContainer {
+  width: 100%;
+  height: calc(100vh - 61px);
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.mainBodyContainer .sideBar {
+  width: 24vw;
+  height: calc(100vh - 61px);
+  background-color: #324953;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.mainBodyContainer .sideBar::-webkit-scrollbar {
+  display: none;
+}
+
+.mainBodyContainer .sideBar:hover::-webkit-scrollbar {
+  display: block;
+  width: 5px;
+  background-color: #ffffffaa;
+  border-radius: 10px;
+}
+
+.mainBodyContainer .sideBar .profileDiv {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 0;
+}
+
+.mainBodyContainer .sideBar .profileDiv .userImg {
+  width: 60%;
+  height: 25vh;
+  border: 1px solid #0b1c24aa;
+  border-radius: 100%;
+}
+
+.mainBodyContainer .sideBar .profileDiv h2 {
+  color: white;
+  font-size: 25px;
+}
+
+.mainBodyContainer .sideBar .profileDiv a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.mainBodyContainer .sideBar .profileDiv a:hover {
+  text-decoration: underline;
+}
+
+.mainBodyContainer .activityList {
+  width: calc(100vw - 24vw);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-size: 25px;
+  color: #324953aa;
+  border: 1px solid #324953;
+  padding: 5px 20px;
+}
+
+.mainBodyContainer .activityList::-webkit-scrollbar {
+  display: none;
+}
 /*# sourceMappingURL=index.css.map */
