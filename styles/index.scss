@@ -511,7 +511,7 @@ body{
     display: none;
     color: white;
     position: fixed;
-    top: calc(100vh - 60px);
+    bottom: 10px;
     left: 10vw;
     transition: 1s;
     z-index: 3000;
