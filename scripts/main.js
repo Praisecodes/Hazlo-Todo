@@ -27,10 +27,10 @@ const form = document.querySelector(".contact");
 const socials = document.querySelector(".social");
 const mailingListEmail = document.querySelector(".mailingListEmail");
 const mailingListEmailLabel = document.querySelector(".mailListLabel");
-const home = document.querySelector(".home");
-const about = document.querySelector(".about");
-const support = document.querySelector(".support");
-const contactTop = document.querySelector(".contact-top");
+const home = document.querySelectorAll(".home");
+const about = document.querySelectorAll(".about");
+const support = document.querySelectorAll(".support");
+const contactTop = document.querySelectorAll(".contact-top");
 const LoginBtn = document.querySelector(".login");
 const SignUpBtn = document.querySelector(".signUp");
 const CloseLogin = document.querySelector(".closeLogin");
@@ -56,6 +56,12 @@ const confirmPassword = document.querySelector(".confirmPassword");
 const emailSignup = document.querySelector(".emailSignup");
 const gender = document.querySelector(".gender");
 const submitSignup = document.querySelector(".submitSignup");
+const navBtn = document.querySelector(".navBtn");
+const mobileNavContainer = document.querySelector(".mobileNavContainer");
+const mobileNav = document.querySelector(".mobileNav");
+const closeNav = document.querySelector(".closeNav");
+const loginMobile = document.querySelector(".loginMobile");
+const signupMobile = document.querySelector(".signupMobile");
 
 const validEmail = /[a-zA-Z0-9\.\-_]+[@][a-z]{2,}[\.][a-z]{2,}/
 const validUsername = /^[a-zA-Z]+$/
@@ -94,25 +100,60 @@ mailingListEmail.addEventListener('keyup', (e)=>{
     }
 });
 
-about.addEventListener('click', (e)=>{
-    Info.scrollIntoView({
-        behavior: 'smooth'
+about.forEach((e)=>{
+    e.addEventListener('click', (er)=>{
+        Info.scrollIntoView({
+            behavior: 'smooth'
+        });
+        mobileNav.classList.add("right");
+        mobileNav.classList.remove("left");
+        setTimeout(() => {
+            mobileNavContainer.style.display = "none";
+        }, 500);
     });
 });
 
-contactTop.addEventListener('click', (e)=>{
-    socials.scrollIntoView({
-        behavior: 'smooth'
+contactTop.forEach((e)=>{
+    e.addEventListener('click', (er)=>{
+        socials.scrollIntoView({
+            behavior: 'smooth'
+        });
+        mobileNav.classList.add("right");
+        mobileNav.classList.remove("left");
+        setTimeout(() => {
+            mobileNavContainer.style.display = "none";
+        }, 500);
     });
 });
 
 const OpenSignUp = () =>{
+    mobileNav.classList.add("right");
+    mobileNav.classList.remove("left");
+    setTimeout(() => {
+        mobileNavContainer.style.display = "none";
+    }, 500);
     document.querySelector(".modalContainer").style.display = "flex";
     SignUpModal.style.display = "flex";
     document.body.style.overflowY = "hidden";
 }
 
 LoginBtn.addEventListener('click', (e)=>{
+    mobileNav.classList.add("right");
+    mobileNav.classList.remove("left");
+    setTimeout(() => {
+        mobileNavContainer.style.display = "none";
+    }, 500);
+    document.querySelector(".modalContainer").style.display = "flex";
+    LoginModal.style.display = "flex";
+    document.body.style.overflowY = "hidden";
+});
+
+loginMobile.addEventListener('click', (e)=>{
+    mobileNav.classList.add("right");
+    mobileNav.classList.remove("left");
+    setTimeout(() => {
+        mobileNavContainer.style.display = "none";
+    }, 500);
     document.querySelector(".modalContainer").style.display = "flex";
     LoginModal.style.display = "flex";
     document.body.style.overflowY = "hidden";
@@ -121,6 +162,7 @@ LoginBtn.addEventListener('click', (e)=>{
 SignUpBtn.addEventListener('click', OpenSignUp);
 landingSignUp.addEventListener('click', OpenSignUp);
 infoSignUp.addEventListener('click', OpenSignUp);
+signupMobile.addEventListener('click', OpenSignUp);
 
 CloseLogin.addEventListener('click', (e)=>{
     LoginModal.classList.remove("FadeIn");
@@ -318,4 +360,20 @@ gender.addEventListener('keyup', (e)=>{
         infoDiv.classList.add("MoveInup");
         infoDiv.classList.remove("Showdown");
     }
+});
+
+navBtn.addEventListener('click', (e)=>{
+    mobileNavContainer.style.display = "block";
+    setTimeout(() => {
+        mobileNav.classList.add("left");
+        mobileNav.classList.remove("right");
+    }, 100);
+});
+
+closeNav.addEventListener('click', (e)=>{
+    mobileNav.classList.add("right");
+    mobileNav.classList.remove("left");
+    setTimeout(() => {
+        mobileNavContainer.style.display = "none";
+    }, 500);
 });

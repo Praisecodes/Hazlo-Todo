@@ -20,7 +20,7 @@
         <div class="loginModal FadeIn">
             <button class="closeLogin">
                 <i class="fa fa-x"></i>
-            </button><br/>
+            </button><br/><br/>
 
             <h1>
                 Login And <span id="loginPhrase"></span>
@@ -92,6 +92,9 @@
                 Sign Up <i class="fa-solid fa-user-plus"></i>
             </button>
         </div>
+        <button class="navBtn">
+            <i class="fa fa-bars-staggered"></i>
+        </button>
     </div>
 
     <div class="landing">
@@ -156,6 +159,28 @@
 
     <div class="infoDiv Showdown">
         <h3 class="message"></h3>
+    </div>
+
+    <div class="mobileNavContainer">
+        <div class="mobileNav right">
+            <button class="closeNav">
+                <i class="fa fa-arrow-right"></i>
+            </button><br/>
+            <ul class="mobileMenu">
+                <li class="home">HOME</li>
+                <li class="about">ABOUT</li>
+                <li class="support">SUPPORT</li>
+                <li class="contact-top">CONTACT</li>
+            </ul>
+            <div class="buttonsMobile">
+                <button class="loginMobile">
+                    Login <i class="fa fa-arrow-right"></i>
+                </button>
+                <button class="signupMobile">
+                    Sign Up <i class="fa fa-user-plus"></i>
+                </button>
+            </div>
+        </div>
     </div>
 
     <script src="scripts/main.js"></script>

@@ -252,6 +252,7 @@ body{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    overflow-x: hidden;
     .logo{
         color: #324953;
         font-family: "Poppins";
@@ -289,7 +290,7 @@ body{
         height: 100%;
         align-items: center;
         margin-right: 2%;
-        button{
+        .login, .signUp{
             border: 2px solid #6e68a8;
             width: 135px;
             height: 40px;
@@ -317,6 +318,22 @@ body{
                 background-color: transparent;
                 color: #324953;
             }
+        }
+    }
+    .navBtn{
+        background-color: transparent;
+        color: #324953;
+        font-size: 25px;
+        border: 0;
+        outline: 0;
+        text-align: center;
+        width: 50px;
+        height: 30px;
+        cursor: pointer;
+        display: none;
+        margin-right: 2%;
+        &:hover{
+            border: 2px solid #6e68a8;
         }
     }
 }
@@ -488,4 +505,117 @@ body{
     left: 10vw;
     transition: 1s;
     z-index: 3000;
+}
+
+.right{
+    transform: translateX(100%);
+}
+
+.left{
+    transform: translateX(0%);
+}
+
+.mobileNavContainer{
+    width: 100%;
+    height: 100vh;
+    background-color: #324953cc;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: none;
+    .mobileNav{
+        width: 50vw;
+        height: 100%;
+        background-color: white;
+        color: #324953;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 50vw;
+        position: relative;
+        transition: .5s;
+        .closeNav{
+            width: 50px;
+            height: 50px;
+            border: 2px solid #6e68a8;
+            background-color: #6e68a8;
+            color: white;
+            outline: 0;
+            cursor: pointer;
+            position: absolute;
+            right: 3px;
+            top: 3px;
+            border-radius: 50px;
+            font-size: 20px;
+            &:hover{
+                background-color: transparent;
+                color: #324953;
+            }
+        }
+        .mobileMenu{
+            list-style-type: none;
+            width: 100%;
+            li{
+                font-size: 20px;
+                padding: 10px;
+                margin: 5px 0;
+                width: 100%;
+            }
+        }
+        .buttonsMobile{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+            .loginMobile, .signupMobile{
+                width: 200px;
+                height: 40px;
+                font-size: 18px;
+                border: 2px solid #6e68a8;
+                outline: 0;
+                cursor: pointer;
+                text-align: center;
+                margin: 10px 20px;
+            }
+            .loginMobile{
+                background-color: transparent;
+                &:hover{
+                    color: white;
+                    background-color: #6e68a8;
+                }
+            }
+            .signupMobile{
+                background-color: #6e68a8;
+                color: white;
+                &:hover{
+                    color: #324953;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+// Home Page Responsiveness
+@media screen and (max-width: 1005px){
+    .topper{
+        .menu, .buttons{
+            display: none;
+        }
+        .navBtn{
+            display: block;
+        }
+    }
+    .modalContainer{
+        .signUpModal{
+            .mainForm{
+                form{
+                    input{
+                        width: 280px;
+                    }
+                }
+            }
+        }
+    }
 }
