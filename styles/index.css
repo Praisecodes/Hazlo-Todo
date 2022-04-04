@@ -254,6 +254,10 @@ body {
   color: #324953;
 }
 
+.modalContainer .loginModal h1, .modalContainer .signUpModal h1 {
+  text-align: center;
+}
+
 .modalContainer .loginModal .mainForm, .modalContainer .signUpModal .mainForm {
   width: 100%;
   height: 75%;
@@ -750,6 +754,10 @@ body {
   overflow-x: hidden;
 }
 
+.infoDiv h1 {
+  text-align: center;
+}
+
 .right {
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
@@ -924,6 +932,7 @@ body {
   }
   .modalContainer .loginModal, .modalContainer .signUpModal {
     width: 95vw;
+    height: 85vh;
   }
   .modalContainer .loginModal h1, .modalContainer .signUpModal h1 {
     font-size: 130%;
@@ -969,6 +978,18 @@ body {
   }
   .contact-and-info .container .contact h2 {
     font-size: 120%;
+  }
+}
+
+@media screen and (max-width: 385px) {
+  .landing .writeUp h1 {
+    font-size: 300%;
+  }
+  .landing .writeUp h3 {
+    font-size: 90%;
+  }
+  .landing .writeUp button {
+    width: 250px;
   }
 }
 /*# sourceMappingURL=index.css.map */

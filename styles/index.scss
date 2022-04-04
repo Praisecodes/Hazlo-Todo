@@ -149,6 +149,9 @@ body{
                 color: #324953;
             }
         }
+        h1{
+            text-align: center;
+        }
         .mainForm{
             width: 100%;
             height: 75%;
@@ -513,6 +516,9 @@ body{
     transition: 1s;
     z-index: 3000;
     overflow-x: hidden;
+    h1{
+        text-align: center;
+    }
 }
 
 .right{
@@ -680,6 +686,7 @@ body{
     .modalContainer{
         .loginModal, .signUpModal{
             width: 95vw;
+            height: 85vh;
             h1{
                 font-size: 130%;
             }
@@ -761,6 +768,22 @@ body{
                 h2{
                     font-size: 120%;
                 }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 385px){
+    .landing{
+        .writeUp{
+            h1{
+                font-size: 300%;
+            }
+            h3{
+                font-size: 90%;
+            }
+            button{
+                width: 250px;
             }
         }
     }
