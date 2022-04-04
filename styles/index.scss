@@ -673,6 +673,10 @@ body{
 }
 
 @media screen and (max-width: 680px){
+    .infoDiv{
+        width: 95vw;
+        left: 2.5vw;
+    }
     .landing{
         .writeUp{
             h1{
