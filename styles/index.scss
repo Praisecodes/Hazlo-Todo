@@ -201,6 +201,48 @@ body{
             }
         }
     }
+    .signUpModal{
+        .mainForm{
+            form{
+                width: 100%;
+                overflow-y: scroll;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                input{
+                    width: 250px;
+                    height: 30px;
+                    padding: 10px;
+                    border: 0;
+                    border-bottom: 2px solid #324953;
+                    background-color: transparent;
+                    margin: 20px;
+                    font-size: 16px;
+                    outline: 0;
+                }
+                .submitSignup{
+                    width: 230px;
+                    height: 40px;
+                    transition: .5s;
+                    border: 2px solid #6e68a8;
+                    outline: 0;
+                    color: white;
+                    background-color: #6e68a8;
+                    cursor: pointer;
+                    font-size: 20px;
+                    margin: 20px;
+                    &:hover{
+                        background-color: transparent;
+                        color: #324953;
+                    }
+                }
+                &::-webkit-scrollbar{
+                    display: none;
+                }
+            }
+        }
+    }
 }
 
 .topper{
@@ -430,4 +472,20 @@ body{
             }
         }
     }
+}
+
+.infoDiv{
+    width: 80vw;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    display: none;
+    color: white;
+    position: fixed;
+    top: calc(100vh - 60px);
+    left: 10vw;
+    transition: 1s;
+    z-index: 3000;
 }

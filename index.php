@@ -49,16 +49,20 @@
                 <i class="fa fa-x"></i>
             </button>
 
+            <h1>
+                Signup And Be Dazzled!!
+            </h1>
+
             <div class="mainForm">
                 <form method="post">
-                    <input type="text" name="FirstName" placeholder="Enter Your First Name">
-                    <input type="text" class="LastName" placeholder="Enter Your Last Name">
-                    <input type="text" class="OtherNames" placeholder="Enter Your Other Names">
-                    <input type="text" class="usernameSignup" placeholder="Choose A Username">
-                    <input type="text" class="emailSignup" placeholder="Enter Your Email">
-                    <input type="text" class="passwordSignup" placeholder="Choose A Password">
-                    <input type="text" class="confirmPassword" placeholder="Confirm The Password">
-                    <input type="text" class="gender" placeholder="Male Or Female">
+                    <input type="text" class="Firstname" name="Firstname" placeholder="Enter Your First Name">
+                    <input type="text" class="LastName" name="LastName" placeholder="Enter Your Last Name">
+                    <input type="text" class="OtherNames" name="OtherNames" placeholder="Enter Your Other Names">
+                    <input type="text" class="usernameSignup" name="userNameSignup" placeholder="Choose A Username">
+                    <input type="password" class="passwordSignup" name="passwordSignup" placeholder="Choose A Password">
+                    <input type="password" class="confirmPassword" name="confirmPassword" placeholder="Confirm The Password">
+                    <input type="text" class="emailSignup" name="emailSignup" placeholder="Enter Your Email">
+                    <input type="text" class="gender" name="gender" placeholder="Male Or Female">
                     <button class="submitSignup" type="submit">
                         Create Account
                     </button>
@@ -148,6 +152,10 @@
         </div><br/><br/>
 
         <p>copyright &copy; 2022 Hazlo Todo</p>
+    </div>
+
+    <div class="infoDiv Showdown">
+        <h3 class="message"></h3>
     </div>
 
     <script src="scripts/main.js"></script>
