@@ -206,6 +206,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow-x: hidden;
 }
 
 .modalContainer .loginModal, .modalContainer .signUpModal {
@@ -271,6 +272,7 @@ body {
           align-items: center;
   padding: 20px;
   background-color: transparent;
+  overflow-x: hidden;
 }
 
 .modalContainer .loginModal .mainForm form {
@@ -518,6 +520,7 @@ body {
           flex-direction: row;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+  overflow-x: hidden;
 }
 
 .landing .writeUp {
@@ -535,6 +538,7 @@ body {
           justify-content: center;
   padding-left: 2%;
   background-color: transparent;
+  overflow-x: hidden;
 }
 
 .landing .writeUp h1 {
@@ -576,6 +580,7 @@ body {
   background-size: contain;
   height: 100%;
   width: 50%;
+  overflow-x: hidden;
 }
 
 .contact-and-info {
@@ -594,6 +599,7 @@ body {
           align-items: center;
   color: white;
   padding-top: 5%;
+  overflow-x: hidden;
 }
 
 .contact-and-info .social a .icons {
@@ -618,6 +624,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow-x: hidden;
 }
 
 .contact-and-info .container .info {
@@ -670,6 +677,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow-x: hidden;
 }
 
 .contact-and-info .container .contact form input {
@@ -739,6 +747,7 @@ body {
   -webkit-transition: 1s;
   transition: 1s;
   z-index: 3000;
+  overflow-x: hidden;
 }
 
 .right {
@@ -870,6 +879,71 @@ body {
   }
   .modalContainer .signUpModal .mainForm form input {
     width: 280px;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .landing .images {
+    display: none;
+  }
+  .landing .writeUp {
+    padding-left: 5%;
+    width: 100%;
+  }
+  .modalContainer .loginModal, .modalContainer .signUpModal {
+    width: 80vw;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .contact-and-info .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contact-and-info .container .info, .contact-and-info .container .contact {
+    width: 80%;
+    margin-top: 20px;
+  }
+  .contact-and-info .container .info {
+    padding: 20px;
+  }
+  .mobileNavContainer .mobileNav {
+    width: 75vw;
+    margin-left: 25vw;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .landing .writeUp h1 {
+    font-size: 400%;
+  }
+  .landing .writeUp h3 {
+    font-size: 140%;
+  }
+  .modalContainer .loginModal, .modalContainer .signUpModal {
+    width: 95vw;
+  }
+  .modalContainer .loginModal h1, .modalContainer .signUpModal h1 {
+    font-size: 130%;
+  }
+  .contact-and-info .container .info h1 {
+    font-size: 150%;
+  }
+  .contact-and-info .container .contact h2 {
+    font-size: 130%;
+  }
+  .contact-and-info .social a .icons {
+    font-size: 20px;
+  }
+  .modalContainer .signUpModal .closeLogin, .modalContainer .signUpModal .closeSignUp, .modalContainer .loginModal .closeLogin, .modalContainer .loginModal .closeSignUp {
+    width: 40px;
+    height: 38px;
+    font-size: 15px;
+  }
+  .modalContainer .signUpModal .mainForm form input, .modalContainer .loginModal .mainForm form input {
+    width: 320px;
   }
 }
 /*# sourceMappingURL=index.css.map */
