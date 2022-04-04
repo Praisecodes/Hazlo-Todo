@@ -691,6 +691,9 @@ body{
                 h1{
                     font-size: 150%;
                 }
+                p{
+                    font-size: 15px;
+                }
             }
             .contact{
                 h2{
@@ -718,6 +721,45 @@ body{
                     input{
                         width: 320px;
                     }
+                }
+            }
+        }
+    }
+    .topper{
+        .logo{
+            font-size: 230%;
+        }
+    }
+}
+
+@media screen and (max-width: 485px){
+    .landing{
+        .writeUp{
+            h1{
+                font-size: 350%;
+            }
+            h3{
+                font-size: 120%;
+            }
+            p{
+                font-size: 13px;
+            }
+        }
+    }
+    .mobileNavContainer{
+        .mobileNav{
+            .closeNav{
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+
+    .contact-and-info{
+        .container{
+            .contact{
+                h2{
+                    font-size: 120%;
                 }
             }
         }
