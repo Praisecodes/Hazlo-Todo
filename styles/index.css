@@ -188,6 +188,82 @@ body {
   font-family: "Poppins";
 }
 
+@-webkit-keyframes goOff {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  50% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  75% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  100% {
+    -webkit-transform: translateY(-200%);
+            transform: translateY(-200%);
+  }
+}
+
+@keyframes goOff {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  50% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  75% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  100% {
+    -webkit-transform: translateY(-200%);
+            transform: translateY(-200%);
+  }
+}
+
+.err_msg {
+  background-color: #f00;
+  color: white;
+  width: 40vw;
+  position: fixed;
+  top: 0;
+  left: 30vw;
+  -webkit-animation: goOff 4.5s;
+          animation: goOff 4.5s;
+  -webkit-transform: translateY(-200%);
+          transform: translateY(-200%);
+}
+
+.err_msg p {
+  text-align: center;
+  font-size: 16px;
+  padding: 3px;
+}
+
+.success_msg {
+  background-color: #0f0;
+  color: white;
+  width: 40vw;
+  position: fixed;
+  top: 0;
+  left: 30vw;
+  -webkit-animation: goOff 4.5s;
+          animation: goOff 4.5s;
+  -webkit-transform: translateY(-200%);
+          transform: translateY(-200%);
+}
+
+.success_msg p {
+  text-align: center;
+  font-size: 16px;
+  padding: 3px;
+}
+
 .modalContainer {
   position: fixed;
   top: 0;
@@ -754,7 +830,7 @@ body {
   overflow-x: hidden;
 }
 
-.infoDiv h3 {
+.infoDiv p {
   text-align: center;
 }
 

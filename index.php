@@ -23,6 +23,24 @@
     <title>Hazlo Todo - Be Organized</title>
 </head>
 <body>
+    <?php
+        if(isset($_SESSION['message'])){
+            echo "<div class='err_msg'>
+            <p>" . $_SESSION['message'] . "</p>
+            </div>";
+            $_SESSION['message'] = null;
+        }
+    ?>
+
+    <?php
+        if(isset($_SESSION['message_success'])){
+            echo "<div class='success_msg'>
+            <p>" . $_SESSION['message_success'] . "</p>
+            </div>";
+            $_SESSION['message_success'] = null;
+        }
+    ?>
+
     <div class="modalContainer">
         <div class="loginModal FadeIn">
             <button class="closeLogin">
@@ -165,7 +183,7 @@
     </div>
 
     <div class="infoDiv Showdown">
-        <h3 class="message"></h3>
+        <p class="message"></p>
     </div>
 
     <div class="mobileNavContainer">

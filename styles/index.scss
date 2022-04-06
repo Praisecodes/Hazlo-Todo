@@ -105,6 +105,54 @@ body{
     font-family: "Poppins";
 }
 
+@keyframes goOff{
+    0%{
+        transform: translateY(0%);
+    }
+    50%{
+        transform: translateY(0%);
+    }
+    75%{
+        transform: translateY(0%);
+    }
+    100%{
+        transform: translateY(-200%);
+    }
+}
+
+.err_msg{
+    background-color: #f00;
+    color: white;
+    width: 40vw;
+    position: fixed;
+    top: 0;
+    left: 30vw;
+    animation: goOff 4.5s;
+    transform: translateY(-200%);
+    p{
+        text-align: center;
+        font-size: 16px;
+        padding: 3px;
+    }
+}
+
+.success_msg{
+    background-color: #0f0;
+    color: white;
+    width: 40vw;
+    position: fixed;
+    top: 0;
+    left: 30vw;
+    animation: goOff 4.5s;
+    transform: translateY(-200%);
+    p{
+        text-align: center;
+        font-size: 16px;
+        padding: 3px;
+    }
+}
+
+
 .modalContainer{
     position: fixed;
     top: 0;
@@ -516,7 +564,7 @@ body{
     transition: 1s;
     z-index: 3000;
     overflow-x: hidden;
-    h3{
+    p{
         text-align: center;
     }
 }

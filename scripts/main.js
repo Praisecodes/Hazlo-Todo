@@ -67,6 +67,7 @@ const validEmail = /[a-zA-Z0-9\.\-_]+[@][a-z]{2,}[\.][a-z]{2,}/
 const validUsername = /^[a-zA-Z]+$/
 const validPassword = /(?=.*[_\.\-@])(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9_\-\.@]{8,}/
 const othernameValid = /^[a-zA-Z ]+$/
+const usernameValid = /^[a-zA-Z0-9\-_]+$/
 
 
 window.onscroll = () =>{
@@ -219,7 +220,7 @@ CloseSignUp.addEventListener('click', (e)=>{
 usernameLogin.addEventListener('keyup', (e)=>{
     let usernameLoginVal = usernameLogin.value;
 
-    if(validUsername.test(usernameLoginVal)){
+    if(usernameValid.test(usernameLoginVal)){
         usernameLogin.style.borderBottom = "2px solid #0f0";
         nameLabelLogin.textContent = "";
     }
@@ -228,7 +229,7 @@ usernameLogin.addEventListener('keyup', (e)=>{
         usernameLogin.style.borderBottom = "2px solid #f00";
     }
     else{
-        nameLabelLogin.textContent = "Username Cannot Contain Digits Or Symbols And Spaces";
+        nameLabelLogin.textContent = "Username Can Only Contain Alphanumeric and - or _";
         usernameLogin.style.borderBottom = "2px solid #f00";
     }
 });
@@ -301,7 +302,7 @@ OtherNames.addEventListener('keyup', (e)=>{
 });
 
 usernameSignup.addEventListener('keyup', (e)=>{
-    SignUpActions(usernameSignup, validUsername, "Username Cannot Be Empty", "Username Cannot Contain Digits, Space or Symbols");
+    SignUpActions(usernameSignup, usernameValid, "Username Cannot Be Empty", "Username Can Only Contain Alphanumeric And - or _");
 });
 
 passwordSignup.addEventListener('keyup', (e)=>{
@@ -340,7 +341,7 @@ emailSignup.addEventListener('keyup', (e)=>{
 gender.addEventListener('keyup', (e)=>{
     let genderVal = gender.value;
 
-    if(genderVal == "Male" || genderVal == "MALE" || genderVal == "Female" || genderVal == "FEMALE"){
+    if(genderVal == "Male" || genderVal == "male" || genderVal == "Female" || genderVal == "female"){
         gender.style.borderBottom = "2px solid #0f0";
         message.textContent = "";
         infoDiv.classList.add("Showdown");
