@@ -46,8 +46,8 @@
             $active_group = 'default';
             $query_builder = TRUE;
 
-            $conn = new mysqli("localhost", "root", "", "users");
-            //$conn = new mysqli($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
+            //$conn = new mysqli("localhost", "root", "", "users");
+            $conn = new mysqli($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
 
 
             if($conn->connect_error){
