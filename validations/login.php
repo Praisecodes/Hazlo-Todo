@@ -73,6 +73,7 @@
                 }
                 else{
                     $_SESSION['message'] = "No Such User, Please Sign Up";
+                    header("Location: ../");
                 }
 
                 
