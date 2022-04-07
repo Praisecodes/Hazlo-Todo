@@ -1,5 +1,7 @@
-<?php session_start(); 
-    if(!isset($_SESSION["username"])){
+<?php
+    session_start();
+    if(!isset($_SESSION["username"]) && !isset($_SESSION["userFname"])){
+        $_SESSION['message'] = "Please Make sure You Login";
         header("Location: ../");
     }
 ?>
@@ -14,6 +16,15 @@
     <title>Hazlo Todo | Work Area</title>
 </head>
 <body>
+    <?php
+        if(isset($_SESSION['message_success'])){
+            echo "<div class='success_msg'>
+            <p>" . $_SESSION['message_success'] . "</p>
+            </div>";
+            $_SESSION['message_success'] = null;
+        }
+    ?>
+
     <div class="top">
         <h1 class="logo">
             HAZLO TODO
@@ -25,7 +36,7 @@
                 <div class="userImg">
 
                 </div><br/>
-                <h2>Hello, <?php echo $_SESSION["username"];?></h2>
+                <p>Hello, <?php echo $_SESSION["userFname"];?></p>
                 <a href="">@<?php echo $_SESSION["username"];?></a>
             </div>
         </div>

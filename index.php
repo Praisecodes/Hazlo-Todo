@@ -1,6 +1,8 @@
 <?php
     session_start();
-    if(isset($_SESSION["username"])){
+    if((isset($_COOKIE["usersname"])) && (isset($_COOKIE["fullname"]))){
+        $_SESSION['username'] = $_COOKIE["usersname"];
+        $_SESSION['userFname'] = $_COOKIE["fullname"];
         header("Location: workarea/");
     }
 ?>
