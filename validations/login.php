@@ -52,29 +52,30 @@
                         $MainUsername = $row['UserName'];
                         $email = $row['UserEmail'];
                     }
+                    if(!($password === $MainPassword)){
+                        $_SESSION['message'] = "Invalid Password";
+                        header("Location: ../");
+                    }
+                    elseif(!($username === $MainUsername)){
+                        $_SESSION['message'] = "Username Mismatch";
+                        header("Location: ../");
+                    }
+                    else{
+                        setcookie("usersname", $MainUsername, time()+86400,"/");
+                        setcookie("fullname", $FullName, time()+86400, "/");
+                        if(isset($_COOKIE["usersname"]) && isset($_COOKIE["fullname"])){
+                            $_SESSION["username"] = $_COOKIE["usersname"];
+                            $_SESSION["userFname"] = $_COOKIE["fullname"];
+                            $_SESSION['message_success'] = $_COOKIE["usersname"] . " and " . $_COOKIE["fullname"];
+                            header("Location: ../workarea");
+                        }
+                    }
                 }
                 else{
                     $_SESSION['message'] = "No Such User, Please Sign Up";
                 }
 
-                if(!($password === $MainPassword)){
-                    $_SESSION['message'] = "Invalid Password";
-                    header("Location: ../");
-                }
-                elseif(!($username === $MainUsername)){
-                    $_SESSION['message'] = "Username Mismatch";
-                    header("Location: ../");
-                }
-                else{
-                    setcookie("usersname", $MainUsername, time()+86400,"/");
-                    setcookie("fullname", $FullName, time()+86400, "/");
-                    if(isset($_COOKIE["usersname"]) && isset($_COOKIE["fullname"])){
-                        $_SESSION["username"] = $_COOKIE["usersname"];
-                        $_SESSION["userFname"] = $_COOKIE["fullname"];
-                        $_SESSION['message_success'] = $_COOKIE["usersname"] . " and " . $_COOKIE["fullname"];
-                        header("Location: ../workarea");
-                    }
-                }
+                
             }
             else{
                 $_SESSION['message'] = "An Error Occured, Please Contact Us Immediately";
