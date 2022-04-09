@@ -124,15 +124,19 @@ body{
     background-color: #f00;
     color: white;
     width: 40vw;
+    height: 50px;
     position: fixed;
     top: 0;
     left: 30vw;
     animation: goOff 4.5s;
     transform: translateY(-200%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     p{
         text-align: center;
         font-size: 16px;
-        padding: 3px;
+        // padding: 3px;
     }
 }
 
@@ -140,15 +144,19 @@ body{
     background-color: #0f0;
     color: white;
     width: 40vw;
+    height: 50px;
     position: fixed;
     top: 0;
     left: 30vw;
     animation: goOff 4.5s;
     transform: translateY(-200%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     p{
         text-align: center;
         font-size: 16px;
-        padding: 3px;
+        // padding: 3px;
     }
 }
 

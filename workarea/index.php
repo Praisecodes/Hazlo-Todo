@@ -13,6 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <title>Hazlo Todo | Work Area</title>
 </head>
 <body>
@@ -29,6 +30,17 @@
         <h1 class="logo">
             HAZLO TODO
         </h1>
+        <div class="profileTop">
+            <img src="" alt="">
+            <button class="dropdown">
+                <i class="fa fa-angle-down"></i>
+            </button>
+            <div class="profileMenu">
+                <ul>
+                    
+                </ul>
+            </div>
+        </div>
     </div>
     <div class="mainBodyContainer">
         <div class="sideBar">
@@ -44,5 +56,7 @@
             <h1>Under Contruction!!</h1>
         </div>
     </div>
+
+    <script src="../scripts/workarea.js"></script>
 </body>
 </html>

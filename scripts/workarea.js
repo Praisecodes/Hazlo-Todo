@@ -1,0 +1,1 @@
+const SideBar = document.querySelector(".sideBar");

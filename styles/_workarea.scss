@@ -5,7 +5,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    overflow-x: hidden;
+    //overflow-x: hidden;
     border: 0;
     border-bottom: 1px solid #324953;
     .logo{
@@ -13,6 +13,51 @@
         font-family: "Poppins";
         font-size: 230%;
         margin-left: 20px;
+    }
+    .profileTop{
+        position: relative;
+        width: 60px;
+        height: 40px;
+        // border: 1px solid #324953;
+        margin-right: 3%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        z-index: 3000;
+        img{
+            width: 70%;
+            height: 100%;
+            border: 1px solid #324953;
+            border-radius: 50%;
+        }
+        .dropdown{
+            border: 0;
+            background-color: transparent;
+            color: #324953;
+            font-size: 14px;
+            transition: .5s;
+            cursor: pointer;
+        }
+        .profileMenu{
+            width: 13rem;
+            height: 15rem;
+            border-radius: 5px;
+            box-shadow: 0 0 4px 1px #32495327;
+            position: absolute;
+            top: 100%;
+            right: 10px;
+            z-index: 3000;
+            background-color: white;
+            display: none;
+            transition: .8s;
+        }
+        &:hover .profileMenu{
+            display: block;
+        }
+        &:hover .dropdown{
+            transform: rotate(180deg);
+        }
     }
 }
 
@@ -31,15 +76,10 @@
         overflow-y: scroll;
         overflow-x: hidden;
         &::-webkit-scrollbar{
-            display: none;
-        }
-        &:hover{
-            &::-webkit-scrollbar{
-                display: block;
-                width: 5px;
-                background-color: #ffffffaa;
-                border-radius: 10px;
-            }
+            display: block;
+            width: 3px;
+            background-color: #ffffffaa;
+            border-radius: 10px;
         }
         .profileDiv{
             width: 100%;
