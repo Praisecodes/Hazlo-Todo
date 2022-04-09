@@ -32,12 +32,12 @@
         </h1>
         <div class="profileTop">
             <img src="" alt="">
-            <button class="dropdown">
+            <div class="dropdown">
                 <i class="fa fa-angle-down"></i>
-            </button>
+            </div>
             <div class="profileMenu">
                 <ul>
-                    
+
                 </ul>
             </div>
         </div>
