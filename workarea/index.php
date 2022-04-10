@@ -34,6 +34,20 @@
             <p>Hello, <?php echo $_SESSION["userFname"];?></p>
             <a href="">@<?php echo $_SESSION["username"];?></a>
         </div>
+
+        <div class="options">
+            <ul>
+                <li class="allActivities">
+                    All Activities <i class="fa fa-angle-down"></i>
+
+                    <div class="activities">
+                        <h1>No Activity</h1>
+                    </div>
+                </li>
+                <li class="settings">User Settings <i class="fa fa-gear"></i></li>
+                <li class="profile">User Profile <i class="fa fa-id-badge"></i></li>
+            </ul>
+        </div>
     </div>
     
     <div class="top">
@@ -65,10 +79,24 @@
                 </div><br/>
                 <p>Hello, <?php echo $_SESSION["userFname"];?></p>
                 <a href="">@<?php echo $_SESSION["username"];?></a>
+            </div><br/>
+
+            <div class="options">
+                <ul>
+                    <li class="allActivities">
+                        All Activities <i class="fa fa-angle-down"></i>
+
+                        <div class="activity">
+                            <h1>No Activity</h1>
+                        </div>
+                    </li>
+                    <li class="settings">User Settings <i class="fa fa-gear"></i></li>
+                    <li class="profile">User Profile <i class="fa fa-id-badge"></i></li>
+                </ul>
             </div>
         </div>
         <div class="activityList">
-            <h1>Under Contruction!!</h1>
+            <h1>Under Construction!!</h1>
         </div>
     </div>
 

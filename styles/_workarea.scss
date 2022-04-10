@@ -146,6 +146,54 @@
                 }
             }
         }
+
+        .options{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            ul{
+                width: 100%;
+                list-style-type: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                .allActivities{
+                    .activity{
+                        position: absolute;
+                        width: 90%;
+                        top: 100%;
+                        right: 0;
+                        border: 1px solid #1e353f;
+                        background-color: #1e353f;
+                        z-index: 2000;
+                        display: none;
+                        h1{
+                            color: #ffffffaa;
+                            font-size: 22px;
+                            padding: 5px;
+                        }
+                    }
+                }
+                li{
+                    position: relative;
+                    width: 97%;
+                    font-size: 18px;
+                    padding: 10px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    color: white;
+                    cursor: pointer;
+                    margin: 5px 0;
+                    &:hover{
+                        border: 1px solid #1e353f;
+                    }
+                }
+            }
+        }
     }
     .activityList{
         width: calc(100vw - 24vw);
@@ -205,6 +253,54 @@
             transition: .5s;
             &:hover{
                 text-decoration: underline;
+            }
+        }
+    }
+
+    .options{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        ul{
+            width: 100%;
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            .allActivities{
+                .activities{
+                    position: absolute;
+                    width: 90%;
+                    top: 100%;
+                    right: 0;
+                    border: 1px solid #1e353f;
+                    background-color: #1e353f;
+                    z-index: 2000;
+                    display: none;
+                    h1{
+                        color: #ffffffaa;
+                        font-size: 22px;
+                        padding: 5px;
+                    }
+                }
+            }
+            li{
+                position: relative;
+                width: 97%;
+                font-size: 18px;
+                padding: 10px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color: white;
+                cursor: pointer;
+                margin: 5px 0;
+                &:hover{
+                    border: 1px solid #1e353f;
+                }
             }
         }
     }

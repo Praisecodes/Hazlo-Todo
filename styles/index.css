@@ -1319,6 +1319,81 @@ body {
   text-decoration: underline;
 }
 
+.mainBodyContainer .sideBar .options {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.mainBodyContainer .sideBar .options ul {
+  width: 100%;
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.mainBodyContainer .sideBar .options ul .allActivities .activity {
+  position: absolute;
+  width: 90%;
+  top: 100%;
+  right: 0;
+  border: 1px solid #1e353f;
+  background-color: #1e353f;
+  z-index: 2000;
+  display: none;
+}
+
+.mainBodyContainer .sideBar .options ul .allActivities .activity h1 {
+  color: #ffffffaa;
+  font-size: 22px;
+  padding: 5px;
+}
+
+.mainBodyContainer .sideBar .options ul li {
+  position: relative;
+  width: 97%;
+  font-size: 18px;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  cursor: pointer;
+  margin: 5px 0;
+}
+
+.mainBodyContainer .sideBar .options ul li:hover {
+  border: 1px solid #1e353f;
+}
+
 .mainBodyContainer .activityList {
   width: calc(100vw - 24vw);
   overflow-y: scroll;
@@ -1400,6 +1475,81 @@ body {
 
 .sideNav .profileDiv a:hover {
   text-decoration: underline;
+}
+
+.sideNav .options {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.sideNav .options ul {
+  width: 100%;
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.sideNav .options ul .allActivities .activities {
+  position: absolute;
+  width: 90%;
+  top: 100%;
+  right: 0;
+  border: 1px solid #1e353f;
+  background-color: #1e353f;
+  z-index: 2000;
+  display: none;
+}
+
+.sideNav .options ul .allActivities .activities h1 {
+  color: #ffffffaa;
+  font-size: 22px;
+  padding: 5px;
+}
+
+.sideNav .options ul li {
+  position: relative;
+  width: 97%;
+  font-size: 18px;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  cursor: pointer;
+  margin: 5px 0;
+}
+
+.sideNav .options ul li:hover {
+  border: 1px solid #1e353f;
 }
 
 @media screen and (max-width: 950px) {
