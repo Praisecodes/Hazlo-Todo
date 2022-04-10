@@ -26,6 +26,16 @@
         }
     ?>
 
+    <div class="sideNav">
+        <div class="profileDiv">
+            <div class="userImg">
+
+            </div><br/>
+            <p>Hello, <?php echo $_SESSION["userFname"];?></p>
+            <a href="">@<?php echo $_SESSION["username"];?></a>
+        </div>
+    </div>
+    
     <div class="top">
         <div class="left">
             <i class="fa fa-ellipsis"></i>

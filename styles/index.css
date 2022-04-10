@@ -1335,6 +1335,73 @@ body {
   display: none;
 }
 
+.sideNav {
+  width: 40vw;
+  height: calc(100vh - 61px);
+  background-color: #324953;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-transition: .5s;
+  transition: .5s;
+  position: fixed;
+  top: 61px;
+  left: 0;
+  -webkit-transform: translateX(-200%);
+          transform: translateX(-200%);
+}
+
+.sideNav::-webkit-scrollbar {
+  display: block;
+  width: 3px;
+  background-color: #ffffffaa;
+  border-radius: 10px;
+}
+
+.sideNav .profileDiv {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 0;
+}
+
+.sideNav .profileDiv .userImg {
+  width: 60%;
+  height: 25vh;
+  border: 1px solid #0b1c24aa;
+  border-radius: 100%;
+}
+
+.sideNav .profileDiv p {
+  color: white;
+  font-size: 23px;
+  text-align: center;
+}
+
+.sideNav .profileDiv a {
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.sideNav .profileDiv a:hover {
+  text-decoration: underline;
+}
+
 @media screen and (max-width: 950px) {
   .mainBodyContainer .sideBar {
     -webkit-transform: translateX(-200%);
