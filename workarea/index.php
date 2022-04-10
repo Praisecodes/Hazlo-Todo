@@ -51,7 +51,7 @@
 
                 </div><br/>
                 <p>Hello, <?php echo $_SESSION["userFname"];?></p>
-                <a href="./signout.php">@<?php echo $_SESSION["username"];?></a>
+                <a href="">@<?php echo $_SESSION["username"];?></a>
             </div>
         </div>
         <div class="activityList">
