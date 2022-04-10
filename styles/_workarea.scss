@@ -230,6 +230,13 @@
 }
 
 @media screen and (max-width: 750px) {
+    .top{
+        .left{
+            .logo{
+                font-size: 200%;
+            }
+        }
+    }
     .sideNav{
         width: 75vw;
         .profileDiv{
