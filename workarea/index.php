@@ -37,7 +37,9 @@
             </div>
             <div class="profileMenu">
                 <ul>
-
+                    <li class="viewProfile">View Profile <i class="fa fa-id-badge"></i></li>
+                    <li class="settings">Settings <i class="fa fa-gear"></i></li>
+                    <li class="logout">Log Out <i class="fa fa-arrow-right-from-bracket"></i></li>
                 </ul>
             </div>
         </div>

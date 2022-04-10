@@ -40,17 +40,41 @@
             cursor: pointer;
         }
         .profileMenu{
-            width: 13rem;
-            height: 15rem;
+            width: 11rem;
             border-radius: 5px;
             box-shadow: 0 0 4px 1px #32495327;
             position: absolute;
             top: 100%;
-            right: 10px;
+            right: 0px;
             z-index: 3000;
             background-color: white;
             display: none;
             transition: .8s;
+            ul{
+                list-style-type: none;
+                width: 100%;
+                height: fit-content;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                left: 0;
+                box-shadow: 0 0 4px 1px #32495327;
+                li{
+                    color: #324953;
+                    background-color: transparent;
+                    width: 100%;
+                    height: 30px;
+                    padding: 5px 5px;
+                    font-size: 18px;
+                    margin-top: 10px;
+                    transition: .5s;
+                    &:hover{
+                        background-color: #ece3e3;
+                    }
+                }
+            }
         }
         &:hover .profileMenu{
             display: block;

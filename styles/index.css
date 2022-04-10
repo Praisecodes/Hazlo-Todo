@@ -1158,19 +1158,59 @@ body {
 }
 
 .top .profileTop .profileMenu {
-  width: 13rem;
-  height: 15rem;
+  width: 11rem;
   border-radius: 5px;
   -webkit-box-shadow: 0 0 4px 1px #32495327;
           box-shadow: 0 0 4px 1px #32495327;
   position: absolute;
   top: 100%;
-  right: 10px;
+  right: 0px;
   z-index: 3000;
   background-color: white;
   display: none;
   -webkit-transition: .8s;
   transition: .8s;
+}
+
+.top .profileTop .profileMenu ul {
+  list-style-type: none;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  left: 0;
+  -webkit-box-shadow: 0 0 4px 1px #32495327;
+          box-shadow: 0 0 4px 1px #32495327;
+}
+
+.top .profileTop .profileMenu ul li {
+  color: #324953;
+  background-color: transparent;
+  width: 100%;
+  height: 30px;
+  padding: 5px 5px;
+  font-size: 18px;
+  margin-top: 10px;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.top .profileTop .profileMenu ul li:hover {
+  background-color: #ece3e3;
 }
 
 .top .profileTop:hover .profileMenu {
