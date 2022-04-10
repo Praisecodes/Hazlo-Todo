@@ -1426,5 +1426,8 @@ body {
   .sideNav .profileDiv .userImg {
     width: 65%;
   }
+  .mainBodyContainer .activityList {
+    font-size: 20px;
+  }
 }
 /*# sourceMappingURL=index.css.map */
