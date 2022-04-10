@@ -1115,7 +1115,26 @@ body {
   border-bottom: 1px solid #324953;
 }
 
-.top .logo {
+.top .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.top .left i {
+  font-size: 25px;
+  display: none;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.top .left .logo {
   color: #324953;
   font-family: "Poppins";
   font-size: 230%;
@@ -1244,6 +1263,8 @@ body {
   background-color: #324953;
   overflow-y: scroll;
   overflow-x: hidden;
+  -webkit-transition: .5s;
+  transition: .5s;
 }
 
 .mainBodyContainer .sideBar::-webkit-scrollbar {
@@ -1306,9 +1327,25 @@ body {
   color: #324953aa;
   border: 1px solid #324953;
   padding: 5px 20px;
+  -webkit-transition: .5s;
+  transition: .5s;
 }
 
 .mainBodyContainer .activityList::-webkit-scrollbar {
   display: none;
+}
+
+@media screen and (max-width: 950px) {
+  .mainBodyContainer .sideBar {
+    -webkit-transform: translateX(-200%);
+            transform: translateX(-200%);
+    width: 0;
+  }
+  .mainBodyContainer .activityList {
+    width: 100%;
+  }
+  .top .left i {
+    display: block;
+  }
 }
 /*# sourceMappingURL=index.css.map */

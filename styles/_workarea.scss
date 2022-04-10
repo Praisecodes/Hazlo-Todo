@@ -8,11 +8,22 @@
     //overflow-x: hidden;
     border: 0;
     border-bottom: 1px solid #324953;
-    .logo{
-        color: #324953;
-        font-family: "Poppins";
-        font-size: 230%;
-        margin-left: 20px;
+    .left{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i{
+            font-size: 25px;
+            display: none;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .logo{
+            color: #324953;
+            font-family: "Poppins";
+            font-size: 230%;
+            margin-left: 20px;
+        }
     }
     .profileTop{
         position: relative;
@@ -100,6 +111,7 @@
         background-color: #324953;
         overflow-y: scroll;
         overflow-x: hidden;
+        transition: .5s;
         &::-webkit-scrollbar{
             display: block;
             width: 3px;
@@ -144,10 +156,28 @@
         color: #324953aa;
         border: 1px solid #324953;
         padding: 5px 20px;
+        transition: .5s;
         &::-webkit-scrollbar{
             display: none;
         }
     }
 }
 
-
+@media screen and (max-width: 950px){
+    .mainBodyContainer{
+        .sideBar{
+            transform: translateX(-200%);
+            width: 0;
+        }
+        .activityList{
+            width: 100%;
+        }
+    }
+    .top{
+        .left{
+            i{
+                display: block;
+            }
+        }
+    }
+}

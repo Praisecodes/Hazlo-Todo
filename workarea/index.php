@@ -27,9 +27,12 @@
     ?>
 
     <div class="top">
-        <h1 class="logo">
-            HAZLO TODO
-        </h1>
+        <div class="left">
+            <i class="fa fa-ellipsis"></i>
+            <h1 class="logo">
+                HAZLO TODO
+            </h1>
+        </div>
         <div class="profileTop">
             <img src="" alt="">
             <div class="dropdown">
