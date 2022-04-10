@@ -1415,4 +1415,10 @@ body {
     display: block;
   }
 }
+
+@media screen and (max-width: 750px) {
+  .sideNav {
+    width: 60vw;
+  }
+}
 /*# sourceMappingURL=index.css.map */
