@@ -1192,6 +1192,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   position: absolute;
+  background-color: white;
   left: 0;
   -webkit-box-shadow: 0 0 4px 1px #32495327;
           box-shadow: 0 0 4px 1px #32495327;
