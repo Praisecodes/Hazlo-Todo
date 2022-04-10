@@ -39,5 +39,5 @@ allActivities.forEach(allActs=>{
             activity.style.display = "none";
             activitiesShow = false;
         }
-    })
-})
+    });
+});
