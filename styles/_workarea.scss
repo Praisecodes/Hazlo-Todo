@@ -232,5 +232,10 @@
 @media screen and (max-width: 750px) {
     .sideNav{
         width: 75vw;
+        .profileDiv{
+            .userImg{
+                width: 65%;
+            }
+        }
     }
 }

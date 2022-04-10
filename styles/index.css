@@ -1420,5 +1420,8 @@ body {
   .sideNav {
     width: 75vw;
   }
+  .sideNav .profileDiv .userImg {
+    width: 65%;
+  }
 }
 /*# sourceMappingURL=index.css.map */
