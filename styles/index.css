@@ -1282,13 +1282,13 @@ body {
 
 .mainBodyContainer .sideBar .profileDiv p {
   color: white;
-  font-size: 25px;
+  font-size: 23px;
   text-align: center;
 }
 
 .mainBodyContainer .sideBar .profileDiv a {
   color: white;
-  font-size: 18px;
+  font-size: 15px;
   text-decoration: none;
   -webkit-transition: .5s;
   transition: .5s;
