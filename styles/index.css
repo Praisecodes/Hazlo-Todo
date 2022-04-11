@@ -1272,6 +1272,7 @@ body {
   width: 3px;
   background-color: #ffffffaa;
   border-radius: 10px;
+  height: auto;
 }
 
 .mainBodyContainer .sideBar .profileDiv {
@@ -1342,9 +1343,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1356,19 +1354,32 @@ body {
 
 .mainBodyContainer .sideBar .options ul .allActivities .activity {
   position: absolute;
-  width: 90%;
   top: 100%;
   right: 0;
-  border: 1px solid #1e353f;
   background-color: #1e353f;
   z-index: 2000;
-  display: none;
+  cursor: default;
+  -webkit-transition: .5s;
+  transition: .5s;
+  overflow: hidden;
 }
 
-.mainBodyContainer .sideBar .options ul .allActivities .activity h1 {
-  color: #ffffffaa;
-  font-size: 22px;
-  padding: 5px;
+.mainBodyContainer .sideBar .options ul .allActivities .activity .addActivity {
+  border: 1px solid #324953;
+  background-color: #324953;
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+  width: 21.6vw;
+  height: 50px;
+  font-family: "Poppins";
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.mainBodyContainer .sideBar .options ul .allActivities .activity .addActivity:hover {
+  background-color: #2f5768;
 }
 
 .mainBodyContainer .sideBar .options ul li {
@@ -1388,10 +1399,17 @@ body {
   color: white;
   cursor: pointer;
   margin: 5px 0;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.mainBodyContainer .sideBar .options ul li i {
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 .mainBodyContainer .sideBar .options ul li:hover {
-  border: 1px solid #1e353f;
+  background-color: #2f5768;
 }
 
 .mainBodyContainer .activityList {
@@ -1432,126 +1450,6 @@ body {
   border-radius: 10px;
 }
 
-.sideNav .profileDiv {
-  width: 100%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 20px 0;
-}
-
-.sideNav .profileDiv .userImg {
-  width: 60%;
-  height: 25vh;
-  border: 1px solid #0b1c24aa;
-  border-radius: 100%;
-}
-
-.sideNav .profileDiv p {
-  color: white;
-  font-size: 23px;
-  text-align: center;
-}
-
-.sideNav .profileDiv a {
-  color: white;
-  font-size: 15px;
-  text-decoration: none;
-  -webkit-transition: .5s;
-  transition: .5s;
-}
-
-.sideNav .profileDiv a:hover {
-  text-decoration: underline;
-}
-
-.sideNav .options {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.sideNav .options ul {
-  width: 100%;
-  list-style-type: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.sideNav .options ul .allActivities .activities {
-  position: absolute;
-  width: 90%;
-  top: 100%;
-  right: 0;
-  border: 1px solid #1e353f;
-  background-color: #1e353f;
-  z-index: 2000;
-  display: none;
-}
-
-.sideNav .options ul .allActivities .activities h1 {
-  color: #ffffffaa;
-  font-size: 22px;
-  padding: 5px;
-}
-
-.sideNav .options ul li {
-  position: relative;
-  width: 97%;
-  font-size: 18px;
-  padding: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: white;
-  cursor: pointer;
-  margin: 5px 0;
-}
-
-.sideNav .options ul li:hover {
-  border: 1px solid #1e353f;
-}
-
 @media screen and (max-width: 950px) {
   .mainBodyContainer .sideBar {
     -webkit-transform: translateX(-200%);
@@ -1579,5 +1477,14 @@ body {
   .mainBodyContainer .activityList {
     font-size: 20px;
   }
+}
+
+.DropDownAnime {
+  width: 90%;
+}
+
+.hidden {
+  border: 0;
+  width: 0;
 }
 /*# sourceMappingURL=index.css.map */

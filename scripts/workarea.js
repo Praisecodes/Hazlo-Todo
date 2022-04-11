@@ -4,9 +4,10 @@ const dropdown = document.querySelector(".dropdown");
 const ProfileMenu = document.querySelector(".profileMenu");
 const LogOut = document.querySelector(".logout");
 const ellipsis = document.querySelector(".fa-ellipsis");
-const allActivities = document.querySelectorAll(".allActivities");
-const activities = document.querySelector(".activities");
+const allActivities = document.querySelector(".allActivities");
 const activity = document.querySelector(".activity");
+const addActivity = document.querySelector(".addActivity");
+const fa_angle_left = document.querySelector(".fa-angle-left");
 
 let show = false;
 
@@ -25,19 +26,19 @@ ellipsis.addEventListener('click', (e)=>{
     }
 });
 
-activitiesShow = false;
+let showActivities = false;
 
-allActivities.forEach(allActs=>{
-    allActs.addEventListener('click', (e)=>{
-        if(activitiesShow == false){
-            activities.style.display = "block";
-            activity.style.display = "block";
-            activitiesShow = true;
-        }
-        else{
-            activities.style.display = "none";
-            activity.style.display = "none";
-            activitiesShow = false;
-        }
-    });
+allActivities.addEventListener('click', (e)=>{
+    if(showActivities == false){
+        activity.classList.remove("hidden");
+        activity.classList.add("DropDownAnime");
+        fa_angle_left.style.transform = "rotate(180deg)";
+        showActivities = true;
+    }
+    else{
+        activity.classList.remove("DropDownAnime");
+        activity.classList.add("hidden");
+        fa_angle_left.style.transform = "rotate(0deg)";
+        showActivities = false;
+    }
 });

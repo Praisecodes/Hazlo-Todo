@@ -27,27 +27,7 @@
     ?>
 
     <div class="sideNav">
-        <div class="profileDiv">
-            <div class="userImg">
-
-            </div><br/>
-            <p>Hello, <?php echo $_SESSION["userFname"];?></p>
-            <a href="">@<?php echo $_SESSION["username"];?></a>
-        </div>
-
-        <div class="options">
-            <ul>
-                <li class="allActivities">
-                    All Activities <i class="fa fa-angle-down"></i>
-
-                    <div class="activities">
-                        <h1>No Activity</h1>
-                    </div>
-                </li>
-                <li class="settings">User Settings <i class="fa fa-gear"></i></li>
-                <li class="profile">User Profile <i class="fa fa-id-badge"></i></li>
-            </ul>
-        </div>
+        
     </div>
     
     <div class="top">
@@ -84,10 +64,30 @@
             <div class="options">
                 <ul>
                     <li class="allActivities">
-                        All Activities <i class="fa fa-angle-down"></i>
+                        All Activities <i class="fa fa-angle-left"></i>
 
-                        <div class="activity">
-                            <h1>No Activity</h1>
+                        <div class="activity hidden">
+                            <button class="addActivity">
+                                Add An Activity <i class="fa fa-plus"></i>
+                            </button>
+                            <button class="addActivity">
+                                Add An Activity <i class="fa fa-plus"></i>
+                            </button>
+                            <button class="addActivity">
+                                Add An Activity <i class="fa fa-plus"></i>
+                            </button>
+                            <button class="addActivity">
+                                Add An Activity <i class="fa fa-plus"></i>
+                            </button>
+                            <button class="addActivity">
+                                Add An Activity <i class="fa fa-plus"></i>
+                            </button>
+                            <button class="addActivity">
+                                Add An Activity <i class="fa fa-plus"></i>
+                            </button>
+                            <button class="addActivity">
+                                Add An Activity <i class="fa fa-plus"></i>
+                            </button>
                         </div>
                     </li>
                     <li class="settings">User Settings <i class="fa fa-gear"></i></li>
