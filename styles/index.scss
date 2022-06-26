@@ -3,5 +3,98 @@
     src: url("../assets/Poppins-Medium.ttf");
 }
 
+:root{
+    --mainColor: #242c39;
+    --callToAction: #6e6eab;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-size: 16px;
+    font-family: "Poppins";
+    color: var(--mainColor);
+}
+
+.header{
+    display: flex;
+    width: 100vw;
+    height: 60px;
+    padding: 5px;
+    align-items: center;
+    .siteTitle{
+        font-size: 33px;
+    }
+    .navList{
+        width: 300px;
+        height: 100%;
+        display: flex;
+        list-style-type: none;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-left: 200px;
+        li{
+            font-size: 17px;
+            a{
+                text-decoration: none;
+                color: var(--mainColor);
+                transition: .5s;
+                &::after{
+                    content: "";
+                    display: block;
+                    background-color: var(--mainColor);
+                    width: 0;
+                    height: 2px;
+                    transition: .5s;
+                }
+                &:hover{
+                    &::after{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .header_buttons{
+        width: 200px;
+        height: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-left: calc(100vw - 970px);
+        button{
+            width: fit-content;
+            height: 30px;
+            padding: 10px;
+            border: 1px solid var(--callToAction);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Poppins";
+            cursor: pointer;
+            transition: .4s;
+            font-size: 17px;
+        }
+        .loginBtn{
+            background-color: var(--callToAction);
+            color: white;
+            &:hover{
+                background-color: white;
+                color: var(--callToAction);
+            }
+        }
+        .signupBtn{
+            background-color: white;
+            color: var(--callToAction);
+            &:hover{
+                background-color: var(--callToAction);
+                color: white;
+            }
+        }
+    }
+}
 
 @import './workarea'

@@ -16,7 +16,25 @@
     <title>Hazlo Todo - Be Organized</title>
 </head>
 <body>
-    
+    <div class="header">
+        <h1 class="siteTitle">
+            Hazlo Todo
+        </h1>
+
+        <ul class="navList">
+            <li class="home"><a href="./">HOME</a></li>
+            <li class="about"><a href="./about">ABOUT</a></li>
+            <li class="support"><a href="./support">SUPPORT</a></li>
+            <li class="contact"><a href="">CONTACT</a></li>
+        </ul>
+
+        <div class="header_buttons">
+            <button class="loginBtn">LOGIN</button>
+            <button class="signupBtn">SIGN UP</button>
+        </div>
+    </div>
+
+
     <script src="scripts/main.js"></script>
 </body>
 </html>

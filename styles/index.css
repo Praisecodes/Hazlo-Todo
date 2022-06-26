@@ -2,4 +2,135 @@
   font-family: "Poppins";
   src: url("../assets/Poppins-Medium.ttf");
 }
+
+:root {
+  --mainColor: #242c39;
+  --callToAction: #6e6eab;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Poppins";
+  color: var(--mainColor);
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  height: 60px;
+  padding: 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .siteTitle {
+  font-size: 33px;
+}
+
+.header .navList {
+  width: 300px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 200px;
+}
+
+.header .navList li {
+  font-size: 17px;
+}
+
+.header .navList li a {
+  text-decoration: none;
+  color: var(--mainColor);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.header .navList li a::after {
+  content: "";
+  display: block;
+  background-color: var(--mainColor);
+  width: 0;
+  height: 2px;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.header .navList li a:hover::after {
+  width: 100%;
+}
+
+.header .header_buttons {
+  width: 200px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: calc(100vw - 970px);
+}
+
+.header .header_buttons button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 30px;
+  padding: 10px;
+  border: 1px solid var(--callToAction);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Poppins";
+  cursor: pointer;
+  -webkit-transition: .4s;
+  transition: .4s;
+  font-size: 17px;
+}
+
+.header .header_buttons .loginBtn {
+  background-color: var(--callToAction);
+  color: white;
+}
+
+.header .header_buttons .loginBtn:hover {
+  background-color: white;
+  color: var(--callToAction);
+}
+
+.header .header_buttons .signupBtn {
+  background-color: white;
+  color: var(--callToAction);
+}
+
+.header .header_buttons .signupBtn:hover {
+  background-color: var(--callToAction);
+  color: white;
+}
 /*# sourceMappingURL=index.css.map */
