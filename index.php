@@ -46,8 +46,26 @@
             </p><br/>
             <button class="signupBtn">Create A Free Account</button>
         </div>
-        <div class="image">
+        <div class="image"></div>
+    </div>
 
+    <div class="footerPage">
+        <div class="about">
+            <p>
+                Hazlo Todo is a server based project management system that helps manage all projects from professional
+                to leisure projects on all ocassions to help keep you updated no matter where you are.<br/>With our highly
+                secure servers, we assure that your information is certainly kept safe and sound and also very easy for you
+                to access wherever.<br/>Get Started With Us Today.
+            </p><br/>
+            <button class="signupBtn">Create A Free Account</button>
+        </div>
+
+        <div class="subscribe">
+            <h3>Get Latest Updates?</h3>
+            <form>
+                <input type="email" name="email" id="Email" class="Email" placeholder="Enter Your Email">
+                <button type="submit" class="subscribeBtn">Subscribe</button>
+            </form>
         </div>
     </div>
 

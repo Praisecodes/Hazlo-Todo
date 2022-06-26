@@ -5,7 +5,8 @@
 
 :root {
   --mainColor: #242c39;
-  --callToAction: #6e6eab;
+  --callToAction: #3a5155;
+  --footerColor: #ffffffee;
 }
 
 * {
@@ -199,5 +200,125 @@ body {
   background-size: contain;
   width: 50%;
   height: 100%;
+}
+
+.footerPage {
+  width: 100vw;
+  background-color: var(--mainColor);
+  color: var(--footerColor);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footerPage .about {
+  width: 50%;
+  height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 14px;
+  padding: 15px;
+  overflow: hidden;
+}
+
+.footerPage .about button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 40px;
+  border: 1px solid var(--callToAction);
+  color: white;
+  background-color: var(--callToAction);
+  cursor: pointer;
+  -webkit-transition: .4s;
+  transition: .4s;
+  font-family: "Poppins";
+  font-size: 14px;
+  padding: 10px;
+}
+
+.footerPage .subscribe {
+  width: 50%;
+  height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footerPage .subscribe form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footerPage .subscribe form input {
+  outline: 0;
+  border: 0;
+  height: 40px;
+  width: 200px;
+  padding: 5px;
+  color: var(--mainColor);
+  margin: 4px;
+  font-family: "Poppins";
+}
+
+.footerPage .subscribe form button {
+  border: 1px solid var(--callToAction);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 40px;
+  background-color: var(--callToAction);
+  color: white;
+  font-size: 14px;
+  font-family: "Poppins";
+  padding: 10px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=index.css.map */
