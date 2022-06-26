@@ -17,6 +17,7 @@ body {
   font-size: 16px;
   font-family: "Poppins";
   color: var(--mainColor);
+  overflow-x: hidden;
 }
 
 .header {
@@ -36,7 +37,7 @@ body {
 }
 
 .header .navList {
-  width: 300px;
+  width: 350px;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -132,5 +133,71 @@ body {
 .header .header_buttons .signupBtn:hover {
   background-color: var(--callToAction);
   color: white;
+}
+
+.mainPage {
+  width: 100vw;
+  height: calc(100vh - 70px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.mainPage .mainStuff {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px;
+}
+
+.mainPage .mainStuff .siteName {
+  font-size: 70px;
+}
+
+.mainPage .mainStuff button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 40px;
+  border: 1px solid var(--callToAction);
+  color: white;
+  background-color: var(--callToAction);
+  -webkit-transition: .4s;
+  transition: .4s;
+  cursor: pointer;
+  font-family: "Poppins";
+  padding: 10px;
+  font-size: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mainPage .mainStuff button:hover {
+  background-color: white;
+  color: var(--callToAction);
+}
+
+.mainPage .image {
+  background-image: url("../images/Notepad 2.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 50%;
+  height: 100%;
 }
 /*# sourceMappingURL=index.css.map */

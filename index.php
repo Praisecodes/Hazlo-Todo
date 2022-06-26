@@ -34,6 +34,22 @@
         </div>
     </div>
 
+    <div class="mainPage">
+        <div class="mainStuff">
+            <h1 class="siteName">HAZLO TODO</h1>
+            <h3 class="tagPhrases">
+                BE <span id="catchPhrases"></span> WITH HAZLO TODO.
+            </h3><br/>
+
+            <p class="text">
+                Become A Member Of The Hazlo Todo Community Today.<br/>Start Managing Your Activities With Us.
+            </p><br/>
+            <button class="signupBtn">Create A Free Account</button>
+        </div>
+        <div class="image">
+
+        </div>
+    </div>
 
     <script src="scripts/main.js"></script>
 </body>
