@@ -1,96 +1,82 @@
 <?php
-    header("Content-Type: application/json");
     header("Access-Control-Allow-Origin: *");
+    header("Content-Type: application/json");
+    header("Access-Control-Allow-Headers: Content-Type");
 
-    $ContentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : "Content Type Is Not application/json";
+    require_once "connection.php";
 
-    $data = array();
-    if($ContentType === "application/json"){
+    $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : "Not Set";
+
+    $username = null; $password = null; $main_password = null;
+    if($contentType === "application/json"){
         $contents = trim(file_get_contents("php://input"));
 
         $decoded = json_decode($contents, true);
+        $username = testInput($decoded["Username"]);
+        $password = testInput($decoded["Password"]);
 
-        if(is_array($decoded)){
-            $conn = new mysqli("localhost", "root", "", "users");
-            
-            $i = 0;
+        $sql = "SELECT user_password FROM user_info WHERE username=?;";
 
-            if($conn->connect_error){
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('s', $username);
+        if(!($stmt->execute())){
+            echo json_encode([
+                "Error 0x03: Error Executing Statement"
+            ]);
+            http_response_code(200);
+            $stmt->close();
+            $conn->close();
+            exit;
+        }
+        else{
+            $result = $stmt->get_result();
+            if(!($result->num_rows > 1)){
                 echo json_encode([
-                    "message" => "Error: " . $conn->connect_error
+                    "No Such User Found"
                 ]);
+                http_response_code(200);
+                $stmt->close();
+                $conn->close();
+                exit;
             }
             else{
-                $sql = "SELECT * FROM user_info WHERE UserEmail = ?;";
-
-                $stmt = $conn->prepare($sql);
-                if($stmt->bind_param("s", $decoded["email"])){
-                    if(!$stmt->execute()){
-                        echo json_encode([
-                            "message" => "Error With The Execution"
-                        ], true);
-                    }
-                    else{
-                        if(!$result = $stmt->get_result()){
-                            echo json_encode([
-                                "message" => "Serious Error"
-                            ], true);
-                        }
-                        else{
-                            if($result->num_rows > 0){
-                                
-                                while($row = $result->fetch_assoc()){
-                                    $data["Username"] = $row["UserName"];
-                                    $data["Password"] = $row["UserPassword"];
-                                    $data["Email"] = $row["UserEmail"];
-
-                                    $i++;
-                                }
-                                if($decoded["password"] === $data["Password"] && $decoded["username"] === $data["Username"]){
-                                    echo json_encode([
-                                        "message" => "Success"
-                                    ], true);
-                                }
-                                elseif(!($decoded["password"] === $data["Password"])){
-                                    echo json_encode([
-                                        "message" => "Invalid Password"
-                                    ], true);
-                                }
-                                elseif(!($decoded["username"] === $data["Username"])){
-                                    echo json_encode([
-                                        "message" => "Invalid Username"
-                                    ], true);
-                                }
-                                else{
-                                    echo json_encode([
-                                        "message" => "Invalid Credentials"
-                                    ]);
-                                }
-                            }
-                            else{
-                                echo json_encode([
-                                    "message" => "No such user found"
-                                ], true);
-                            }
-                        }
-                    }
+                while($row = $result->fetch_assoc()){
+                    $main_password = $row["user_password"];
+                }
+                if(!($password === $main_password)){
+                    echo json_encode([
+                        "Password Mismatch"
+                    ]);
+                    http_response_code(200);
+                    $stmt->close();
+                    $conn->close();
+                    exit;
                 }
                 else{
                     echo json_encode([
-                        "message" => "A Fatal Error Has Occured, Please Contact The Developer Immediately"
-                    ], true);
+                        "Success"
+                    ]);
+                    http_response_code(200);
+                    $stmt->close();
+                    $conn->close();
+                    exit;
                 }
             }
         }
-        else{
-            echo json_encode([
-                "message" => "Not Returning An Array"
-            ], true);
-        }
     }
     else{
+        http_response_code(500);
         echo json_encode([
-            "message" => "Error: " . $ContentType
-        ], true);
+            "Error 0x01: Invalid Type Recieved"
+        ]);
+        exit;
+    }
+
+    function testInput($data){
+        $data = stripslashes($data);
+        $data = trim($data);
+        $data = htmlspecialchars($data);
+
+        return $data;
     }
 ?>
