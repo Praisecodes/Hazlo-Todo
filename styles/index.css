@@ -321,4 +321,219 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
+
+.container_login {
+  background-color: var(--mainColor);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container_login .login {
+  width: 25rem;
+  height: 25rem;
+  background-color: var(--callToAction);
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 2px;
+}
+
+.container_login .login input {
+  width: 75%;
+  height: 35px;
+  padding: 5px;
+  outline: 0;
+  border: 0;
+  font-family: "Poppins";
+  font-size: 14px;
+  color: var(--mainColor);
+}
+
+.container_login .login button {
+  border: 1px solid var(--mainColor);
+  color: white;
+  font-family: "Poppins";
+  font-size: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 35px;
+  padding: 10px;
+  background-color: var(--mainColor);
+  cursor: pointer;
+}
+
+.container_login a {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container_login a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  display: block;
+  -webkit-transition: .5s;
+  transition: .5s;
+  background-color: white;
+}
+
+.container_login a:hover::after {
+  width: 100%;
+}
+
+.container_signup {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--mainColor);
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container_signup .signup {
+  background-color: var(--callToAction);
+  width: 30rem;
+  height: 30rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container_signup .signup input {
+  outline: 0;
+  border: 0;
+  width: 75%;
+  height: 35px;
+  padding: 5px;
+  color: var(--mainColor);
+  font-family: "Poppins";
+}
+
+.container_signup .signup button {
+  border: 1px solid var(--mainColor);
+  background-color: var(--mainColor);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px;
+  height: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  font-family: "Poppins";
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.container_signup p, .container_signup a {
+  font-size: 14px;
+}
+
+.container_signup a {
+  text-decoration: none;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container_signup a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.container_signup a:hover::after {
+  width: 100%;
+}
 /*# sourceMappingURL=index.css.map */

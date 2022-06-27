@@ -1,0 +1,66 @@
+.container_login{
+    background-color: var(--mainColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    .login{
+        width: 25rem;
+        height: 25rem;
+        background-color: var(--callToAction);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2px;
+        input{
+            width: 75%;
+            height: 35px;
+            padding: 5px;
+            outline: 0;
+            border: 0;
+            font-family: "Poppins";
+            font-size: 14px;
+            color: var(--mainColor);
+        }
+        button{
+            border: 1px solid var(--mainColor);
+            color: white;
+            font-family: "Poppins";
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: fit-content;
+            height: 35px;
+            padding: 10px;
+            background-color: var(--mainColor);
+            cursor: pointer;
+        }
+    }
+    a{
+        color: white;
+        text-decoration: none;
+        font-size: 13px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &::after{
+            content: "";
+            width: 0;
+            height: 2px;
+            display: block;
+            transition: .5s;
+            background-color: white;
+        }
+        &:hover{
+            &::after{
+                width: 100%;
+            }
+        }
+    }
+}
