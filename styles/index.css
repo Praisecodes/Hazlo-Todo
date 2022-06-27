@@ -536,4 +536,10 @@ body {
 .container_signup a:hover::after {
   width: 100%;
 }
+
+.redStuff {
+  border-bottom: 2px solid red;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
 /*# sourceMappingURL=index.css.map */
