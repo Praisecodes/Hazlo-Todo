@@ -19,17 +19,35 @@ window.onload = () => {
  const validPassword = /(?=.*[_\.\-@])(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9_\-\.@]{8,}/;
  const validName = /^[a-zA-Z ]+$/;
 
+ function disableBtn(buttonEle, condition, Opacity){
+     buttonEle.disabled = condition;
+     buttonEle.style.opacity = Opacity;
+ }
+
+ const checkIfEmpty = (element1, element2, element3, element4, element5) => {
+     if(element1.value == "" || element2.value == "" || element3.value == "" || element4.value == "" || element5.value == ""){
+        return false;
+     }
+     else{
+        return true;
+     }
+ }
+
  const testingInputs = (choosenElement, expression) => {
      let theText = choosenElement.value;
      if(!(theText.match(expression))){
          choosenElement.style.borderBottom = "2px solid red";
-         signupBtn.disabled = true;
-         signupBtn.style.opacity = 0.4;
+         disableBtn(signupBtn, true, 0.4);
      }
      else{
          choosenElement.style.borderBottom = null;
-         signupBtn.disabled = false;
-         signupBtn.style.opacity = null;
+
+         if(!(checkIfEmpty(Username, Fullname, Email, Password, CPassword))){
+            disableBtn(signupBtn, true, 0.4);
+         }
+         else{
+             disableBtn(signupBtn, false, null);
+         }
      }
  }
 
@@ -52,10 +70,17 @@ Password.addEventListener('keyup', (e)=>{
 CPassword.addEventListener('keyup', (e)=>{
     if(!(CPassword.value === Password.value)){
         CPassword.style.borderBottom = "2px solid red";
-
+        disableBtn(signupBtn, true, 0.4);
     }
     else{
         CPassword.style.borderBottom = null;
+
+        if(!(checkIfEmpty(Username, Fullname, Email, Password, CPassword))){
+            disableBtn(signupBtn, true, 0.4);
+         }
+         else{
+             disableBtn(signupBtn, false, null);
+         }
     }
 })
 

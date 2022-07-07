@@ -499,6 +499,8 @@ body {
   font-family: "Poppins";
   font-size: 14px;
   cursor: pointer;
+  -webkit-transition: .5s;
+  transition: .5s;
 }
 
 .container_signup p, .container_signup a {
