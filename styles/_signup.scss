@@ -1,3 +1,22 @@
+@keyframes comeInGo{
+    0%{
+        transform: translateY(0%);
+    }
+    20%{
+        transform: translateY(110%);
+    }
+    70%{
+        transform: translateY(110%);
+    }
+    80%{
+        transform: translateY(110%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+
+
 .container_signup{
     width: 100vw;
     height: 100vh;
@@ -7,14 +26,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: 2px;
     .signup{
         background-color: var(--callToAction);
         width: 30rem;
-        height: 30rem;
+        height: fit-content;
+        padding: 1.3rem 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        transition: 1s;
         input{
             outline: 0;
             border: 0;
@@ -64,9 +88,21 @@
             }
         }
     }
-}
 
-.redStuff{
-    border-bottom: 2px solid red;
-    transition: .3s;
+    .passwordGuide{
+        font-size: 14px;
+        margin-top: 3px;
+        transition: 1s;
+        display: none;
+        overflow: hidden;
+        background-color: #3a5155aa;
+        padding: 10px;
+        position: fixed;
+        top: -150px;
+        transform: translateY(-100%);
+        animation: comeInGo 10s;
+        ul{
+            list-style: disc;
+        }
+    }
 }

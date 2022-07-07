@@ -5,6 +5,7 @@ const Password = document.querySelector(".Password");
 const CPassword = document.querySelector(".CPassword");
 const signup = document.querySelector(".signup");
 const signupBtn = document.querySelector(".signup_signupBtn");
+const passwordGuide = document.querySelector(".passwordGuide");
 
 window.onload = () => {
     signupBtn.disabled = true;
@@ -16,7 +17,7 @@ window.onload = () => {
  */
  const validEmail = /[a-zA-Z_\.\-_0-9]{3,}[@][a-z]{2,}[\.][a-z]{2,}/;
  const validUsername = /^[a-zA-Z_\-]{4,}$/;
- const validPassword = /(?=.*[_\.\-@])(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9_\-\.@]{8,}/;
+ const validPassword = /(?=.*[\W])(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9\W]{8,}/;
  const validName = /^[a-zA-Z ]+$/;
 
  function disableBtn(buttonEle, condition, Opacity){
@@ -65,6 +66,7 @@ Email.addEventListener('keyup', (e)=>{
 
 Password.addEventListener('keyup', (e)=>{
     testingInputs(Password, validPassword);
+    passwordGuide.style.display = "block";
 })
 
 CPassword.addEventListener('keyup', (e)=>{
