@@ -16,6 +16,9 @@
     }
 }
 
+.comeBack{
+    transform: translateX(0%);
+}
 
 .container_signup{
     width: 100vw;
@@ -26,9 +29,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    scrollbar-width: 2px;
+    overflow: hidden;
+    position: relative;
     .signup{
         background-color: var(--callToAction);
         width: 30rem;
@@ -104,5 +106,18 @@
         ul{
             list-style: disc;
         }
+    }
+
+    .messageBar{
+        height: fit-content;
+        width: fit-content;
+        padding: 15px;
+        position: fixed;
+        right: 0px;
+        top: 10px;
+        background-color: var(--callToAction);
+        transform: translateX(200%);
+        color: white;
+        transition: .5s;
     }
 }

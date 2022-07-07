@@ -339,6 +339,7 @@ body {
           align-items: center;
   width: 100vw;
   height: 100vh;
+  position: relative;
 }
 
 .container_login .login {
@@ -475,6 +476,11 @@ body {
   }
 }
 
+.comeBack {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
 .container_signup {
   width: 100vw;
   height: 100vh;
@@ -493,9 +499,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  scrollbar-width: 2px;
+  overflow: hidden;
+  position: relative;
 }
 
 .container_signup .signup {
@@ -612,5 +617,24 @@ body {
 
 .container_signup .passwordGuide ul {
   list-style: disc;
+}
+
+.container_signup .messageBar {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 15px;
+  position: fixed;
+  right: 0px;
+  top: 10px;
+  background-color: var(--callToAction);
+  -webkit-transform: translateX(200%);
+          transform: translateX(200%);
+  color: white;
+  -webkit-transition: .5s;
+  transition: .5s;
 }
 /*# sourceMappingURL=index.css.map */

@@ -6,6 +6,7 @@ const CPassword = document.querySelector(".CPassword");
 const signup = document.querySelector(".signup");
 const signupBtn = document.querySelector(".signup_signupBtn");
 const passwordGuide = document.querySelector(".passwordGuide");
+const messageBar = document.querySelector(".messageBar");
 
 window.onload = () => {
     signupBtn.disabled = true;
@@ -106,7 +107,30 @@ signup.addEventListener('submit', (e)=>{
     })
     .then(res=>res.json())
     .then((data)=>{
-        console.log(data);
+        if(data == "Success"){
+            messageBar.style.transform = "translateX(0%)";
+
+            messageBar.innerHTML = "Success!! You've Signed Up, Please Login";
+            setTimeout(() => {
+                messageBar.style.transform = "translateX(200%)";
+            }, 6000);
+        }
+        else if(data == "0x1EX"){
+            messageBar.style.transform = "translateX(0%)";
+
+            messageBar.innerHTML = "Oops!! This Username is already available";
+            setTimeout(() => {
+                messageBar.style.transform = "translateX(200%)";
+            }, 6000);
+        }
+        else if(data == "0x1MIS"){
+            messageBar.style.transform = "translateX(0%)";
+
+            messageBar.innerHTML = "The Passwords Do Not Match";
+            setTimeout(() => {
+                messageBar.style.transform = "translateX(200%)";
+            }, 6000);
+        }
     })
     .catch((error)=>{
         console.log(error);

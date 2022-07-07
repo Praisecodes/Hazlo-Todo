@@ -36,7 +36,7 @@
                 $result = $check_stmt->get_result();
                 if($result->num_rows > 0){
                     echo json_encode([
-                        "This username already exists"
+                        "0x1EX"
                     ]);
                     $check_stmt->close();
                     $conn->close();
@@ -70,7 +70,7 @@
         }
         else{
             echo json_encode([
-                "Password Mismatch"
+                "0x1MIS"
             ]);
             exit;
         }
