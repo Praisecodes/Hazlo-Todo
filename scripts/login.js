@@ -1,6 +1,7 @@
 const Username = document.querySelector(".Username");
 const Password = document.querySelector(".Password");
 const login = document.querySelector(".login");
+const finalMessage = document.querySelector(".finalMessage");
 
 login.addEventListener('submit', (e)=>{
     e.preventDefault();
@@ -19,7 +20,25 @@ login.addEventListener('submit', (e)=>{
     })
     .then(res=>res.json())
     .then((data)=>{
-        console.log(data);
+        if(data == "Success"){
+            window.location = "../workarea";
+        }
+        else if(data == "0x1MIS"){
+            finalMessage.style.transform = "translateX(0%)";
+
+            finalMessage.innerHTML = "Invalid Password";
+            setTimeout(() => {
+                finalMessage.style.transform = "translateX(200%)";
+            }, 4000);
+        }
+        else if(data == "0x1DBE"){
+            finalMessage.style.transform = "translateX(0%)";
+
+            finalMessage.innerHTML = "No Such User Found";
+            setTimeout(() => {
+                finalMessage.style.transform = "translateX(200%)";
+            }, 4000);
+        }
     })
     .catch((error)=>{
         console.log(error);

@@ -32,7 +32,7 @@
             $result = $stmt->get_result();
             if($result->num_rows === 0){
                 echo json_encode([
-                    "No Such User Found"
+                    "0x1DBE"
                 ]);
                 http_response_code(200);
                 $stmt->close();
@@ -45,7 +45,7 @@
                 }
                 if(!($password === $main_password)){
                     echo json_encode([
-                        "Password Mismatch"
+                        "0x1MIS"
                     ]);
                     http_response_code(200);
                     $stmt->close();

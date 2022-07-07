@@ -430,6 +430,19 @@ body {
   width: 100%;
 }
 
+.container_login .finalMessage {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  padding: 15px;
+  background-color: var(--callToAction);
+  color: white;
+  -webkit-transform: translateX(200%);
+          transform: translateX(200%);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
 @-webkit-keyframes comeInGo {
   0% {
     -webkit-transform: translateY(0%);

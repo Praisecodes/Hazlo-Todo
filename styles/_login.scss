@@ -64,4 +64,15 @@
             }
         }
     }
+
+    .finalMessage{
+        position: absolute;
+        top: 20px;
+        right: 0;
+        padding: 15px;
+        background-color: var(--callToAction);
+        color: white;
+        transform: translateX(200%);
+        transition: .5s;
+    }
 }
