@@ -21,6 +21,141 @@ body {
   overflow-x: hidden;
 }
 
+.mobileNavContainer {
+  width: 100vw;
+  height: 100vh;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  overflow: hidden;
+  display: none;
+}
+
+.mobileNavContainer .closeNav {
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 0;
+  background-color: #ffffffcc;
+}
+
+.mobileNavContainer .closeNav .fa-x {
+  font-size: 14px;
+  color: var(--mainColor);
+}
+
+.mobileNavContainer .mobileNavBar {
+  height: 100%;
+  background-color: white;
+  width: 35vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 65vw;
+  -webkit-transform: translateX(200%);
+          transform: translateX(200%);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.mobileNavContainer .mobileNavBar ul {
+  list-style-type: none;
+  display: inherit;
+  -webkit-box-orient: inherit;
+  -webkit-box-direction: inherit;
+      -ms-flex-direction: inherit;
+          flex-direction: inherit;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+}
+
+.mobileNavContainer .mobileNavBar ul li {
+  padding: 10px;
+  width: 100%;
+  margin: 5px 0;
+}
+
+.mobileNavContainer .mobileNavBar ul li a {
+  color: var(--mainColor);
+  text-decoration: none;
+}
+
+.mobileNavContainer .mobileNavBar ul li a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  display: block;
+  -webkit-transition: .5s;
+  transition: .5s;
+  background-color: var(--mainColor);
+}
+
+.mobileNavContainer .mobileNavBar ul li a:hover::after {
+  width: 100%;
+}
+
+.mobileNavContainer .mobileNavBar .mobileNav_buttons {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mobileNavContainer .mobileNavBar .mobileNav_buttons button {
+  font-size: 18px;
+  font-family: "Poppins";
+  padding: 10px 15px;
+  border: 1px solid var(--callToAction);
+  -webkit-transition: .5s;
+  transition: .5s;
+  margin: 5px 0;
+}
+
+.mobileNavContainer .mobileNavBar .mobileNav_buttons .signupBtn {
+  background-color: transparent;
+}
+
+.mobileNavContainer .mobileNavBar .mobileNav_buttons .signupBtn:hover {
+  background-color: var(--callToAction);
+  color: white;
+}
+
+.mobileNavContainer .mobileNavBar .mobileNav_buttons .loginBtn {
+  background-color: var(--callToAction);
+  color: white;
+}
+
+.mobileNavContainer .mobileNavBar .mobileNav_buttons .loginBtn:hover {
+  background-color: transparent;
+  color: var(--mainColor);
+}
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -31,6 +166,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow: hidden;
 }
 
 .header .siteTitle {
@@ -136,12 +272,38 @@ body {
   color: white;
 }
 
+.header .mobileNavBtn {
+  width: 50px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+}
+
+.header .mobileNavBtn .fa-bars {
+  font-size: 25px;
+  color: var(--mainColor);
+}
+
 .mainPage {
   width: 100vw;
   height: calc(100vh - 70px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow: hidden;
 }
 
 .mainPage .mainStuff {
@@ -215,11 +377,11 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow: hidden;
 }
 
 .footerPage .about {
   width: 50%;
-  height: 50vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -235,7 +397,6 @@ body {
           align-items: center;
   font-size: 14px;
   padding: 15px;
-  overflow: hidden;
 }
 
 .footerPage .about button {
@@ -256,7 +417,6 @@ body {
 
 .footerPage .subscribe {
   width: 50%;
-  height: 50vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -286,13 +446,19 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .footerPage .subscribe form input {
   outline: 0;
   border: 0;
   height: 40px;
-  width: 200px;
+  width: 250px;
   padding: 5px;
   color: var(--mainColor);
   margin: 4px;
@@ -304,7 +470,7 @@ body {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  height: 40px;
+  height: 35px;
   background-color: var(--callToAction);
   color: white;
   font-size: 14px;
@@ -736,7 +902,43 @@ body {
   transition: .5s;
 }
 
-@media screen and (max-width: 507px) {
+@media screen and (max-width: 948px) {
+  .header .navList, .header .header_buttons {
+    display: none;
+  }
+  .header .mobileNavBtn {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 910px) {
+  .mainPage .mainStuff {
+    width: 100%;
+  }
+  .mainPage .image {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  .footerPage {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .footerPage .about {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .footerPage .subscribe {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
+
+@media screen and (max-width: 510px) {
   .container_signup .signup {
     width: 95vw;
   }
@@ -748,6 +950,33 @@ body {
   }
   .container_login .login input {
     width: 85%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .mainPage .mainStuff .siteName {
+    font-size: 50px;
+  }
+  .mainPage .mainStuff .text {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .mainPage .mainStuff .siteName {
+    font-size: 40px;
+  }
+  .mainPage .mainStuff .tagPhrases {
+    font-size: 17px;
+  }
+  .mainPage .mainStuff .text {
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 345px) {
+  .mainPage .mainStuff .tagPhrases {
+    font-size: 14px;
   }
 }
 /*# sourceMappingURL=index.css.map */

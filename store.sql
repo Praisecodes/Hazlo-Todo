@@ -1,0 +1,5 @@
+CREATE TABLE subscribed_emails(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    timeSubscribed DATETIME DEFAULT CURRENT_TIMESTAMP,
+    emailSubscribed TEXT NOT NULL
+);

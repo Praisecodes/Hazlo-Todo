@@ -16,6 +16,25 @@
     <title>Hazlo Todo - Be Organized</title>
 </head>
 <body>
+    <div class="mobileNavContainer">
+        <button class="closeNav">
+            <i class="fa fa-x"></i>
+        </button>
+        <div class="mobileNavBar">
+            <ul class="MobilenavList">
+                <li class="Mobilehome"><a href="./">HOME</a></li>
+                <li class="Mobileabout"><a href="./about">ABOUT</a></li>
+                <li class="Mobilesupport"><a href="./support">SUPPORT</a></li>
+                <li class="contact"><a href="">CONTACT</a></li>
+            </ul>
+
+            <div class="mobileNav_buttons">
+                <button class="loginBtn">LOGIN</button>
+                <button class="signupBtn">SIGN UP</button>
+            </div>
+        </div>
+    </div>
+
     <div class="header">
         <h1 class="siteTitle">
             Hazlo Todo
@@ -32,6 +51,9 @@
             <button class="loginBtn">LOGIN</button>
             <button class="signupBtn">SIGN UP</button>
         </div>
+        <button class="mobileNavBtn">
+            <i class="fa fa-bars"></i>
+        </button>
     </div>
 
     <div class="mainPage">

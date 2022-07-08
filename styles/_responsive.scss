@@ -1,4 +1,41 @@
-@media screen and (max-width: 507px){
+@media screen and (max-width: 948px){
+    .header{
+        .navList, .header_buttons{
+            display: none;
+        }
+        .mobileNavBtn{
+            display: block;
+        }
+    }
+}
+
+@media screen and (max-width: 910px){
+    .mainPage{
+        .mainStuff{
+            width: 100%;
+        }
+        .image{
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 610px) {
+    .footerPage{
+        flex-direction: column;
+        .about{
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .subscribe{
+            width: 100%;
+            margin-bottom: 5px;
+        }
+    }
+}
+
+@media screen and (max-width: 510px){
     .container_signup{
         .signup{
             width: 95vw;
@@ -13,6 +50,45 @@
             width: 95vw;
             input{
                 width: 85%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px){
+    .mainPage{
+        .mainStuff{
+            .siteName{
+                font-size: 50px;
+            }
+            .text{
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 375px){
+    .mainPage{
+        .mainStuff{
+            .siteName{
+                font-size: 40px;
+            }
+            .tagPhrases{
+                font-size: 17px;
+            }
+            .text{
+                font-size: 11px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 345px){
+    .mainPage{
+        .mainStuff{
+            .tagPhrases{
+                font-size: 14px;
             }
         }
     }
