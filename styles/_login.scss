@@ -1,3 +1,12 @@
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
 .container_login{
     background-color: var(--mainColor);
     display: flex;
@@ -40,6 +49,11 @@
             padding: 10px;
             background-color: var(--mainColor);
             cursor: pointer;
+
+            .fa-spinner{
+                font-size: 18px;
+                animation: spin .5s infinite;
+            }
         }
     }
     a{

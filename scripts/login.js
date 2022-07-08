@@ -2,9 +2,13 @@ const Username = document.querySelector(".Username");
 const Password = document.querySelector(".Password");
 const login = document.querySelector(".login");
 const finalMessage = document.querySelector(".finalMessage");
+const login_loginBtn = document.querySelector(".login_loginBtn");
 
 login.addEventListener('submit', (e)=>{
     e.preventDefault();
+
+    login_loginBtn.innerHTML = "<i class='fa fa-spinner'></i>";
+    login_loginBtn.disabled = true;
 
     let Details = {
         "Username": Username.value,
@@ -20,6 +24,8 @@ login.addEventListener('submit', (e)=>{
     })
     .then(res=>res.json())
     .then((data)=>{
+        login_loginBtn.innerHTML = "Login";
+        login_loginBtn.disabled = false;
         if(data == "Success"){
             window.location = "../workarea";
         }
@@ -42,5 +48,7 @@ login.addEventListener('submit', (e)=>{
     })
     .catch((error)=>{
         console.log(error);
+        login_loginBtn.innerHTML = "Login";
+        login_loginBtn.disabled = false;
     })
 })

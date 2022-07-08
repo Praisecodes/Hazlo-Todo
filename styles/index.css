@@ -322,6 +322,79 @@ body {
           align-items: center;
 }
 
+.workarea_container {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  overflow: hidden;
+}
+
+.workarea_container .workarea_topper {
+  width: 100vw;
+  height: 10vh;
+}
+
+.workarea_container .workarea_topper .avatar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px;
+  width: 20vw;
+}
+
+.workarea_container .workarea_topper .avatar .circle {
+  width: 4vw;
+  height: 4vw;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.workarea_container .workarea_topper .avatar .usersFullname {
+  font-size: 25px;
+}
+
+.workarea_container .main_container {
+  width: 100vw;
+  height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+
+.workarea_container .main_container .workarea_nav {
+  width: 23vw;
+  height: 100%;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 .container_login {
   background-color: var(--mainColor);
   display: -webkit-box;
@@ -395,6 +468,12 @@ body {
   padding: 10px;
   background-color: var(--mainColor);
   cursor: pointer;
+}
+
+.container_login .login button .fa-spinner {
+  font-size: 18px;
+  -webkit-animation: spin .5s infinite;
+          animation: spin .5s infinite;
 }
 
 .container_login a {

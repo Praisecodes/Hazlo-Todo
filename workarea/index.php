@@ -1,24 +1,30 @@
-<?php
-    session_start();
-    if(!isset($_SESSION["username"]) && !isset($_SESSION["userFname"])){
-        $_SESSION['message'] = "Please Make sure You Login";
-        header("Location: ../");
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hazlo Todo | Workarea</title>
     <link rel="stylesheet" href="../styles/index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <title>Hazlo Todo | Work Area</title>
 </head>
 <body>
-    
+    <div class="workarea_container">
+        <div class="workarea_topper">
+            <div class="avatar">
+                <div class="circle"></div>
+                <p class="userFullName">Elimihele God's Favour</p>
+            </div>
+        </div>
 
-    <script src="../scripts/workarea.js"></script>
+        <div class="main_container">
+            <div class="workarea_nav">
+
+            </div>
+
+            <div class="workarea_main">
+
+            </div>
+        </div>
+    </div>
 </body>
 </html>
