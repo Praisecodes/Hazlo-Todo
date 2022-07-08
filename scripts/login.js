@@ -7,7 +7,7 @@ const login_loginBtn = document.querySelector(".login_loginBtn");
 login.addEventListener('submit', (e)=>{
     e.preventDefault();
 
-    login_loginBtn.innerHTML = "<i class='fa fa-spinner'></i>";
+    login_loginBtn.innerHTML = `<i class="fa fa-spinner"></i>`;
     login_loginBtn.disabled = true;
 
     let Details = {

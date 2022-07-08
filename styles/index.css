@@ -447,7 +447,7 @@ body {
   color: var(--mainColor);
 }
 
-.container_login .login button {
+.container_login .login .login_loginBtn {
   border: 1px solid var(--mainColor);
   color: white;
   font-family: "Poppins";
@@ -470,7 +470,7 @@ body {
   cursor: pointer;
 }
 
-.container_login .login button .fa-spinner {
+.container_login .login .login_loginBtn .fa-spinner {
   font-size: 18px;
   -webkit-animation: spin .5s infinite;
           animation: spin .5s infinite;
