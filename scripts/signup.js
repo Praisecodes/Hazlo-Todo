@@ -74,7 +74,6 @@ Password.addEventListener('keyup', (e)=>{
 })
 
 CPassword.addEventListener('keyup', (e)=>{
-    testingInputs(CPassword, validPassword);
     if(!(CPassword.value === Password.value)){
         CPassword.style.borderBottom = "2px solid red";
         disableBtn(signupBtn, true, 0.4);
@@ -82,12 +81,13 @@ CPassword.addEventListener('keyup', (e)=>{
     else{
         CPassword.style.borderBottom = null;
 
-        if(!(checkIfEmpty(Username, Fullname, Email, Password, CPassword))){
-            disableBtn(signupBtn, true, 0.4);
-         }
-         else{
-             disableBtn(signupBtn, false, null);
-         }
+        testingInputs(CPassword, validPassword);
+        // if(!(checkIfEmpty(Username, Fullname, Email, Password, CPassword))){
+        //     disableBtn(signupBtn, true, 0.4);
+        //  }
+        //  else{
+        //      disableBtn(signupBtn, false, null);
+        //  }
     }
 })
 
