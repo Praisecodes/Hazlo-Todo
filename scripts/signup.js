@@ -74,6 +74,7 @@ Password.addEventListener('keyup', (e)=>{
 })
 
 CPassword.addEventListener('keyup', (e)=>{
+    testingInputs(CPassword, validPassword);
     if(!(CPassword.value === Password.value)){
         CPassword.style.borderBottom = "2px solid red";
         disableBtn(signupBtn, true, 0.4);
