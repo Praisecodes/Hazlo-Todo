@@ -735,4 +735,13 @@ body {
   -webkit-transition: .5s;
   transition: .5s;
 }
+
+@media screen and (max-width: 507px) {
+  .container_signup .signup {
+    width: 95vw;
+  }
+  .container_signup .signup input {
+    width: 85%;
+  }
+}
 /*# sourceMappingURL=index.css.map */
