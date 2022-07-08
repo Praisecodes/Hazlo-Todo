@@ -743,5 +743,11 @@ body {
   .container_signup .signup input {
     width: 85%;
   }
+  .container_login .login {
+    width: 95vw;
+  }
+  .container_login .login input {
+    width: 85%;
+  }
 }
 /*# sourceMappingURL=index.css.map */

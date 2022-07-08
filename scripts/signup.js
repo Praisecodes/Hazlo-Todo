@@ -82,12 +82,6 @@ CPassword.addEventListener('keyup', (e)=>{
         CPassword.style.borderBottom = null;
 
         testingInputs(CPassword, validPassword);
-        // if(!(checkIfEmpty(Username, Fullname, Email, Password, CPassword))){
-        //     disableBtn(signupBtn, true, 0.4);
-        //  }
-        //  else{
-        //      disableBtn(signupBtn, false, null);
-        //  }
     }
 })
 
