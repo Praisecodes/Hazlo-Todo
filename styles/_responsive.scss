@@ -21,6 +21,12 @@
 }
 
 @media screen and (max-width: 610px) {
+    .header{
+        .mobileNavBtn{
+            right: 2px;
+        }
+    }
+
     .footerPage{
         flex-direction: column;
         .about{

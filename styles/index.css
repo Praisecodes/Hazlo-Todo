@@ -921,6 +921,9 @@ body {
 }
 
 @media screen and (max-width: 610px) {
+  .header .mobileNavBtn {
+    right: 2px;
+  }
   .footerPage {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
