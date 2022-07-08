@@ -28,7 +28,9 @@ window.onload = () => {
  }
 
  const checkIfEmpty = (element1, element2, element3, element4, element5) => {
-     if((element1.value == "" && !(element1.value.match(validUsername))) || (element2.value == "" && !(element2.value.match(validName))) || (element3.value == "" && !(element3.value.match(validEmail))) || (element4.value == "" && !(element4.value.match(validPassword))) || element5.value == ""){
+     element1Val = element1.value; element2Val = element2.value; element3Val = element3.value; element4Val = element4.value;
+     element5Val = element5.value;
+     if((element1Val == "" && !(element1Val.match(validUsername))) || (element2Val == "" && !(element2Val.match(validName))) || (element3Val == "" && !(element3Val.match(validEmail))) || (element4Val == "" && !(element4Val.match(validPassword))) || element5Val == "" && !(element5Val.match(validPassword))){
         return false;
      }
      else{
