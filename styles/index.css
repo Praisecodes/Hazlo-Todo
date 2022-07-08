@@ -921,6 +921,10 @@ body {
 }
 
 @media screen and (max-width: 610px) {
+  .mobileNavContainer .mobileNavBar {
+    width: 75vw;
+    margin-left: 25vw;
+  }
   .header .mobileNavBtn {
     right: 2px;
   }
