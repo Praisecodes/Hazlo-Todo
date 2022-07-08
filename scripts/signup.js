@@ -7,6 +7,7 @@ const signup = document.querySelector(".signup");
 const signupBtn = document.querySelector(".signup_signupBtn");
 const passwordGuide = document.querySelector(".passwordGuide");
 const messageBar = document.querySelector(".messageBar");
+const signup_signupBtn = document.querySelector(".signup_signupBtn");
 
 window.onload = () => {
     signupBtn.disabled = true;
@@ -90,6 +91,9 @@ CPassword.addEventListener('keyup', (e)=>{
 signup.addEventListener('submit', (e)=>{
     e.preventDefault();
 
+    signup_signupBtn.innerHTML = `<i class="fa fa-spinner"></i>`;
+    signup_signupBtn.disabled = true;
+
     let Details = {
         "Fullname": Fullname.value,
         "Username": Username.value,
@@ -107,6 +111,8 @@ signup.addEventListener('submit', (e)=>{
     })
     .then(res=>res.json())
     .then((data)=>{
+        signup_signupBtn.innerHTML = `Sign Up`;
+        signup_signupBtn.disabled = false;
         if(data == "Success"){
             messageBar.style.transform = "translateX(0%)";
 
@@ -134,5 +140,7 @@ signup.addEventListener('submit', (e)=>{
     })
     .catch((error)=>{
         console.log(error);
+        signup_signupBtn.innerHTML = `Sign Up`;
+        signup_signupBtn.disabled = false;
     })
 })

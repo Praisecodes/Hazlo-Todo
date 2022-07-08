@@ -654,6 +654,12 @@ body {
   transition: .5s;
 }
 
+.container_signup .signup button .fa-spinner {
+  font-size: 18px;
+  -webkit-animation: spin .5s infinite;
+          animation: spin .5s infinite;
+}
+
 .container_signup p, .container_signup a {
   font-size: 14px;
 }
