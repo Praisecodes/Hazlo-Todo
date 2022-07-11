@@ -15,6 +15,32 @@
     margin: 0;
 }
 
+.darkMode{
+    background-color: var(--mainColor);
+    color: white;
+    .workarea_topper{
+        border-bottom: 1px solid var(--darkModeLight);
+        .topper_icons{
+            .topperIcons{
+                color: white;
+                &:hover{
+                    background-color: var(--darkModeLight);
+                }
+            }
+            .icon_dropdown{
+                &:hover{
+                    background-color: var(--darkModeLight);
+                }
+            }
+        }
+    }
+    .workarea_container{
+        .workarea_nav{
+            background-color: var(--darkModeLight);
+        }
+    }
+}
+
 body{
     font-size: 16px;
     font-family: "Poppins";

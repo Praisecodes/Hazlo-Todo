@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <script src="https://kit.fontawesome.com/1279a1c1cc.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="light">
     <div class="workarea_topper">
         <div class="profile_fullname">
             <div class="circle"></div>

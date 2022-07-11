@@ -1,82 +1,29 @@
-const workarea_nav = document.querySelector('.workarea_nav');
-const topperIcons = document.querySelectorAll('.topperIcons');
-const topper = document.querySelector('.workarea_topper');
 const switchMode = document.querySelector('.switchMode');
-const icon_dropdown = document.querySelector('.icon_dropdown');
 
-function switchTo(Mode){
-    if(Mode == "Darkmode"){
-        switchMode.innerHTML = `<i class="fa fa-sun"></i>`;
-        document.body.style.backgroundColor = "var(--mainColor)";
-        workarea_nav.style.backgroundColor = "var(--darkModeLight)";
-        topper.style.borderBottom = "1px solid var(--darkModeLight)";
-        document.body.style.color = "white";
-        icon_dropdown.addEventListener('mouseover', ()=>{
-            icon_dropdown.style.backgroundColor = "var(--darkModeLight)";
-        });
-        icon_dropdown.addEventListener('mouseout', ()=>{
-            icon_dropdown.style.backgroundColor = null;
-        });
-        topperIcons.forEach((topperIcon)=>{
-            topperIcon.style.color = "white";
-            topperIcon.addEventListener('mouseover', ()=>{
-                topperIcon.style.backgroundColor = "var(--darkModeLight)";
-            });
-            topperIcon.addEventListener('mouseout', ()=>{
-                topperIcon.style.backgroundColor = null;
-            });
-        });
-    }
-    else if (Mode == "Lightmode"){
-        document.body.style.backgroundColor = null;
-        workarea_nav.style.backgroundColor = null;
-        topper.style.borderBottom = null;
-        document.body.style.color = null;
-        icon_dropdown.addEventListener('mouseover', ()=>{
-            icon_dropdown.style.backgroundColor = null;
-        });
-        icon_dropdown.addEventListener('mouseout', ()=>{
-            icon_dropdown.style.backgroundColor = null;
-        });
-        topperIcons.forEach((topperIcon)=>{
-            topperIcon.style.color = null;
-            topperIcon.addEventListener('mouseover', ()=>{
-                topperIcon.style.backgroundColor = null;
-            });
-            topperIcon.addEventListener('mouseout', ()=>{
-                topperIcon.style.backgroundColor = null;
-            });
-        })
-    }
-}
+let currentTheme = localStorage.getItem('Hazlo_Theme');
 
-
-let currentTheme = window.localStorage.getItem('Hazlo_Theme');
-
-(function switchScreenMode(){
-    if(!(currentTheme == null)){
-        switchTo("Lightmode");
+(function doFirst(){
+    if(currentTheme == null){
+        document.body.classList.remove("darkMode");
+        switchMode.innerHTML = `<i class="fa fa-moon"></i>`;
     }
     else{
-        switchTo("Darkmode");
+        document.body.classList.add("darkMode");
+        switchMode.innerHTML = `<i class="fa fa-sun"></i>`;
     }
-
-    console.log(currentTheme);
 })()
 
-switchMode.addEventListener('click', ()=>{
-    if(!(currentTheme == null)){
-        window.localStorage.removeItem('Hazlo_Theme');
-        switchTo("Lightmode");
-        currentTheme = window.localStorage.getItem('Hazlo_Theme');
-        location.reload();
+switchMode.addEventListener('click', (e)=>{
+    if(currentTheme == null){
+        localStorage.setItem('Hazlo_Theme', 'Darkmode');
+        currentTheme = localStorage.getItem('Hazlo_Theme');
+        document.body.classList.add("darkMode");
+        switchMode.innerHTML = `<i class="fa fa-sun"></i>`;
     }
-    else if(currentTheme == null){
-        window.localStorage.setItem('Hazlo_Theme', 'Darkmode');
-        switchTo("Darkmode")
-        currentTheme = window.localStorage.getItem('Hazlo_Theme');
-        location.reload();
+    else{
+        localStorage.removeItem('Hazlo_Theme');
+        currentTheme = localStorage.getItem('Hazlo_Theme');
+        document.body.classList.remove("darkMode");
+        switchMode.innerHTML = `<i class="fa fa-moon"></i>`;
     }
-
-    // ((window.localStorage.setItem('Hazlo_Theme', 'Darkmode')) ? currentTheme == null : (window.localStorage.removeItem('Hazlo_Theme')));
-})
+});

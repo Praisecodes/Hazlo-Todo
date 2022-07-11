@@ -15,6 +15,31 @@
   margin: 0;
 }
 
+.darkMode {
+  background-color: var(--mainColor);
+  color: white;
+}
+
+.darkMode .workarea_topper {
+  border-bottom: 1px solid var(--darkModeLight);
+}
+
+.darkMode .workarea_topper .topper_icons .topperIcons {
+  color: white;
+}
+
+.darkMode .workarea_topper .topper_icons .topperIcons:hover {
+  background-color: var(--darkModeLight);
+}
+
+.darkMode .workarea_topper .topper_icons .icon_dropdown:hover {
+  background-color: var(--darkModeLight);
+}
+
+.darkMode .workarea_container .workarea_nav {
+  background-color: var(--darkModeLight);
+}
+
 body {
   font-size: 16px;
   font-family: "Poppins";
