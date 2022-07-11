@@ -134,13 +134,45 @@
     .workarea_nav{
         width: 20vw;
         height: 100%;
-        // border: 1px solid black;
         background-color: var(--mainColor);
         transition: .3s;
+        color: white;
+        overflow-y: scroll;
+        &::-webkit-scrollbar{
+            width: 0;
+        }
+        .logo_sitename{
+            //border: 1px solid white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 6vh 1vw 6vh 1vw;
+            .sitename{
+                font-size: 25px;
+            }
+            .workarea_motto{
+                font-size: 14px;
+            }
+        }
+        .workarea_nav_options{
+            display: flex;
+            padding: 20px 10px;
+            font-size: 18px;
+            align-items: center;
+            justify-content: space-around;
+            color: inherit;
+            transition: .3s;
+            cursor: pointer;
+            margin: 10px 0;
+            height: 30px;
+            // border-left: 3px solid white;
+            &:hover{
+                background-color: var(--darkModeLight);
+            }
+        }
     }
     .workarea_main{
         width: 80vw;
         height: 100%;
-        // border: 1px solid black;
     }
 }

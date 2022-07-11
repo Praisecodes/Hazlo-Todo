@@ -27,6 +27,7 @@ login.addEventListener('submit', (e)=>{
         login_loginBtn.innerHTML = "Login";
         login_loginBtn.disabled = false;
         if(data == "Success"){
+            localStorage.setItem('__hz_username', Username.value);
             window.location = "../workarea";
         }
         else if(data == "0x1MIS"){

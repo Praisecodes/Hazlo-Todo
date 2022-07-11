@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="../styles/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <script src="https://kit.fontawesome.com/1279a1c1cc.js" crossorigin="anonymous"></script>
+    <script src="../scripts/typed.js"></script>
 </head>
 <body class="light">
     <div class="workarea_topper">
         <div class="profile_fullname">
             <div class="circle"></div>
-            <p class="user_fullname">Precious Okeypraise .C.</p>
+            <p class="user_fullname"></p>
         </div>
 
         <form class="search_activity">
@@ -48,7 +49,26 @@
     </div>
     <div class="workarea_container">
         <div class="workarea_nav">
-            
+            <div class="logo_sitename">
+                <p class="sitename">Hazlo Todo</p>
+                <p class="workarea_motto">
+                    Get More<span id="workarea_motto_catchphrases"></span>
+                </p>
+            </div>
+            <div class="dashboardOption workarea_nav_options">
+                <i class="fa fa-house"></i>
+                <p class="textDashboard">Dashboard</p>
+            </div>
+
+            <div class="activitiesOption workarea_nav_options">
+                <i class="fa fa-chart-line"></i>
+                <p class="textActivities">Activities</p>
+            </div>
+
+            <div class="archiveOption workarea_nav_options">
+                <i class="fa fa-box-archive"></i>
+                <p class="textArchive">Archives</p>
+            </div>
         </div>
         <div class="workarea_main">
 

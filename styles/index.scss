@@ -8,6 +8,7 @@
     --callToAction: #3a5155;
     --footerColor: #ffffffee;
     --darkModeLight: #303a49;
+    --hoverInDark: #424b58;
 }
 
 *{
@@ -37,6 +38,12 @@
     .workarea_container{
         .workarea_nav{
             background-color: var(--darkModeLight);
+            color: #eee;
+            .workarea_nav_options{
+                &:hover{
+                    background-color: var(--hoverInDark);
+                }
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
 const switchMode = document.querySelector('.switchMode');
+const user_fullname = document.querySelector('.user_fullname');
 
 let currentTheme = localStorage.getItem('Hazlo_Theme');
 
@@ -26,4 +27,38 @@ switchMode.addEventListener('click', (e)=>{
         document.body.classList.remove("darkMode");
         switchMode.innerHTML = `<i class="fa fa-moon"></i>`;
     }
+});
+
+var typer = new Typed("#workarea_motto_catchphrases", {
+    strings: [
+        ", Done!",
+        ", Organized!"
+    ],
+    typeSpeed: 70,
+    backSpeed: 40,
+    loop: true
+});
+
+let givenUsername = localStorage.getItem('__hz_username');
+
+// console.log(givenUsername);
+
+fetch('../api/getinfo.php', {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        'username': givenUsername
+    })
+})
+.then(res=>res.json())
+.then((data)=>{
+    // console.log(data);
+    let {fullname, username, email} = data;
+    user_fullname.innerHTML = fullname;
+    localStorage.removeItem('__hz_username');
+})
+.catch((error)=>{
+    console.log(error);
 });
