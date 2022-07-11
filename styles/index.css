@@ -45,6 +45,8 @@ body {
   font-family: "Poppins";
   color: var(--mainColor);
   overflow-x: hidden;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 .mobileNavContainer {
@@ -753,6 +755,8 @@ body {
   width: 20vw;
   height: 100%;
   background-color: var(--mainColor);
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 .workarea_container .workarea_main {
