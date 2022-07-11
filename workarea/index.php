@@ -25,7 +25,7 @@
 
         <div class="topper_icons">
             <button class="switchMode topperIcons">
-                <i class="fa fa-sun"></i>
+                <i class="fa fa-moon"></i>
             </button>
 
             <button class="notifications topperIcons">
