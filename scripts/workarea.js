@@ -2,6 +2,11 @@ const switchMode = document.querySelector('.switchMode');
 const user_fullname = document.querySelector('.user_fullname');
 
 let currentTheme = localStorage.getItem('Hazlo_Theme');
+let givenUsername = localStorage.getItem('__hz_username');
+
+if(givenUsername == null){
+    location = "../login/";
+}
 
 (function doFirst(){
     if(currentTheme == null){
@@ -39,7 +44,6 @@ var typer = new Typed("#workarea_motto_catchphrases", {
     loop: true
 });
 
-let givenUsername = localStorage.getItem('__hz_username');
 
 // console.log(givenUsername);
 
