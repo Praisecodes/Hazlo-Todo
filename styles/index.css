@@ -37,6 +37,20 @@
   background-color: var(--darkModeLight);
 }
 
+.darkMode .workarea_topper .topper_icons .icon_dropdown .mainDropdown {
+  background-color: var(--darkModeLight);
+  -webkit-box-shadow: 0 0 0 0;
+          box-shadow: 0 0 0 0;
+}
+
+.darkMode .workarea_topper .topper_icons .icon_dropdown .mainDropdown .mainDropdown_options:hover {
+  background-color: var(--hoverInDark);
+}
+
+.darkMode .workarea_topper .topper_icons .icon_dropdown .mainDropdown a {
+  color: white;
+}
+
 .darkMode .workarea_container .workarea_nav {
   background-color: var(--darkModeLight);
   color: #eee;
@@ -719,6 +733,7 @@ body {
   transition: .3s;
   padding: 2px;
   margin-left: 8px;
+  position: relative;
 }
 
 .workarea_topper .topper_icons .icon_dropdown:hover {
@@ -741,6 +756,56 @@ body {
   background-color: #cccccc;
   color: var(--mainColor);
   margin-right: 1px;
+}
+
+.workarea_topper .topper_icons .icon_dropdown .mainDropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: white;
+  -webkit-box-shadow: 0 0 2px 1px rgba(20, 20, 20, 0.1);
+          box-shadow: 0 0 2px 1px rgba(20, 20, 20, 0.1);
+  font-size: 15px;
+}
+
+.workarea_topper .topper_icons .icon_dropdown .mainDropdown .mainDropdown_options {
+  width: 12vw;
+  height: 20px;
+  padding: 15px;
+  background-color: transparent;
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.workarea_topper .topper_icons .icon_dropdown .mainDropdown .mainDropdown_options i {
+  margin-right: 3px;
+}
+
+.workarea_topper .topper_icons .icon_dropdown .mainDropdown .mainDropdown_options .fa-right-to-bracket {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.workarea_topper .topper_icons .icon_dropdown .mainDropdown .mainDropdown_options:hover {
+  background-color: #dddddd;
+}
+
+.workarea_topper .topper_icons .icon_dropdown .mainDropdown a {
+  text-decoration: none;
+  color: var(--mainColor);
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 .workarea_container {

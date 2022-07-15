@@ -32,6 +32,18 @@
                 &:hover{
                     background-color: var(--darkModeLight);
                 }
+                .mainDropdown{
+                    background-color: var(--darkModeLight);
+                    box-shadow: 0 0 0 0;
+                    .mainDropdown_options{
+                        &:hover{
+                            background-color: var(--hoverInDark);
+                        }
+                    }
+                    a{
+                        color: white;
+                    }
+                }
             }
         }
     }

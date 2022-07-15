@@ -44,6 +44,30 @@
                 <div class="drop_arrow">
                     <i class="fa fa-angle-down"></i>
                 </div>
+
+                <div class="mainDropdown">
+                    <a href="./" class="mainDropdown_options">
+                        <i class="fa fa-user"></i>
+                        Your Profile
+                    </a>
+                    <div class="yourActivities mainDropdown_options">
+                        <i class="fa fa-chart-line"></i>
+                        Your Activities
+                    </div>
+                    <div class="calendar mainDropdown_options">
+                        <i class="fa fa-calendar"></i>
+                        Calendar
+                    </div>
+                    <div class="settings mainDropdown_options">
+                        <i class="fa fa-gear"></i>
+                        Settings
+                    </div>
+                    <hr>
+                    <div class="signout mainDropdown_options">
+                        <i class="fa fa-right-to-bracket"></i>
+                        Sign Out
+                    </div>
+                </div>
             </div>
         </div>
     </div>

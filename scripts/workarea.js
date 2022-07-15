@@ -1,6 +1,6 @@
 const switchMode = document.querySelector('.switchMode');
 const user_fullname = document.querySelector('.user_fullname');
-const notifications = document.querySelector('.notifications');
+const signout = document.querySelector('.signout');
 
 let currentTheme = localStorage.getItem('Hazlo_Theme');
 
@@ -73,7 +73,7 @@ var typer = new Typed("#workarea_motto_catchphrases", {
     loop: true
 });
 
-notifications.addEventListener('click', (e)=>{
+signout.addEventListener('click', (e)=>{
     fetch('../api/signoutuser.php')
     .then(res=>res.json())
     .then(()=>{

@@ -107,6 +107,7 @@
             transition: .3s;
             padding: 2px;
             margin-left: 8px;
+            position: relative;
             &:hover{
                 background-color: #eeeeee;
             }
@@ -120,6 +121,39 @@
                 background-color: #cccccc;
                 color: var(--mainColor);
                 margin-right: 1px;
+            }
+            .mainDropdown{
+                position: absolute;
+                top: 100%;
+                right: 0;
+                height: fit-content;
+                display: flex;
+                flex-direction: column;
+                background-color: white;
+                box-shadow: 0 0 2px 1px rgba(20, 20, 20, 0.1);
+                font-size: 15px;
+                .mainDropdown_options{
+                    width: 12vw;
+                    height: 20px;
+                    padding: 15px;
+                    background-color: transparent;
+                    cursor: pointer;
+                    transition: .3s;
+                    i{
+                        margin-right: 3px;
+                    }
+                    .fa-right-to-bracket{
+                        transform: rotate(180deg);
+                    }
+                    &:hover{
+                        background-color: #dddddd;
+                    }
+                }
+                a{
+                    text-decoration: none;
+                    color: var(--mainColor);
+                    transition: .3s;
+                }
             }
         }
     }
