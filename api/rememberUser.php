@@ -2,8 +2,6 @@
     header("Content-Type: application/json");
     header("Access-Control-Allow-Origin: *");
 
-    require_once "connection.php";
-
     if(isset($_COOKIE["__hz_username"])){
         echo json_encode([
             $_COOKIE["__hz_username"]

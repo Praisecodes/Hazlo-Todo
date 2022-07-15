@@ -1,6 +1,8 @@
 const switchMode = document.querySelector('.switchMode');
 const user_fullname = document.querySelector('.user_fullname');
 const signout = document.querySelector('.signout');
+const icon_dropdown = document.querySelector('.icon_dropdown');
+const mainDropdown = document.querySelector('.mainDropdown');
 
 let currentTheme = localStorage.getItem('Hazlo_Theme');
 
@@ -82,4 +84,19 @@ signout.addEventListener('click', (e)=>{
     .catch((err)=>{
         console.log(err);
     })
+});
+
+let optionsOpen = false;
+
+icon_dropdown.addEventListener('click', ()=>{
+    if(optionsOpen == false){
+        mainDropdown.classList.add('openByHeight');
+        mainDropdown.classList.remove('closeByHeight');
+        optionsOpen = true;
+    }
+    else{
+        mainDropdown.classList.remove('openByHeight');
+        mainDropdown.classList.add('closeByHeight');
+        optionsOpen = false;
+    }
 });

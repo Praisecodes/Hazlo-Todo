@@ -126,12 +126,12 @@
                 position: absolute;
                 top: 100%;
                 right: 0;
-                height: fit-content;
                 display: flex;
                 flex-direction: column;
                 background-color: white;
-                box-shadow: 0 0 2px 1px rgba(20, 20, 20, 0.1);
+                overflow: hidden;
                 font-size: 15px;
+                transition: .9s;
                 .mainDropdown_options{
                     width: 12vw;
                     height: 20px;
@@ -148,11 +148,6 @@
                     &:hover{
                         background-color: #dddddd;
                     }
-                }
-                a{
-                    text-decoration: none;
-                    color: var(--mainColor);
-                    transition: .3s;
                 }
             }
         }
@@ -181,11 +176,15 @@
             flex-direction: column;
             align-items: center;
             margin: 6vh 1vw 6vh 1vw;
+            img{
+                width: 52%;
+                height: 12%;
+            }
             .sitename{
-                font-size: 25px;
+                font-size: 28px;
             }
             .workarea_motto{
-                font-size: 14px;
+                font-size: 16px;
             }
         }
         .workarea_nav_options{

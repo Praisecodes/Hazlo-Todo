@@ -16,6 +16,16 @@
     margin: 0;
 }
 
+.openByHeight{
+    height: fit-content;
+    box-shadow: 0 0 2px 1px rgba(20, 20, 20, 0.1);
+}
+
+.closeByHeight{
+    height: 0;
+    box-shadow: 0 0 0 0;
+}
+
 .darkMode{
     background-color: var(--mainColor);
     color: white;
@@ -39,9 +49,6 @@
                         &:hover{
                             background-color: var(--hoverInDark);
                         }
-                    }
-                    a{
-                        color: white;
                     }
                 }
             }

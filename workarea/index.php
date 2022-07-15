@@ -45,11 +45,11 @@
                     <i class="fa fa-angle-down"></i>
                 </div>
 
-                <div class="mainDropdown">
-                    <a href="./" class="mainDropdown_options">
+                <div class="mainDropdown closeByHeight">
+                    <div class="mainDropdown_options">
                         <i class="fa fa-user"></i>
                         Your Profile
-                    </a>
+                    </div>
                     <div class="yourActivities mainDropdown_options">
                         <i class="fa fa-chart-line"></i>
                         Your Activities
@@ -74,6 +74,7 @@
     <div class="workarea_container">
         <div class="workarea_nav">
             <div class="logo_sitename">
+                <img src="../images/hazlo logo transparent.png" alt="Hazlo Todo Logo"><br/>
                 <p class="sitename">Hazlo Todo</p>
                 <p class="workarea_motto">
                     Get More<span id="workarea_motto_catchphrases"></span>

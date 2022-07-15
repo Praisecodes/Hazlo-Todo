@@ -16,6 +16,20 @@
   margin: 0;
 }
 
+.openByHeight {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-box-shadow: 0 0 2px 1px rgba(20, 20, 20, 0.1);
+          box-shadow: 0 0 2px 1px rgba(20, 20, 20, 0.1);
+}
+
+.closeByHeight {
+  height: 0;
+  -webkit-box-shadow: 0 0 0 0;
+          box-shadow: 0 0 0 0;
+}
+
 .darkMode {
   background-color: var(--mainColor);
   color: white;
@@ -45,10 +59,6 @@
 
 .darkMode .workarea_topper .topper_icons .icon_dropdown .mainDropdown .mainDropdown_options:hover {
   background-color: var(--hoverInDark);
-}
-
-.darkMode .workarea_topper .topper_icons .icon_dropdown .mainDropdown a {
-  color: white;
 }
 
 .darkMode .workarea_container .workarea_nav {
@@ -762,9 +772,6 @@ body {
   position: absolute;
   top: 100%;
   right: 0;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -773,9 +780,10 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: white;
-  -webkit-box-shadow: 0 0 2px 1px rgba(20, 20, 20, 0.1);
-          box-shadow: 0 0 2px 1px rgba(20, 20, 20, 0.1);
+  overflow: hidden;
   font-size: 15px;
+  -webkit-transition: .9s;
+  transition: .9s;
 }
 
 .workarea_topper .topper_icons .icon_dropdown .mainDropdown .mainDropdown_options {
@@ -799,13 +807,6 @@ body {
 
 .workarea_topper .topper_icons .icon_dropdown .mainDropdown .mainDropdown_options:hover {
   background-color: #dddddd;
-}
-
-.workarea_topper .topper_icons .icon_dropdown .mainDropdown a {
-  text-decoration: none;
-  color: var(--mainColor);
-  -webkit-transition: .3s;
-  transition: .3s;
 }
 
 .workarea_container {
@@ -850,12 +851,17 @@ body {
   margin: 6vh 1vw 6vh 1vw;
 }
 
+.workarea_container .workarea_nav .logo_sitename img {
+  width: 52%;
+  height: 12%;
+}
+
 .workarea_container .workarea_nav .logo_sitename .sitename {
-  font-size: 25px;
+  font-size: 28px;
 }
 
 .workarea_container .workarea_nav .logo_sitename .workarea_motto {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .workarea_container .workarea_nav .workarea_nav_options {
