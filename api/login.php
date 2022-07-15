@@ -56,6 +56,7 @@
                     echo json_encode([
                         "Success"
                     ]);
+                    setcookie("__hz_username", $username, time() + (86400 * 3), "/");
                     http_response_code(200);
                     $stmt->close();
                     $conn->close();

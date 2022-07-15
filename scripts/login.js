@@ -4,6 +4,20 @@ const login = document.querySelector(".login");
 const finalMessage = document.querySelector(".finalMessage");
 const login_loginBtn = document.querySelector(".login_loginBtn");
 
+(function firstThing(){
+    fetch("../api/rememberUser.php")
+    .then(res=>res.json())
+    .then((data)=>{
+        if(!(data=="false")){
+            localStorage.setItem("__hz_username", data);
+            location = "../workarea/";
+        }
+    })
+    .catch((error)=>{
+        console.log(error);
+    })
+})()
+
 login.addEventListener('submit', (e)=>{
     e.preventDefault();
 

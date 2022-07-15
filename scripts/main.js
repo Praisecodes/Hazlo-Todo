@@ -8,6 +8,20 @@ const mobileNavContainer = document.querySelector('.mobileNavContainer');
 const mobileNavBar = document.querySelector('.mobileNavBar');
 const closeNav = document.querySelector('.closeNav');
 
+(function firstThingMain(){
+    fetch("./api/rememberUser.php")
+    .then(res=>res.json())
+    .then((data)=>{
+        if(!(data=="false")){
+            localStorage.setItem("__hz_username", data);
+            location = "./workarea/";
+        }
+    })
+    .catch((error)=>{
+        console.log(error);
+    })
+})()
+
 const login = () => {
     window.location = "./login";
 }

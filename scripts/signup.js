@@ -9,6 +9,20 @@ const passwordGuide = document.querySelector(".passwordGuide");
 const messageBar = document.querySelector(".messageBar");
 const signup_signupBtn = document.querySelector(".signup_signupBtn");
 
+(function firstThing(){
+    fetch("../api/rememberUser.php")
+    .then(res=>res.json())
+    .then((data)=>{
+        if(!(data=="false")){
+            localStorage.setItem("__hz_username", data);
+            location = "../workarea/";
+        }
+    })
+    .catch((error)=>{
+        console.log(error);
+    })
+})()
+
 window.onload = () => {
     signupBtn.disabled = true;
     signupBtn.style.opacity = 0.4;
