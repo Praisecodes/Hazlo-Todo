@@ -16,15 +16,25 @@
     margin: 0;
 }
 
+// Style changing classes
+
 .openByHeight{
     height: fit-content;
+}
+
+.addShadow{
     box-shadow: 0 0 2px 1px rgba(20, 20, 20, 0.1);
+}
+
+.noShadow{
+    box-shadow: 0 0 0 0;
 }
 
 .closeByHeight{
     height: 0;
-    box-shadow: 0 0 0 0;
 }
+
+////////
 
 .darkMode{
     background-color: var(--mainColor);

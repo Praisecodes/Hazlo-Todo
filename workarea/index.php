@@ -45,7 +45,7 @@
                     <i class="fa fa-angle-down"></i>
                 </div>
 
-                <div class="mainDropdown closeByHeight">
+                <div class="mainDropdown closeByHeight noShadow">
                     <div class="mainDropdown_options">
                         <i class="fa fa-user"></i>
                         Your Profile
@@ -74,7 +74,7 @@
     <div class="workarea_container">
         <div class="workarea_nav">
             <div class="logo_sitename">
-                <img src="../images/hazlo logo transparent.png" alt="Hazlo Todo Logo"><br/>
+                <img src="../images/hazlo logo transparent.png" alt="Hazlo Todo Logo">
                 <p class="sitename">Hazlo Todo</p>
                 <p class="workarea_motto">
                     Get More<span id="workarea_motto_catchphrases"></span>

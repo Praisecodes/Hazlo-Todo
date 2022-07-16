@@ -131,7 +131,7 @@
                 background-color: white;
                 overflow: hidden;
                 font-size: 15px;
-                transition: .9s;
+                transition: .3s;
                 .mainDropdown_options{
                     width: 12vw;
                     height: 20px;
@@ -177,14 +177,15 @@
             align-items: center;
             margin: 6vh 1vw 6vh 1vw;
             img{
-                width: 52%;
-                height: 12%;
+                width: 48%;
+                height: 8%;
+                margin-bottom: 2px;
             }
             .sitename{
-                font-size: 28px;
+                font-size: 23px;
             }
             .workarea_motto{
-                font-size: 16px;
+                font-size: 13px;
             }
         }
         .workarea_nav_options{

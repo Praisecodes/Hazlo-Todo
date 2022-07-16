@@ -20,14 +20,20 @@
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+}
+
+.addShadow {
   -webkit-box-shadow: 0 0 2px 1px rgba(20, 20, 20, 0.1);
           box-shadow: 0 0 2px 1px rgba(20, 20, 20, 0.1);
 }
 
-.closeByHeight {
-  height: 0;
+.noShadow {
   -webkit-box-shadow: 0 0 0 0;
           box-shadow: 0 0 0 0;
+}
+
+.closeByHeight {
+  height: 0;
 }
 
 .darkMode {
@@ -782,8 +788,8 @@ body {
   background-color: white;
   overflow: hidden;
   font-size: 15px;
-  -webkit-transition: .9s;
-  transition: .9s;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 .workarea_topper .topper_icons .icon_dropdown .mainDropdown .mainDropdown_options {
@@ -852,16 +858,17 @@ body {
 }
 
 .workarea_container .workarea_nav .logo_sitename img {
-  width: 52%;
-  height: 12%;
+  width: 48%;
+  height: 8%;
+  margin-bottom: 2px;
 }
 
 .workarea_container .workarea_nav .logo_sitename .sitename {
-  font-size: 28px;
+  font-size: 23px;
 }
 
 .workarea_container .workarea_nav .logo_sitename .workarea_motto {
-  font-size: 16px;
+  font-size: 13px;
 }
 
 .workarea_container .workarea_nav .workarea_nav_options {

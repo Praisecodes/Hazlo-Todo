@@ -91,12 +91,16 @@ let optionsOpen = false;
 icon_dropdown.addEventListener('click', ()=>{
     if(optionsOpen == false){
         mainDropdown.classList.add('openByHeight');
+        mainDropdown.classList.add('addShadow');
         mainDropdown.classList.remove('closeByHeight');
+        mainDropdown.classList.remove('noShadow');
         optionsOpen = true;
     }
     else{
         mainDropdown.classList.remove('openByHeight');
+        mainDropdown.classList.remove('addShadow');
         mainDropdown.classList.add('closeByHeight');
+        mainDropdown.classList.add('noShadow');
         optionsOpen = false;
     }
 });
