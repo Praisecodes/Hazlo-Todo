@@ -3,6 +3,9 @@ const user_fullname = document.querySelector('.user_fullname');
 const signout = document.querySelector('.signout');
 const icon_dropdown = document.querySelector('.icon_dropdown');
 const mainDropdown = document.querySelector('.mainDropdown');
+const dashboardOption = document.querySelector('.dashboardOption');
+const activitiesOption = document.querySelector('.activitiesOption');
+const archiveOption = document.querySelector('.archiveOption');
 
 let currentTheme = localStorage.getItem('Hazlo_Theme');
 
@@ -103,4 +106,22 @@ icon_dropdown.addEventListener('click', ()=>{
         mainDropdown.classList.add('noShadow');
         optionsOpen = false;
     }
+});
+
+function changeActive(activeElement, element2, element3){
+    activeElement.classList.add('active');
+    element2.classList.remove('active');
+    element3.classList.remove('active');
+}
+
+dashboardOption.addEventListener('click', ()=>{
+    changeActive(dashboardOption,activitiesOption, archiveOption);
+});
+
+activitiesOption.addEventListener('click', ()=>{
+    changeActive(activitiesOption, dashboardOption, archiveOption);
+});
+
+archiveOption.addEventListener('click', ()=>{
+    changeActive(archiveOption, dashboardOption, activitiesOption);
 });

@@ -80,7 +80,7 @@
                     Get More<span id="workarea_motto_catchphrases"></span>
                 </p>
             </div>
-            <div class="dashboardOption workarea_nav_options">
+            <div class="dashboardOption workarea_nav_options active">
                 <i class="fa fa-house"></i>
                 <p class="textDashboard">Dashboard</p>
             </div>

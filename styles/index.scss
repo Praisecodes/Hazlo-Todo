@@ -9,6 +9,7 @@
     --footerColor: #ffffffee;
     --darkModeLight: #303a49;
     --hoverInDark: #424b58;
+    --activeLight: #3f4857;
 }
 
 *{
@@ -34,11 +35,19 @@
     height: 0;
 }
 
+.active{
+    background-color: var(--activeLight);
+    border-left: 4px solid white;
+}
+
 ////////
 
 .darkMode{
     background-color: var(--mainColor);
     color: white;
+    .active{
+        border-left: 4px solid #eee;
+    }
     .workarea_topper{
         border-bottom: 1px solid var(--darkModeLight);
         .topper_icons{
