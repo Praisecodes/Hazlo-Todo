@@ -50,13 +50,13 @@
                         <i class="fa fa-user"></i>
                         Your Profile
                     </div>
-                    <div class="yourActivities mainDropdown_options">
+                    <div class="activitiesOption mainDropdown_options">
                         <i class="fa fa-chart-line"></i>
                         Your Activities
                     </div>
-                    <div class="calendar mainDropdown_options">
-                        <i class="fa fa-calendar"></i>
-                        Calendar
+                    <div class="archiveOption mainDropdown_options">
+                        <i class="fa fa-box-archive"></i>
+                        Your Archives
                     </div>
                     <div class="settings mainDropdown_options">
                         <i class="fa fa-gear"></i>

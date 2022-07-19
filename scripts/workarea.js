@@ -4,8 +4,8 @@ const signout = document.querySelector('.signout');
 const icon_dropdown = document.querySelector('.icon_dropdown');
 const mainDropdown = document.querySelector('.mainDropdown');
 const dashboardOption = document.querySelector('.dashboardOption');
-const activitiesOption = document.querySelector('.activitiesOption');
-const archiveOption = document.querySelector('.archiveOption');
+const activitiesOptions = document.querySelectorAll('.activitiesOption');
+const archiveOptions = document.querySelectorAll('.archiveOption');
 
 let currentTheme = localStorage.getItem('Hazlo_Theme');
 
@@ -108,20 +108,32 @@ icon_dropdown.addEventListener('click', ()=>{
     }
 });
 
-function changeActive(activeElement, element2, element3){
-    activeElement.classList.add('active');
-    element2.classList.remove('active');
-    element3.classList.remove('active');
-}
-
 dashboardOption.addEventListener('click', ()=>{
-    changeActive(dashboardOption,activitiesOption, archiveOption);
+    dashboardOption.classList.add('active');
+    activitiesOptions.forEach((activitiesOption)=>{
+        activitiesOption.classList.remove('active');
+    });
+    archiveOptions.forEach((archiveOption)=>{
+        archiveOption.classList.remove('active');
+    });
 });
 
-activitiesOption.addEventListener('click', ()=>{
-    changeActive(activitiesOption, dashboardOption, archiveOption);
+activitiesOptions.forEach((activitiesOption)=>{
+    activitiesOption.addEventListener('click', ()=>{
+        activitiesOption.classList.add('active');
+        dashboardOption.classList.remove('active');
+        archiveOptions.forEach((archiveOption)=>{
+            archiveOption.classList.remove('active');
+        });
+    })
 });
 
-archiveOption.addEventListener('click', ()=>{
-    changeActive(archiveOption, dashboardOption, activitiesOption);
+archiveOptions.forEach((archiveOption)=>{
+    archiveOption.addEventListener('click', ()=>{
+        archiveOption.classList.add('active');
+        dashboardOption.classList.remove('active');
+        activitiesOptions.forEach((activitiesOption)=>{
+            activitiesOption.classList.remove('active');
+        });
+    });
 });
