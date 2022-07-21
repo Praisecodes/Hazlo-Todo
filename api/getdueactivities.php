@@ -10,6 +10,7 @@
     $data = array();
     $i = 0;
     $username = null;
+    $newVal = "true";
 
     if($content_type === "application/json"){
         $content = trim(file_get_contents("php://input"));
@@ -19,7 +20,7 @@
         $username = TestInput($decoded["username"]);
         $sql = "SELECT * FROM activities WHERE username=? AND isDue=?;";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param('ss', $username, 'true');
+        $stmt->bind_param('ss', $username, $newVal);
         if($stmt->execute()){
             $result = $stmt->get_result();
             if($result->num_rows > 0 && $result->num_rows == 1){
