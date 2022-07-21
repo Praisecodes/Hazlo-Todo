@@ -23,7 +23,7 @@
                 while($all_row = $all_result->fetch_assoc()){
                     $data["TotalActivities"] = $all_row;
                 }
-
+                echo json_encode($data);
                 
             }
             else{
