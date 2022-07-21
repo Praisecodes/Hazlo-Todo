@@ -35,6 +35,7 @@
                     $data["isStarred"] = $row["isStarred"];
                     $data["inTrash"] = $row["inTrash"];
                     $data["isComplete"] = $row["isComplete"];
+                    $data["isDue"] = $row["isDue"];
                 }
 
                 echo json_encode($data);
