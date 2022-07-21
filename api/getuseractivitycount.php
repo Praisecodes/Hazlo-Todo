@@ -20,10 +20,9 @@
         if($all_stmt->execute()){
             $all_result = $all_stmt->get_result();
             if($all_result->num_rows > 0){
-                // while($all_row = $all_result->fetch_assoc()){
-                //     $data["TotalActivities"] = $all_row;
-                // }
-                $data["TotalActivities"] = $all_result;
+                while($all_row = $all_result->fetch_assoc()){
+                    $data["TotalActivities"] = $all_row["COUNT(ActivityTitle)"];
+                }
                 echo json_encode($data);
                 
             }
