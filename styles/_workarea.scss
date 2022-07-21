@@ -133,7 +133,7 @@
                 font-size: 15px;
                 transition: .3s;
                 .mainDropdown_options{
-                    width: 12vw;
+                    width: 12rem;
                     height: 20px;
                     padding: 15px;
                     background-color: transparent;
@@ -168,7 +168,16 @@
         color: white;
         overflow-y: scroll;
         &::-webkit-scrollbar{
-            width: 0;
+            width: 4px;
+            transition: .3s;
+            display: block;
+            &:hover{
+                width: 5px;
+            }
+        }
+        &::-webkit-scrollbar-thumb{
+            background-color: #888888;
+            border-radius: 50px;
         }
         .logo_sitename{
             //border: 1px solid white;

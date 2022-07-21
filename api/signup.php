@@ -4,6 +4,7 @@
     header("Access-Control-Allow-Headers: Content-Type");
 
     require_once "connection.php";
+    require_once "testInput.php";
 
     $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : "Not Set";
 
@@ -75,13 +76,5 @@
             exit;
         }
         
-    }
-
-    function TestInput($data){
-        $data = stripslashes($data);
-        $data = trim($data);
-        $data = htmlspecialchars($data);
-
-        return $data;
     }
 ?>

@@ -50,6 +50,10 @@
                         <i class="fa fa-user"></i>
                         Your Profile
                     </div>
+                    <div class="dashboardOption mainDropdown_options">
+                        <i class="fa fa-house"></i>
+                        Dashboard
+                    </div>
                     <div class="activitiesOption mainDropdown_options">
                         <i class="fa fa-chart-line"></i>
                         Your Activities
@@ -58,11 +62,23 @@
                         <i class="fa fa-box-archive"></i>
                         Your Archives
                     </div>
+                    <div class="trashOption mainDropdown_options">
+                        <i class="fa fa-trash-can"></i>
+                        Trash Bin
+                    </div>
+                    <div class="starredOption mainDropdown_options">
+                        <i class="fa fa-star"></i>
+                        Starred Activities
+                    </div>
+                    <div class="completeOption mainDropdown_options">
+                        <i class="fa fa-square-check"></i>
+                        Completed
+                    </div>
+                    <hr>
                     <div class="settings mainDropdown_options">
                         <i class="fa fa-gear"></i>
                         Settings
                     </div>
-                    <hr>
                     <div class="signout mainDropdown_options">
                         <i class="fa fa-right-to-bracket"></i>
                         Sign Out
@@ -93,6 +109,21 @@
             <div class="archiveOption workarea_nav_options">
                 <i class="fa fa-box-archive"></i>
                 <p class="textArchive">Archives</p>
+            </div>
+
+            <div class="trashOption workarea_nav_options">
+                <i class="fa fa-trash-can"></i>
+                <p class="textTrash">Trash Bin</p>
+            </div>
+
+            <div class="starredOption workarea_nav_options">
+                <i class="fa fa-star"></i>
+                <p class="textStarred">Starred</p>
+            </div>
+
+            <div class="completeOption workarea_nav_options">
+                <i class="fa fa-square-check"></i>
+                <p class="textComplete">Completed</p>
             </div>
         </div>
         <div class="workarea_main">
