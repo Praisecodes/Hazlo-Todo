@@ -16,7 +16,7 @@
         $username = testInput($decoded["username"]);
         $activityTitle = testInput($decoded["activityTitle"]);
 
-        $sql = "SELECT * FROM activities WHERE username=? AND AcitivityTitle=?;";
+        $sql = "SELECT * FROM activities WHERE username=? AND ActivityTitle=?;";
 
         $stmt = $conn->prepare($sql);
         $stmt->bind_param('ss', $username, $activityTitle);
