@@ -23,5 +23,6 @@ CREATE TABLE activities(
     isArchived VARCHAR(100) NOT NULL,
     isStarred VARCHAR(100) NOT NULL,
     inTrash VARCHAR(100) NOT NULL,
-    isComplete VARCHAR(100) NOT NULL
+    isComplete VARCHAR(100) NOT NULL,
+    isDue VARCHAR(100) NOT NULL
 );
