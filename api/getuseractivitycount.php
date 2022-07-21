@@ -38,21 +38,143 @@
                             $data["ArchivedActivities"] = $isArchived_row["COUNT(ActivityTitle)"];
                         }
                         $isArchived_stmt->close();
-                        echo json_encode($data);
+                        $isDue_stmt = $conn->prepare($isDue_sql);
+                        $isDue_stmt->bind_param('s', $username);
+                        if($isDue_stmt->execute()){
+                            $isDue_result = $isDue_stmt->get_result();
+                            while($isDue_row = $isDue_result->fetch_assoc()){
+                                $data["ActivitiesDue"] = $isDue_row["COUNT(ActivityTitle)"];
+                            }
+                            $isDue_stmt->close();
+                            $complete_stmt = $conn->prepare($isComplete_sql);
+                            $complete_stmt->bind_param('s', $username);
+                            if($complete_stmt->execute()){
+                                $complete_result = $complete_stmt->get_result();
+                                if($complete_result->num_rows > 0){
+                                    while($complete_row = $complete_result->fetch_assoc()){
+                                        $data["ActivitiesCompleted"] = $complete_row["COUNT(ActivityTitle)"];
+                                    }
+                                    $complete_stmt->close();
+                                    $starred_stmt = $conn->prepare($isStarred_sql);
+                                    $starred_stmt->bind_param('s', $username);
+                                    if($starred_stmt->execute()){
+                                        $starred_result = $starred_stmt->get_result();
+                                        if($starred_result->num_rows > 0){
+                                            while($starred_row = $starred_result->fetch_assoc()){
+                                                $data["ActivitiesStarred"] = $row["COUNT(ActivityTitle)"];
+                                            }
+                                            $starred_stmt->close();
+                                            $unfinished_stmt = $conn->prepare($isNotComplete_sql);
+                                            $unfinished_stmt->bind_param('s', $username);
+                                            if($unfinished_stmt->execute()){
+                                                $unfinished_result = $unfinished_stmt->get_result();
+                                                if($unfinished_result->num_rows > 0){
+                                                    while($unfinished_row = $unfinished_result->fetch_assoc()){
+                                                        $data["ActivitiesUnfinished"] = $unfinished_row["COUNT(ActivityTitle)"];
+                                                    }
+                                                    $unfinished_stmt->close();
+                                                    $conn->close();
+                                                    http_response_code(200);
+                                                    echo json_encode($data);
+                                                }
+                                                else{
+                                                    echo json_encode([
+                                                        "No Data Returned(unfinished)"
+                                                    ]);
+                                                    $unfinished_stmt->close();
+                                                    $conn->close();
+                                                    http_response_code(500);
+                                                    exit;
+                                                }
+                                            }
+                                            else{
+                                                echo json_encode([
+                                                    "1x02unfiExecErr"
+                                                ]);
+                                                $unfinished_stmt->close();
+                                                $conn->close();
+                                                http_response_code(500);
+                                                exit;
+                                            }
+                                        }
+                                        else{
+                                            echo json_encode([
+                                                "No Data Returned(star)"
+                                            ]);
+                                            $starred_stmt->close();
+                                            $conn->close();
+                                            exit;
+                                        }
+                                    }
+                                    else{
+                                        echo json_encode([
+                                            "1x02starExecErr"
+                                        ]);
+                                        $starred_stmt->close();
+                                        $conn->close();
+                                        http_response_code(500);
+                                        exit;
+                                    }
+                                }
+                                else{
+                                    echo json_encode([
+                                        "No Data Returned(comp)"
+                                    ]);
+                                    http_response_code(200);
+                                    $complete_stmt->close();
+                                    $conn->close();
+                                    exit;
+                                }
+                            }
+                            else{
+                                echo json_encode([
+                                    "1x02compExecErr"
+                                ]);
+                                $complete_stmt->close();
+                                $conn->close();
+                                http_response_code(500);
+                                exit;
+                            }
+                        }
+                        else{
+                            echo json_encode([
+                                "1x02DueExecErr"
+                            ]);
+                            $isDue_stmt->close();
+                            $conn->close();
+                            http_response_code(500);
+                            exit;
+                        }
+                    }
+                    else{
+                        echo json_encode([
+                            "No Data Returned(arc)"
+                        ]);
+                        $isArchived_stmt->close();
+                        $conn->close();
+                        exit;
                     }
                 }
-                
+                else{
+                    echo json_encode([
+                        "1x02ArcExecErr"
+                    ]);
+                    $isArchived_stmt->close();
+                    $conn->close();
+                    http_response_code(500);
+                    exit;
+                }
             }
             else{
                 echo json_encode([
-                    "No Data Returned"
+                    "No Data Returned(All)"
                 ]);
                 http_response_code(200);
             }
         }
         else{
             echo json_encode([
-                "1x01ExecErr"
+                "1x01AllExecErr"
             ]);
             $all_stmt->close();
             $conn->close();
