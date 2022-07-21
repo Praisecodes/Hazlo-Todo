@@ -15,6 +15,11 @@
         $username = InputTesting($decoded["username"]);
 
         $all_sql = "SELECT COUNT(ActivityTitle) FROM activities WHERE username=?;";
+        $isArchived_sql = "SELECT COUNT(ActivityTitle) FROM activities WHERE username=? AND isArchived='true';";
+        $isDue_sql = "SELECT COUNT(ActivityTitle) FROM activities WHERE username=? AND isDue='true';";
+        $isComplete_sql = "SELECT COUNT(ActivityTitle) FROM activities WHERE username=? AND isComplete='true';";
+        $isStarred_sql = "SELECT COUNT(ActivityTitle) FROM activities WHERE username=? AND isStarred='true';";
+        $isNotComplete_sql = "SELECT COUNT(ActivityTitle) FROM activities WHERE username=? AND isComplete='false';";
         $all_stmt = $conn->prepare($all_sql);
         $all_stmt->bind_param('s', $username);
         if($all_stmt->execute()){
@@ -23,7 +28,19 @@
                 while($all_row = $all_result->fetch_assoc()){
                     $data["TotalActivities"] = $all_row["COUNT(ActivityTitle)"];
                 }
-                echo json_encode($data);
+                $all_stmt->close();
+                $isArchived_stmt = $conn->prepare($isArchived_sql);
+                $isArchived_stmt->bind_param('s', $username);
+                if($isArchived_stmt->execute()){
+                    $isArchived_result = $isArchived_stmt->get_result();
+                    if($isArchived_result->num_rows > 0){
+                        while($isArchived_row = $isArchived_result->fetch_assoc()){
+                            $data["ArchivedActivities"] = $isArchived_row["COUNT(ActivityTitle)"];
+                        }
+                        $isArchived_stmt->close();
+                        echo json_encode($data);
+                    }
+                }
                 
             }
             else{
