@@ -61,7 +61,7 @@
                                         $starred_result = $starred_stmt->get_result();
                                         if($starred_result->num_rows > 0){
                                             while($starred_row = $starred_result->fetch_assoc()){
-                                                $data["ActivitiesStarred"] = $row["COUNT(ActivityTitle)"];
+                                                $data["ActivitiesStarred"] = $starred_row["COUNT(ActivityTitle)"];
                                             }
                                             $starred_stmt->close();
                                             $unfinished_stmt = $conn->prepare($isNotComplete_sql);
