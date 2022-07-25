@@ -127,7 +127,9 @@
             </div>
         </div>
         <div class="workarea_main">
-
+            <div class="loader unshow">
+                <i class="fa fa-circle-radiation"></i>
+            </div>
         </div>
     </div>
 

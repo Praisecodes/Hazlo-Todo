@@ -9,8 +9,52 @@ const archiveOptions = document.querySelectorAll('.archiveOption');
 const trashOptions = document.querySelectorAll('.trashOption');
 const starredOptions = document.querySelectorAll('.starredOption');
 const completeOptions = document.querySelectorAll('.completeOption');
+const loader = document.querySelector('.loader');
 
 let currentTheme = localStorage.getItem('Hazlo_Theme');
+let usersFullname = null;
+
+function showLoader(){
+    loader.classList.add('show');
+    loader.classList.remove('unshow');
+}
+
+function unshowLoader(){
+    loader.classList.add('unshow');
+    loader.classList.remove('show');
+}
+
+function showSection(section){
+    switch (section) {
+        case 'dashboard':
+            showLoader();
+            break;
+
+        case 'activities':
+            showLoader();
+            break;
+
+        case 'archives':
+            showLoader();
+            break;
+
+        case 'trashbin':
+            showLoader();
+            break;
+
+        case 'starred':
+            showLoader();
+            break;
+
+        case 'completed':
+            showLoader();
+            break;
+    
+        default:
+            console.log('Error!! No section added');
+            break;
+    }
+}
 
 (function doFirst(){
     if(currentTheme == null){
@@ -44,6 +88,7 @@ let currentTheme = localStorage.getItem('Hazlo_Theme');
             .then((data)=>{
                 let {fullname, username, email} = data;
                 user_fullname.innerHTML = fullname;
+                usersFullname = fullname;
                 localStorage.removeItem('__hz_username');
             })
             .catch((error)=>{
@@ -134,24 +179,30 @@ function switchFocus(element1, element2, element3, element4, element5, element6)
 
 dashboardOptions.forEach((dashboardOption)=>{
     switchFocus(dashboardOption, activitiesOptions, archiveOptions, trashOptions, starredOptions, completeOptions);
+    showSection('dashboard');
 });
 
 activitiesOptions.forEach((activitiesOption)=>{
     switchFocus(activitiesOption, dashboardOptions, archiveOptions, trashOptions, starredOptions, completeOptions);
+    showSection('activites');
 });
 
 archiveOptions.forEach((archiveOption)=>{
     switchFocus(archiveOption, dashboardOptions, activitiesOptions, trashOptions, starredOptions, completeOptions);
+    showSection('archives');
 });
 
 trashOptions.forEach((trashOption)=>{
     switchFocus(trashOption, dashboardOptions, activitiesOptions, archiveOptions, starredOptions, completeOptions);
+    showSection('trashbin');
 });
 
 starredOptions.forEach((starredOption)=>{
     switchFocus(starredOption, dashboardOptions, activitiesOptions, trashOptions, archiveOptions, completeOptions);
+    showSection('starred');
 });
 
 completeOptions.forEach((completeOption)=>{
     switchFocus(completeOption, dashboardOptions, activitiesOptions, trashOptions, starredOptions, archiveOptions);
+    showSection('completed');
 });
