@@ -13,6 +13,7 @@ const loader = document.querySelector('.loader');
 
 let currentTheme = localStorage.getItem('Hazlo_Theme');
 let usersFullname = null;
+let users_username = null;
 
 function showLoader(){
     loader.classList.add('show');
@@ -28,10 +29,33 @@ function showSection(section){
     switch (section) {
         case 'dashboard':
             showLoader();
+            fetch('../api/getuseractivitycount.php', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    "username": users_username
+                })
+            })
+            .then(res=>res.json())
+            .then((data)=>{
+                if(data == "No Data Returned(All)"){
+                    console.log("No Data");
+                }
+                else{
+                    console.log(data);
+                    let {ActivitiesCompleted, ActivitiesDue, ActivitiesStarred, ActivitiesTrashed, ActivitiesUnfinished, ArchivedActivities, TotalActivities} = data;
+                    
+                    unshowLoader();
+                }
+            })
+            .catch((err)=>{console.log(err)});
             break;
 
         case 'activities':
             showLoader();
+            
             break;
 
         case 'archives':
@@ -66,6 +90,8 @@ function showSection(section){
         switchMode.innerHTML = `<i class="fa fa-sun"></i>`;
     }
 
+    showSection('dashboard');
+
     fetch("../api/rememberUser.php")
     .then(res=>res.json())
     .then((data)=>{
@@ -89,6 +115,7 @@ function showSection(section){
                 let {fullname, username, email} = data;
                 user_fullname.innerHTML = fullname;
                 usersFullname = fullname;
+                users_username = username;
                 localStorage.removeItem('__hz_username');
             })
             .catch((error)=>{
@@ -157,52 +184,62 @@ icon_dropdown.addEventListener('click', ()=>{
 });
 
 function switchFocus(element1, element2, element3, element4, element5, element6){
-    element1.addEventListener('click', ()=>{
-        element1.classList.add('active');
-        element2.forEach((ele2)=>{
-            ele2.classList.remove('active');
-        });
-        element3.forEach((ele3)=>{
-            ele3.classList.remove('active');
-        });
-        element4.forEach((ele4)=>{
-            ele4.classList.remove('active');
-        });
-        element5.forEach((ele5)=>{
-            ele5.classList.remove('active');
-        });
-        element6.forEach((ele6)=>{
-            ele6.classList.remove('active');
-        });
+    element1.classList.add('active');
+    element2.forEach((ele2)=>{
+        ele2.classList.remove('active');
+    });
+    element3.forEach((ele3)=>{
+        ele3.classList.remove('active');
+    });
+    element4.forEach((ele4)=>{
+        ele4.classList.remove('active');
+    });
+    element5.forEach((ele5)=>{
+        ele5.classList.remove('active');
+    });
+    element6.forEach((ele6)=>{
+        ele6.classList.remove('active');
     });
 }
 
 dashboardOptions.forEach((dashboardOption)=>{
-    switchFocus(dashboardOption, activitiesOptions, archiveOptions, trashOptions, starredOptions, completeOptions);
-    showSection('dashboard');
+    dashboardOption.addEventListener('click', ()=>{
+        switchFocus(dashboardOption, activitiesOptions, archiveOptions, trashOptions, starredOptions, completeOptions);
+        showSection('dashboard');
+    });
 });
 
 activitiesOptions.forEach((activitiesOption)=>{
-    switchFocus(activitiesOption, dashboardOptions, archiveOptions, trashOptions, starredOptions, completeOptions);
-    showSection('activites');
+    activitiesOption.addEventListener('click', ()=>{
+        switchFocus(activitiesOption, dashboardOptions, archiveOptions, trashOptions, starredOptions, completeOptions);
+        showSection('activities');
+    });
 });
 
 archiveOptions.forEach((archiveOption)=>{
-    switchFocus(archiveOption, dashboardOptions, activitiesOptions, trashOptions, starredOptions, completeOptions);
-    showSection('archives');
+    archiveOption.addEventListener('click', ()=>{
+        switchFocus(archiveOption, dashboardOptions, activitiesOptions, trashOptions, starredOptions, completeOptions);
+        showSection('archives');
+    });
 });
 
 trashOptions.forEach((trashOption)=>{
-    switchFocus(trashOption, dashboardOptions, activitiesOptions, archiveOptions, starredOptions, completeOptions);
-    showSection('trashbin');
+    trashOption.addEventListener('click', ()=>{
+        switchFocus(trashOption, dashboardOptions, activitiesOptions, archiveOptions, starredOptions, completeOptions);
+        showSection('trashbin');
+    })
 });
 
 starredOptions.forEach((starredOption)=>{
-    switchFocus(starredOption, dashboardOptions, activitiesOptions, trashOptions, archiveOptions, completeOptions);
-    showSection('starred');
+    starredOption.addEventListener('click', ()=>{
+        switchFocus(starredOption, dashboardOptions, activitiesOptions, trashOptions, archiveOptions, completeOptions);
+        showSection('starred');
+    })
 });
 
 completeOptions.forEach((completeOption)=>{
-    switchFocus(completeOption, dashboardOptions, activitiesOptions, trashOptions, starredOptions, archiveOptions);
-    showSection('completed');
+    completeOption.addEventListener('click', ()=>{
+        switchFocus(completeOption, dashboardOptions, activitiesOptions, trashOptions, starredOptions, archiveOptions);
+        showSection('completed');
+    })
 });

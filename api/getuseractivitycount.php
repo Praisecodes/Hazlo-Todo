@@ -20,6 +20,7 @@
         $isComplete_sql = "SELECT COUNT(ActivityTitle) FROM activities WHERE username=? AND isComplete='true';";
         $isStarred_sql = "SELECT COUNT(ActivityTitle) FROM activities WHERE username=? AND isStarred='true';";
         $isNotComplete_sql = "SELECT COUNT(ActivityTitle) FROM activities WHERE username=? AND isComplete='false';";
+        $isTrashed_sql = "SELECT COUNT(ActivityTitle) FROM activities WHERE username=? AND inTrash='true'";
         $all_stmt = $conn->prepare($all_sql);
         $all_stmt->bind_param('s', $username);
         if($all_stmt->execute()){
@@ -73,9 +74,40 @@
                                                         $data["ActivitiesUnfinished"] = $unfinished_row["COUNT(ActivityTitle)"];
                                                     }
                                                     $unfinished_stmt->close();
-                                                    $conn->close();
                                                     http_response_code(200);
-                                                    echo json_encode($data);
+                                                    $trash_stmt = $conn->prepare($isTrashed_sql);
+                                                    $trash_stmt->bind_param('s', $username);
+                                                    if($trash_stmt->execute()){
+                                                        $trash_result = $trash_stmt->get_result();
+                                                        if($trash_result->num_rows > 0){
+                                                            while($trash_row = $trash_result->fetch_assoc()){
+                                                                $data["ActivitiesTrashed"] = $trash_row["COUNT(ActivityTitle)"];
+                                                            }
+                                                            $trash_stmt->close();
+                                                            $conn->close();
+                                                            http_response_code(200);
+                                                            echo json_encode($data);
+                                                            exit;
+                                                        }
+                                                        else{
+                                                            echo json_encode([
+                                                                "No Data Returned(Trash)"
+                                                            ]);
+                                                            $trash_stmt->close();
+                                                            $conn->close();
+                                                            http_response_code(200);
+                                                            exit;
+                                                        }
+                                                    }
+                                                    else{
+                                                        echo json_encode([
+                                                            "1x02trashExecErr"
+                                                        ]);
+                                                        http_response_code(500);
+                                                        $trash_stmt->close();
+                                                        $conn->close();
+                                                        exit;
+                                                    }
                                                 }
                                                 else{
                                                     echo json_encode([
@@ -170,6 +202,9 @@
                     "No Data Returned(All)"
                 ]);
                 http_response_code(200);
+                $all_stmt->close();
+                $conn->close();
+                exit;
             }
         }
         else{
