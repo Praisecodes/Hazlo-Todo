@@ -10,6 +10,8 @@
     --darkModeLight: #303a49;
     --hoverInDark: #424b58;
     --activeLight: #3f4857;
+    --cardColor: #eeeeee55;
+    --cardColorDark: #303a49aa  ;
 }
 
 *{
@@ -25,6 +27,38 @@
 
 .addShadow{
     box-shadow: 0 0 2px 1px rgba(20, 20, 20, 0.1);
+}
+
+.due{
+    color: #da1111;
+}
+
+.shine{
+    color: #f3f310;
+}
+
+.complete{
+    color: #14d614;
+}
+
+.violet{
+    color: #612dda;
+}
+
+.orange{
+    color: #d89c2b;
+}
+
+.cyan{
+    color: #3bd67c;
+}
+
+.general{
+    color: #2c70ee;
+}
+
+.star{
+    color: #dada14;
 }
 
 .noShadow{
@@ -128,11 +162,15 @@
                 }
             }
         }
-        // .workarea_main{
-        //     .loader{
-        //         background-color: #333;
-        //     }
-        // }
+        .workarea_main{
+            .dashBoardContainer{
+                .cards{
+                    .dashboard_cards{
+                        background-color: var(--cardColorDark);
+                    }
+                }
+            }
+        }
     }
 }
 

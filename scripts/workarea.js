@@ -10,10 +10,11 @@ const trashOptions = document.querySelectorAll('.trashOption');
 const starredOptions = document.querySelectorAll('.starredOption');
 const completeOptions = document.querySelectorAll('.completeOption');
 const loader = document.querySelector('.loader');
+const workarea_main = document.querySelector('.workarea_main');
 
 let currentTheme = localStorage.getItem('Hazlo_Theme');
-let usersFullname = null;
-let users_username = null;
+var usersFullname;
+let users_username = "";
 
 function showLoader(){
     loader.classList.add('show');
@@ -25,61 +26,6 @@ function unshowLoader(){
     loader.classList.remove('show');
 }
 
-function showSection(section){
-    switch (section) {
-        case 'dashboard':
-            showLoader();
-            fetch('../api/getuseractivitycount.php', {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    "username": users_username
-                })
-            })
-            .then(res=>res.json())
-            .then((data)=>{
-                if(data == "No Data Returned(All)"){
-                    console.log("No Data");
-                }
-                else{
-                    console.log(data);
-                    let {ActivitiesCompleted, ActivitiesDue, ActivitiesStarred, ActivitiesTrashed, ActivitiesUnfinished, ArchivedActivities, TotalActivities} = data;
-                    
-                    unshowLoader();
-                }
-            })
-            .catch((err)=>{console.log(err)});
-            break;
-
-        case 'activities':
-            showLoader();
-            
-            break;
-
-        case 'archives':
-            showLoader();
-            break;
-
-        case 'trashbin':
-            showLoader();
-            break;
-
-        case 'starred':
-            showLoader();
-            break;
-
-        case 'completed':
-            showLoader();
-            break;
-    
-        default:
-            console.log('Error!! No section added');
-            break;
-    }
-}
-
 (function doFirst(){
     if(currentTheme == null){
         document.body.classList.remove("darkMode");
@@ -89,8 +35,6 @@ function showSection(section){
         document.body.classList.add("darkMode");
         switchMode.innerHTML = `<i class="fa fa-sun"></i>`;
     }
-
-    showSection('dashboard');
 
     fetch("../api/rememberUser.php")
     .then(res=>res.json())
@@ -126,7 +70,121 @@ function showSection(section){
     .catch((error)=>{
         console.log(error);
     });
+    showLoader();
 })()
+
+function showSection(section){
+    switch (section) {
+        case 'dashboard':
+            showLoader();
+            fetch('../api/getuseractivitycount.php', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    "username": users_username
+                })
+            })
+            .then(res=>res.json())
+            .then((data)=>{
+                if(data == "No Data Returned(All)"){
+                    console.log("No Data");
+                }
+                else{
+                    let {ActivitiesCompleted, ActivitiesDue, ActivitiesStarred, ActivitiesTrashed, ActivitiesUnfinished, ArchivedActivities, TotalActivities} = data;
+                    let mainDashboard = `<div class="dashBoardContainer">
+                                            <div class="welcome">
+                                                <p class="welcome_bold">
+                                                    Hello there, ${usersFullname}
+                                                </p>
+                                                <p class="welcome_small">
+                                                    View Your Activity Stats Below <i class="fa fa-arrow-down general"></i>
+                                                </p>
+                                            </div>
+                                            <div class="cards">
+                                                <div class="dashboard_cards totalActivities general">
+                                                    <i class="fa fa-calendar"></i>
+                                                    <h1 class="count">${TotalActivities}</h1>
+                                                    <p class="tag">Total Activities</p>
+                                                </div>
+
+                                                <div class="dashboard_cards activitiesDueToday due">
+                                                    <i class="fa fa-hourglass-end"></i>
+                                                    <h1 class="count">${ActivitiesDue}</h1>
+                                                    <p class="tag">Activities Due Today</p>
+                                                </div>
+
+                                                <div class="dashboard_cards totalActivitiesCompleted complete">
+                                                    <i class="fa fa-circle-check"></i>
+                                                    <h1 class="count">${ActivitiesCompleted}</h1>
+                                                    <p class="tag">Total Activities Completed</p>
+                                                </div>
+
+                                                <div class="dashboard_cards ArchivedActivities violet">
+                                                    <i class="fa fa-box-archive"></i>
+                                                    <h1 class="count">${ArchivedActivities}</h1>
+                                                    <p class="tag">Archived Activities</p>
+                                                </div>
+
+                                                <div class="dashboard_cards ActivitiesUnfinished orange">
+                                                    <i class="fa fa-clock"></i>
+                                                    <h1 class="count">${ActivitiesUnfinished}</h1>
+                                                    <p class="tag">Activities Unfinished</p>
+                                                </div>
+
+                                                <div class="dashboard_cards trashedActivities cyan">
+                                                    <i class="fa fa-trash-can"></i>
+                                                    <h1 class="count">${ActivitiesTrashed}</h1>
+                                                    <p class="tag">Trashed Activities</p>
+                                                </div>
+
+                                                <div class="dashboard_cards starredActivities star">
+                                                    <i class="fa fa-star shine"></i>
+                                                    <h1 class="count">${ActivitiesStarred}</h1>
+                                                    <p class="tag">Starred Activities</p>
+                                                </div>
+                                            </div>
+                                        </div>`;
+
+                    workarea_main.innerHTML = mainDashboard;
+                    
+                    unshowLoader();
+                }
+            })
+            .catch((err)=>{console.log(err)});
+            break;
+
+        case 'activities':
+            showLoader();
+            
+            break;
+
+        case 'archives':
+            showLoader();
+            break;
+
+        case 'trashbin':
+            showLoader();
+            break;
+
+        case 'starred':
+            showLoader();
+            break;
+
+        case 'completed':
+            showLoader();
+            break;
+    
+        default:
+            console.log('Error!! No section added');
+            break;
+    }
+}
+
+window.onload = () =>{
+    showSection('dashboard');
+}
 
 switchMode.addEventListener('click', (e)=>{
     if(currentTheme == null){

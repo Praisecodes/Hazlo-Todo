@@ -132,6 +132,7 @@
                 overflow: hidden;
                 font-size: 15px;
                 transition: .3s;
+                z-index: 1000;
                 .mainDropdown_options{
                     width: 12rem;
                     height: 20px;
@@ -217,6 +218,7 @@
     .workarea_main{
         width: 80vw;
         height: 100%;
+        overflow: hidden;
         .loader{
             width: 100%;
             height: 100%;
@@ -227,6 +229,63 @@
             i{
                 font-size: 90px;
                 animation: spin .7s infinite;
+            }
+        }
+
+        .dashBoardContainer{
+            width: 100%;
+            height: 100%;
+            // display: flex;
+            // flex-direction: column;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            .welcome{
+                width: fit-content;
+                margin: 1% 2.5%;
+                .welcome_bold{
+                    font-size: 25px;
+                }
+                .welcome_small{
+                    font-size: 14px;
+                }
+            }
+
+            .cards{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                .dashboard_cards{
+                    position: relative;
+                    width: 19rem;
+                    height: 14rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 2% 1%;
+                    background-color: var(--cardColor);
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: .3s;
+                    i{
+                        position: absolute;
+                        top: 3%;
+                        right: 3%;
+                        font-size: 16px;
+                    }
+                    &:hover{
+                        transform: scale(102%);
+                    }
+                    .count{
+                        font-size: 100px;
+                    }
+                    .tag{
+                        position: absolute;
+                        bottom: 3px;
+                        font-size: 16px;
+                    }
+                }
             }
         }
     }
