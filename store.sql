@@ -26,3 +26,11 @@ CREATE TABLE activities(
     isComplete VARCHAR(100) NOT NULL,
     isDue VARCHAR(100) NOT NULL
 );
+
+CREATE TABLE user_info(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    fullname TEXT NOT NULL,
+    username TEXT NOT NULL,
+    email TEXT NOT NULL,
+    user_password TEXT NOT NULL
+);
