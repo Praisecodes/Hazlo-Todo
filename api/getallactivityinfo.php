@@ -9,6 +9,7 @@
     $username = null;
     $dataArr = array();
     $i = 0;
+    $falsee = 'false';
 
     if($content_type === "application/json"){
         $content = trim(file_get_contents("php://input"));
@@ -18,7 +19,7 @@
         $username = testInput($decoded["username"]);
         $sql = "SELECT * FROM activities WHERE username=? AND isComplete=? AND isArchived=? AND isStarred=? AND inTrash=?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param('sssss', $username, 'false', 'false', 'false', 'false');
+        $stmt->bind_param('sssss', $username, $falsee, $falsee, $falsee, $falsee);
         if($stmt->execute()){
             $result = $stmt->get_result();
             switch($result->num_rows){
