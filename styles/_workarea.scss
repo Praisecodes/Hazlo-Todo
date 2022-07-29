@@ -297,5 +297,19 @@
                 }
             }
         }
+        .activitiesContainer{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            .activityNull{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #888888aa;
+            }
+        }
     }
 }

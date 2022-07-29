@@ -837,6 +837,20 @@ body {
   bottom: 3px;
   font-size: 16px;
 }
+.workarea_container .workarea_main .activitiesContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.workarea_container .workarea_main .activitiesContainer .activityNull {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(136, 136, 136, 0.6666666667);
+}
 
 .container_login {
   background-color: var(--mainColor);

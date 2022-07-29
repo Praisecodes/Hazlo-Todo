@@ -168,7 +168,12 @@ function showSection(section){
             })
             .then(res=>res.json())
             .then((data)=>{
-                console.log(data);
+                let activitiesContainerHtml  = `<div class="activitiesContainer"></div>`;
+                workarea_main.innerHTML = activitiesContainerHtml;
+                const activitiesContainer = document.querySelector('.activitiesContainer');
+                if(data == "N/A"){
+                    activitiesContainer.innerHTML = `<h1 class="activityNull">You Don't Have Any Activities!</h1>`;
+                }
             })
             .catch((err)=>{console.log(err)});
             break;
