@@ -97,32 +97,32 @@
                 </p>
             </div>
             <div class="dashboardOption workarea_nav_options active">
-                <i class="fa fa-house"></i>
+                <i class="fa fa-house general"></i>
                 <p class="textDashboard">Dashboard</p>
             </div>
 
             <div class="activitiesOption workarea_nav_options">
-                <i class="fa fa-chart-line"></i>
+                <i class="fa fa-chart-line cyan"></i>
                 <p class="textActivities">Activities</p>
             </div>
 
             <div class="archiveOption workarea_nav_options">
-                <i class="fa fa-box-archive"></i>
+                <i class="fa fa-box-archive violet"></i>
                 <p class="textArchive">Archives</p>
             </div>
 
             <div class="trashOption workarea_nav_options">
-                <i class="fa fa-trash-can"></i>
+                <i class="fa fa-trash-can due"></i>
                 <p class="textTrash">Trash Bin</p>
             </div>
 
             <div class="starredOption workarea_nav_options">
-                <i class="fa fa-star"></i>
+                <i class="fa fa-star star"></i>
                 <p class="textStarred">Starred</p>
             </div>
 
             <div class="completeOption workarea_nav_options">
-                <i class="fa fa-square-check"></i>
+                <i class="fa fa-square-check complete"></i>
                 <p class="textComplete">Completed</p>
             </div>
         </div>
