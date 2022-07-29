@@ -99,11 +99,11 @@ function showSection(section){
                                                     Hello there, ${usersFullname}
                                                 </p>
                                                 <p class="welcome_small">
-                                                    View Your Activity Stats Below <i class="fa fa-arrow-down general"></i>
+                                                    View Your Activity Stats Below <i class="fa fa-arrow-down cyan"></i>
                                                 </p>
                                             </div>
                                             <div class="cards">
-                                                <div class="dashboard_cards totalActivities general">
+                                                <div class="dashboard_cards totalActivities cyan">
                                                     <i class="fa fa-calendar"></i>
                                                     <h1 class="count">${TotalActivities}</h1>
                                                     <p class="tag">Total Activities</p>
@@ -133,7 +133,7 @@ function showSection(section){
                                                     <p class="tag">Activities Unfinished</p>
                                                 </div>
 
-                                                <div class="dashboard_cards trashedActivities cyan">
+                                                <div class="dashboard_cards trashedActivities general">
                                                     <i class="fa fa-trash-can"></i>
                                                     <h1 class="count">${ActivitiesTrashed}</h1>
                                                     <p class="tag">Trashed Activities</p>
@@ -157,7 +157,20 @@ function showSection(section){
 
         case 'activities':
             showLoader();
-            
+            fetch('../api/getallactivityinfo.php', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    "username": users_username
+                })
+            })
+            .then(res=>res.json())
+            .then((data)=>{
+                console.log(data);
+            })
+            .catch((err)=>{console.log(err)});
             break;
 
         case 'archives':

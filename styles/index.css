@@ -778,6 +778,16 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
 }
+.workarea_container .workarea_main .dashBoardContainer::-webkit-scrollbar {
+  width: 5px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  display: block;
+}
+.workarea_container .workarea_main .dashBoardContainer::-webkit-scrollbar-thumb {
+  background-color: #888888;
+  border-radius: 50px;
+}
 .workarea_container .workarea_main .dashBoardContainer .welcome {
   width: -webkit-fit-content;
   width: -moz-fit-content;

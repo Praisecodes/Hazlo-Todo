@@ -239,6 +239,15 @@
             // flex-direction: column;
             overflow-x: hidden;
             overflow-y: scroll;
+            &::-webkit-scrollbar{
+                width: 5px;
+                transition: .3s;
+                display: block;
+            }
+            &::-webkit-scrollbar-thumb{
+                background-color: #888888;
+                border-radius: 50px;
+            }
             .welcome{
                 width: fit-content;
                 margin: 1% 2.5%;
