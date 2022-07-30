@@ -204,7 +204,7 @@ window.onload = () =>{
     showSection('dashboard');
 }
 
-switchMode.addEventListener('click', (e)=>{
+function switchScreenMode(){
     if(currentTheme == null){
         localStorage.setItem('Hazlo_Theme', 'Darkmode');
         currentTheme = localStorage.getItem('Hazlo_Theme');
@@ -217,6 +217,10 @@ switchMode.addEventListener('click', (e)=>{
         document.body.classList.remove("darkMode");
         switchMode.innerHTML = `<i class="fa fa-moon"></i>`;
     }
+}
+
+switchMode.addEventListener('click', (e)=>{
+    switchScreenMode();
 });
 
 var typer = new Typed("#workarea_motto_catchphrases", {
