@@ -331,14 +331,16 @@
                 flex-direction: column;
                 align-items: center;
                 .activityTitleInput{
-                    width: 40rem;
+                    width: 41.3rem;
                     height: 35px;
                     border: 1px solid var(--mainColor);
                     color: var(--mainColor);
+                    border-radius: 5px;
                     margin: 2% 0;
                     padding: 5px;
                     font-size: 18px;
                     outline: 0;
+                    background-color: transparent;
                 }
                 .chooseText{
                     font-size: 19px;
@@ -351,19 +353,31 @@
                         height: 2px;
                     }
                 }
-                .categoryButtons{
+                .category{
                     width: 40rem;
+                    height: 15px;
+                    padding: 15px;
                     display: flex;
-                    justify-content: center;
+                    justify-content: space-between;
                     align-items: center;
-                    margin: 0 0 1% 0;
+                    position: relative;
+                    cursor: pointer;
+                    border: 1px solid var(--mainColor);
+                    border-radius: 5px;
+                    margin-bottom: 2%;
+                    color: #444444dd;
                     .categories{
-                        margin: 1%;
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        width: 100%;
+                        overflow: hidden;
+                        background-color: white;
                     }
                 }
                 .activityPreviewBox{
-                    width: 30rem;
-                    height: 15rem;
+                    width: 40rem;
+                    height: 20rem;
                     border: 1px solid var(--mainColor);
                     margin: 0 0 1% 0;
                     border-radius: 10px;
@@ -395,7 +409,7 @@
                     cursor: pointer;
                 }
                 .activityNoteAreaDiv{
-                    width: 50rem;
+                    width: 41rem;
                     height: 20rem;
                     margin: 2% 0;
                     .activityNoteArea{

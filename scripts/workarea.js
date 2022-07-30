@@ -76,20 +76,39 @@ function unshowLoader(){
     showLoader();
 })()
 
+let optionsOpen = false;
+
+function dropDown(element){
+    if(optionsOpen == false){
+        element.classList.add('openByHeight');
+        element.classList.add('addShadow');
+        element.classList.remove('closeByHeight');
+        element.classList.remove('noShadow');
+        optionsOpen = true;
+    }
+    else{
+        element.classList.remove('openByHeight');
+        element.classList.remove('addShadow');
+        element.classList.add('closeByHeight');
+        element.classList.add('noShadow');
+        optionsOpen = false;
+    }
+}
+
 function addNewActivity(){
     let addActivityBoard = `<div class="addActivityBoard">
                                 <form class="addActivityForm">
                                     <input class="activityTitleInput" placeholder="Add A Title For Your Activity">
-                                    <label class="chooseText">Choose A Category</label>
-                                    <div class="categoryButtons">
-                                        <input type="checkbox" id="work" value="Work" class="categories"> 
-                                        <label for="work">Work</label>
-                                        <input type="checkbox" id="school" value="School" class="categories">
-                                        <label for="school">School</label>
-                                        <input type="checkbox" id="leisure" value="Leisure" class="categories">
-                                        <label for="leisure">Leisure</label>
-                                        <input type="checkbox" id="chore" value="Chore" class="categories">
-                                        <label for="chore">Chore</label>
+                                    <div class="category">
+                                        Choose A Category
+                                        <i class="fa fa-angle-down"></i>
+
+                                        <div class="categories closeByHeight">
+                                            <div class="work categories_main">Work</div>
+                                            <div class="school categories_main">School</div>
+                                            <div class="leisure categories_main">Leisure</div>
+                                            <div class="hobby categories_main">Hobby</div>
+                                        </div>
                                     </div>
                                     <div class="activityPreviewBox">
                                         <img src="" alt="Activity Image">
@@ -233,18 +252,6 @@ function showSection(section){
     }
 }
 
-function uncheck(el1, el2, el3){
-    if(el1.checked != false){
-        el1.checked = false;
-    }
-    else if(el2.checked != false){
-        el2.checked = false;
-    }
-    else{
-        el3.checked = false;
-    }
-}
-
 window.onload = () =>{
     showSection('dashboard');
 }
@@ -289,23 +296,8 @@ signout.addEventListener('click', (e)=>{
     })
 });
 
-let optionsOpen = false;
-
 icon_dropdown.addEventListener('click', ()=>{
-    if(optionsOpen == false){
-        mainDropdown.classList.add('openByHeight');
-        mainDropdown.classList.add('addShadow');
-        mainDropdown.classList.remove('closeByHeight');
-        mainDropdown.classList.remove('noShadow');
-        optionsOpen = true;
-    }
-    else{
-        mainDropdown.classList.remove('openByHeight');
-        mainDropdown.classList.remove('addShadow');
-        mainDropdown.classList.add('closeByHeight');
-        mainDropdown.classList.add('noShadow');
-        optionsOpen = false;
-    }
+    dropDown(mainDropdown);
 });
 
 function switchFocus(element1, element2, element3, element4, element5, element6){
@@ -372,30 +364,10 @@ completeOptions.forEach((completeOption)=>{
 addActivity.addEventListener('click', ()=>{
     addNewActivity();
 
-    const workCat = document.getElementById('work');
-    const schoolCat = document.getElementById('school');
-    const leisureCat = document.getElementById('leisure');
-    const choreCat = document.getElementById('chore');
-    const activityImageLabel = document.querySelector('.activityImageLabel');
+    const category = document.querySelector('.category');
+    const categories = document.querySelector('.categories');
 
-    activityImageLabel.addEventListener('click', ()=>{
-        if(workCat.checked){
-            chosenCategory = "work";
-            uncheck(schoolCat, leisureCat, choreCat);
-        }
-        else if(schoolCat.checked){
-            chosenCategory = "school";
-            uncheck(workCat, leisureCat, choreCat);
-        }
-        else if(leisureCat.checked){
-            chosenCategory = "leisure";
-            uncheck(workCat, schoolCat, choreCat);
-        }
-        else{
-            chosenCategory = "chore";
-            uncheck(workCat, schoolCat, leisureCat);
-        }
-        console.log(chosenCategory);
-
+    category.addEventListener('click', ()=>{
+        dropDown(categories);
     })
 });
