@@ -202,6 +202,12 @@
 .darkMode .workarea_container .workarea_main .addActivityBoard .addActivityForm .activityTitleInput::placeholder, .darkMode .workarea_container .workarea_main .addActivityBoard .addActivityForm .activityNoteAreaDiv .activityNoteArea::placeholder {
   color: #888;
 }
+.darkMode .workarea_container .workarea_main .addActivityBoard .addActivityForm .category .categories {
+  background-color: var(--darkModeLight);
+}
+.darkMode .workarea_container .workarea_main .addActivityBoard .addActivityForm .category .categories .categories_main:hover {
+  background-color: var(--hoverInDark);
+}
 
 body {
   font-size: 16px;

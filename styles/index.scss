@@ -181,6 +181,16 @@
                             color: #888;
                         }
                     }
+                    .category{
+                        .categories{
+                            background-color: var(--darkModeLight);
+                            .categories_main{
+                                &:hover{
+                                    background-color: var(--hoverInDark);
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
