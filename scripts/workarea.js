@@ -396,7 +396,6 @@ addActivity.addEventListener('click', ()=>{
     });
 
     activityImageLabel.addEventListener('click', (e)=>{
-        showImageLoader();
         if(activityTitleInput.value == ""){
             e.preventDefault();
             console.log("Add A Title Please");
@@ -407,7 +406,32 @@ addActivity.addEventListener('click', ()=>{
         const file = this.files[0];
 
         if(file){
-            console.log(file);
+            showImageLoader();
+            let formData = new FormData();
+            formData.append('activityImage', file);
+
+            fetch("../api/uploadactivityimage.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(res=>res.text())
+            .then((data)=>{
+                switch(data){
+                    case "Failed":
+                        break;
+                    case "1x02Size":
+                        break;
+                    case "1x01Err":
+                        break;
+                    default:
+                        const reader = new FileReader();
+                        reader.readAsDataURL(file);
+                        reader.addEventListener('load', function(){
+                            activityPreviewBox.innerHTML = `<img src="${this.result}" alt="Activity Image">`;
+                        });
+                }
+            })
+            .catch((err)=>{console.log(err)});
         }
         else{
             console.log("No file");
