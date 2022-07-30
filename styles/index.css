@@ -916,6 +916,16 @@ body {
   overflow: hidden;
   background-color: white;
 }
+.workarea_container .workarea_main .addActivityBoard .addActivityForm .category .categories .categories_main {
+  padding: 15px;
+  font-size: 16px;
+  height: 20px;
+  width: 100%;
+  transition: 0.3s;
+}
+.workarea_container .workarea_main .addActivityBoard .addActivityForm .category .categories .categories_main:hover {
+  background-color: #dddddd;
+}
 .workarea_container .workarea_main .addActivityBoard .addActivityForm .activityPreviewBox {
   width: 40rem;
   height: 20rem;
