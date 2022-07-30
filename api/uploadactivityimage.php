@@ -1,6 +1,6 @@
 
 <?php
-    $targetDir = "http://hazlotodo.herokuapp.com/activityimages/";
+    $targetDir = "https://hazlotodo.herokuapp.com/activityimages/";
     // $targetDir = "C:\\xampp\\htdocs\\hazlo\\activityimages\\";
     
     
