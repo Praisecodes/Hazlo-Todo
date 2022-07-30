@@ -100,7 +100,7 @@ function addNewActivity(){
                                 <form class="addActivityForm">
                                     <input class="activityTitleInput" placeholder="Add A Title For Your Activity">
                                     <div class="category">
-                                        Choose A Category
+                                        <p class="chooseACat">Choose A Category</p>
                                         <i class="fa fa-angle-down"></i>
 
                                         <div class="categories closeByHeight">
@@ -111,7 +111,6 @@ function addNewActivity(){
                                         </div>
                                     </div>
                                     <div class="activityPreviewBox">
-                                        <img src="" alt="Activity Image">
                                         <i class="fa fa-camera"></i>
                                     </div>
                                     <input type="file" class="activityImage" id="activityImage">
@@ -366,8 +365,53 @@ addActivity.addEventListener('click', ()=>{
 
     const category = document.querySelector('.category');
     const categories = document.querySelector('.categories');
+    const chooseACat = document.querySelector('.chooseACat');
+    const categories_main = document.querySelectorAll('.categories_main');
+    const activityImage = document.getElementById('activityImage');
+    const activityTitleInput = document.querySelector('.activityTitleInput');
+    const activityImageLabel = document.querySelector('.activityImageLabel');
+    const activityPreviewBox = document.querySelector('.activityPreviewBox');
+
+    function showImageLoader(){
+        let imageLoader = `<div class="loading">
+                                <i class="fa fa-spinner"></i>
+                           </div>`;
+
+        activityPreviewBox.innerHTML = imageLoader;
+    }
+
+    activityTitleInput.addEventListener('keyup', ()=>{
+        document.cookie = `__hz_activity-title=${activityTitleInput.value}; path=/`;
+    });
 
     category.addEventListener('click', ()=>{
         dropDown(categories);
-    })
+    });
+
+    categories_main.forEach((category_main)=>{
+        category_main.addEventListener('click', ()=>{
+            chooseACat.innerHTML = category_main.innerHTML;
+            chosenCategory = category_main.innerHTML;
+        });
+    });
+
+    activityImageLabel.addEventListener('click', (e)=>{
+        showImageLoader();
+        if(activityTitleInput.value == ""){
+            e.preventDefault();
+            console.log("Add A Title Please");
+        }
+    });
+
+    activityImage.addEventListener("change", function(){
+        const file = this.files[0];
+
+        if(file){
+            console.log(file);
+        }
+        else{
+            console.log("No file");
+        }
+    });
+
 });

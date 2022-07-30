@@ -1,6 +1,7 @@
 
 <?php
-    $targetDir = "../activityimages/";
+    // $targetDir = "../activityimages/";
+    $targetDir = "C:\\xampp\\htdocs\\hazlo\\activityimages\\";
     
     
     $fileName = $_FILES["activityImage"]["name"];
@@ -14,7 +15,7 @@
             $NewFileName = $_COOKIE['__hz_username'] . "_" . $_COOKIE["__hz_activity-title"] . "." . $fileExtension;
             $finalPath = $targetDir . $NewFileName;
             if(move_uploaded_file($fileTempLocation, $finalPath)){
-                echo "Success";
+                echo $finalPath;
             }
             else{
                 echo "Failed";
