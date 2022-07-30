@@ -11,10 +11,13 @@ const starredOptions = document.querySelectorAll('.starredOption');
 const completeOptions = document.querySelectorAll('.completeOption');
 const loader = document.querySelector('.loader');
 const workarea_main = document.querySelector('.workarea_main');
+const addActivity = document.querySelector('.addActivity');
+
 
 let currentTheme = localStorage.getItem('Hazlo_Theme');
 var usersFullname;
 let users_username = "";
+let chosenCategory;
 
 function showLoader(){
     loader.classList.add('show');
@@ -72,6 +75,36 @@ function unshowLoader(){
     });
     showLoader();
 })()
+
+function addNewActivity(){
+    let addActivityBoard = `<div class="addActivityBoard">
+                                <form class="addActivityForm">
+                                    <input class="activityTitleInput" placeholder="Add A Title For Your Activity">
+                                    <label class="chooseText">Choose A Category</label>
+                                    <div class="categoryButtons">
+                                        <input type="checkbox" id="work" value="Work" class="categories"> 
+                                        <label for="work">Work</label>
+                                        <input type="checkbox" id="school" value="School" class="categories">
+                                        <label for="school">School</label>
+                                        <input type="checkbox" id="leisure" value="Leisure" class="categories">
+                                        <label for="leisure">Leisure</label>
+                                        <input type="checkbox" id="chore" value="Chore" class="categories">
+                                        <label for="chore">Chore</label>
+                                    </div>
+                                    <div class="activityPreviewBox">
+                                        <img src="" alt="Activity Image">
+                                        <i class="fa fa-camera"></i>
+                                    </div>
+                                    <input type="file" class="activityImage" id="activityImage">
+                                    <label for="activityImage" class="activityImageLabel">Upload Activity Image</label>
+                                    <div class="activityNoteAreaDiv">
+                                        <textarea class="activityNoteArea" placeholder="Add A descriptive Note For Your Activity"></textarea>
+                                    </div>
+                                    
+                                </form>
+                            </div>`;
+    workarea_main.innerHTML = addActivityBoard;
+}
 
 function showSection(section){
     switch (section) {
@@ -200,6 +233,18 @@ function showSection(section){
     }
 }
 
+function uncheck(el1, el2, el3){
+    if(el1.checked != false){
+        el1.checked = false;
+    }
+    else if(el2.checked != false){
+        el2.checked = false;
+    }
+    else{
+        el3.checked = false;
+    }
+}
+
 window.onload = () =>{
     showSection('dashboard');
 }
@@ -321,5 +366,36 @@ completeOptions.forEach((completeOption)=>{
     completeOption.addEventListener('click', ()=>{
         switchFocus(completeOption, dashboardOptions, activitiesOptions, trashOptions, starredOptions, archiveOptions);
         showSection('completed');
+    })
+});
+
+addActivity.addEventListener('click', ()=>{
+    addNewActivity();
+
+    const workCat = document.getElementById('work');
+    const schoolCat = document.getElementById('school');
+    const leisureCat = document.getElementById('leisure');
+    const choreCat = document.getElementById('chore');
+    const activityImageLabel = document.querySelector('.activityImageLabel');
+
+    activityImageLabel.addEventListener('click', ()=>{
+        if(workCat.checked){
+            chosenCategory = "work";
+            uncheck(schoolCat, leisureCat, choreCat);
+        }
+        else if(schoolCat.checked){
+            chosenCategory = "school";
+            uncheck(workCat, leisureCat, choreCat);
+        }
+        else if(leisureCat.checked){
+            chosenCategory = "leisure";
+            uncheck(workCat, schoolCat, choreCat);
+        }
+        else{
+            chosenCategory = "chore";
+            uncheck(workCat, schoolCat, leisureCat);
+        }
+        console.log(chosenCategory);
+
     })
 });
