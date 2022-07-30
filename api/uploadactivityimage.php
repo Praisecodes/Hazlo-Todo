@@ -1,7 +1,7 @@
 
 <?php
-    // $targetDir = "../activityimages/";
-    $targetDir = "C:\\xampp\\htdocs\\hazlo\\activityimages\\";
+    $targetDir = "http://hazlotodo.herokuapp.com/activityimages/";
+    // $targetDir = "C:\\xampp\\htdocs\\hazlo\\activityimages\\";
     
     
     $fileName = $_FILES["activityImage"]["name"];
