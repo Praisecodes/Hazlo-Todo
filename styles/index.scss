@@ -170,6 +170,19 @@
                     }
                 }
             }
+            .addActivityBoard{
+                .addActivityForm{
+                    .activityTitleInput, .category, .activityPreviewBox, .activityNoteAreaDiv .activityNoteArea{
+                        border: 1px solid white;
+                        color: white;
+                    }
+                    .activityTitleInput, .activityNoteAreaDiv .activityNoteArea{
+                        &::placeholder{
+                            color: #888;
+                        }
+                    }
+                }
+            }
         }
     }
 }

@@ -189,6 +189,19 @@
 .darkMode .workarea_container .workarea_main .dashBoardContainer .cards .dashboard_cards {
   background-color: var(--cardColorDark);
 }
+.darkMode .workarea_container .workarea_main .addActivityBoard .addActivityForm .activityTitleInput, .darkMode .workarea_container .workarea_main .addActivityBoard .addActivityForm .category, .darkMode .workarea_container .workarea_main .addActivityBoard .addActivityForm .activityPreviewBox, .darkMode .workarea_container .workarea_main .addActivityBoard .addActivityForm .activityNoteAreaDiv .activityNoteArea {
+  border: 1px solid white;
+  color: white;
+}
+.darkMode .workarea_container .workarea_main .addActivityBoard .addActivityForm .activityTitleInput::-moz-placeholder, .darkMode .workarea_container .workarea_main .addActivityBoard .addActivityForm .activityNoteAreaDiv .activityNoteArea::-moz-placeholder {
+  color: #888;
+}
+.darkMode .workarea_container .workarea_main .addActivityBoard .addActivityForm .activityTitleInput:-ms-input-placeholder, .darkMode .workarea_container .workarea_main .addActivityBoard .addActivityForm .activityNoteAreaDiv .activityNoteArea:-ms-input-placeholder {
+  color: #888;
+}
+.darkMode .workarea_container .workarea_main .addActivityBoard .addActivityForm .activityTitleInput::placeholder, .darkMode .workarea_container .workarea_main .addActivityBoard .addActivityForm .activityNoteAreaDiv .activityNoteArea::placeholder {
+  color: #888;
+}
 
 body {
   font-size: 16px;
@@ -975,6 +988,7 @@ body {
   font-size: 14px;
   padding: 10px;
   font-family: "Poppins";
+  background-color: transparent;
 }
 
 .container_login {
