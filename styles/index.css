@@ -1016,6 +1016,29 @@ body {
   font-family: "Poppins";
   background-color: transparent;
 }
+.workarea_container .workarea_main .addActivityBoard .addActivityForm .actionButtons {
+  width: 13rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1% 0;
+}
+.workarea_container .workarea_main .addActivityBoard .addActivityForm .actionButtons .cancleActivity, .workarea_container .workarea_main .addActivityBoard .addActivityForm .actionButtons .createActivity {
+  padding: 10px;
+  font-size: 17px;
+  outline: 0;
+  cursor: pointer;
+  font-family: "Poppins";
+  color: white;
+}
+.workarea_container .workarea_main .addActivityBoard .addActivityForm .actionButtons .cancleActivity {
+  border: 1px solid var(--darkModeLight);
+  background-color: var(--darkModeLight);
+}
+.workarea_container .workarea_main .addActivityBoard .addActivityForm .actionButtons .createActivity {
+  background-color: var(--callToAction);
+  border: 1px solid var(--callToAction);
+}
 
 .container_login {
   background-color: var(--mainColor);

@@ -451,6 +451,29 @@
                         background-color: transparent;
                     }
                 }
+                .actionButtons{
+                    width: 13rem;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    margin: 1% 0;
+                    .cancleActivity, .createActivity{
+                        padding: 10px;
+                        font-size: 17px;
+                        outline: 0;
+                        cursor: pointer;
+                        font-family: "Poppins";
+                        color: white;
+                    }
+                    .cancleActivity{
+                        border: 1px solid var(--darkModeLight);
+                        background-color: var(--darkModeLight);
+                    }
+                    .createActivity{
+                        background-color: var(--callToAction);
+                        border: 1px solid var(--callToAction);
+                    }
+                }
             }
         }
     }

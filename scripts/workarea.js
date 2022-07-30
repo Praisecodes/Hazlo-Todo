@@ -118,7 +118,10 @@ function addNewActivity(){
                                     <div class="activityNoteAreaDiv">
                                         <textarea class="activityNoteArea" placeholder="Add A descriptive Note For Your Activity"></textarea>
                                     </div>
-                                    
+                                    <div class="actionButtons">
+                                        <button class="cancleActivity">Cancle</button>
+                                        <button class="createActivity">Create</button>
+                                    </div>
                                 </form>
                             </div>`;
     workarea_main.innerHTML = addActivityBoard;
