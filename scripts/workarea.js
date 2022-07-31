@@ -383,9 +383,9 @@ addActivity.addEventListener('click', ()=>{
         activityPreviewBox.innerHTML = imageLoader;
     }
 
-    activityTitleInput.addEventListener('keyup', ()=>{
-        document.cookie = `__hz_activity-title=${activityTitleInput.value}; path=/`;
-    });
+    // activityTitleInput.addEventListener('keyup', ()=>{
+        
+    // });
 
     category.addEventListener('click', ()=>{
         dropDown(categories);
@@ -402,6 +402,25 @@ addActivity.addEventListener('click', ()=>{
         if(activityTitleInput.value == ""){
             e.preventDefault();
             console.log("Add A Title Please");
+        }
+        else{
+            document.cookie = `__hz_activity-title=${activityTitleInput.value}; path=/`;
+            fetch("../api/deleteactivityimage.php")
+            .then(res=>res.text())
+            .then((data)=>{
+                switch(data){
+                    case "success":
+                        console.log("Success Message");
+                        break;
+                    default:
+                        console.log(data);
+                        e.preventDefault();
+                        break;
+                }
+            })
+            .catch((err)=>{
+                console.log(err);
+            });
         }
     });
 
@@ -421,12 +440,16 @@ addActivity.addEventListener('click', ()=>{
             .then((data)=>{
                 switch(data){
                     case "Failed":
+                        console.log(data);
                         break;
                     case "1x02Size":
+                        console.log("Too Big");
                         break;
                     case "1x01Err":
+                        console.log(data);
                         break;
                     default:
+                        document.cookie = `__hz_already-storedImage=${data}; path=/`;
                         const reader = new FileReader();
                         reader.readAsDataURL(file);
                         reader.addEventListener('load', function(){
