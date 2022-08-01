@@ -953,6 +953,31 @@ body {
 .workarea_container .workarea_main .addActivityBoard .addActivityForm .category .categories .categories_main:hover {
   background-color: #dddddd;
 }
+.workarea_container .workarea_main .addActivityBoard .addActivityForm .timeDiv {
+  display: flex;
+  justify-content: space-around;
+  width: 35rem;
+  padding: 10px;
+  align-items: center;
+  background-color: transparent;
+  margin-bottom: 17px;
+}
+.workarea_container .workarea_main .addActivityBoard .addActivityForm .timeDiv .startDate, .workarea_container .workarea_main .addActivityBoard .addActivityForm .timeDiv .endDate {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 3px;
+}
+.workarea_container .workarea_main .addActivityBoard .addActivityForm .timeDiv .startDate p, .workarea_container .workarea_main .addActivityBoard .addActivityForm .timeDiv .endDate p {
+  font-size: 16px;
+}
+.workarea_container .workarea_main .addActivityBoard .addActivityForm .timeDiv .startDate input, .workarea_container .workarea_main .addActivityBoard .addActivityForm .timeDiv .endDate input {
+  padding: 10px;
+  font-family: "Poppins";
+  font-size: 16px;
+  outline: 0;
+  border: 1px solid var(--mainColor);
+}
 .workarea_container .workarea_main .addActivityBoard .addActivityForm .activityPreviewBox {
   width: 40rem;
   height: 20rem;

@@ -112,6 +112,16 @@ function addNewActivity(){
                                             <div class="hobby categories_options categories_main">Hobby</div>
                                         </div>
                                     </div>
+                                    <div class="timeDiv">
+                                        <div class="startDate">
+                                            <p>Start Date</p>
+                                            <input type="date">
+                                        </div>
+                                        <div class="endDate">
+                                            <p>Due Date</p>
+                                            <input type="date">
+                                        </div>
+                                    </div>
                                     <div class="activityPreviewBox">
                                         <i class="fa fa-camera"></i>
                                     </div>

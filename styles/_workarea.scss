@@ -385,6 +385,32 @@
                         }
                     }
                 }
+                .timeDiv{
+                    display: flex;
+                    justify-content: space-around;
+                    width: 35rem;
+                    padding: 10px;
+                    align-items: center;
+                    background-color: transparent;
+                    margin-bottom: 17px;
+                    .startDate, .endDate{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        border-radius: 3px;
+                        p{
+                            font-size: 16px;
+                        }
+                        input{
+                            //width: 90%;
+                            padding: 10px;
+                            font-family: "Poppins";
+                            font-size: 16px;
+                            outline: 0;
+                            border: 1px solid var(--mainColor);
+                        }
+                    }
+                }
                 .activityPreviewBox{
                     width: 40rem;
                     height: 20rem;
