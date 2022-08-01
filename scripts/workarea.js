@@ -98,6 +98,7 @@ function dropDown(element){
 function addNewActivity(){
     let addActivityBoard = `<div class="addActivityBoard">
                                 <form class="addActivityForm">
+                                    <div class="infoDisplay moveRight"></div>
                                     <input class="activityTitleInput" placeholder="Add A Title For Your Activity">
                                     <div class="category">
                                         <p class="chooseACat">Choose A Category</p>
@@ -374,6 +375,9 @@ addActivity.addEventListener('click', ()=>{
     const activityTitleInput = document.querySelector('.activityTitleInput');
     const activityImageLabel = document.querySelector('.activityImageLabel');
     const activityPreviewBox = document.querySelector('.activityPreviewBox');
+    const infoDisplay = document.querySelector('.infoDisplay');
+
+    let imagePath;
 
     function showImageLoader(){
         let imageLoader = `<div class="loading">
@@ -381,6 +385,15 @@ addActivity.addEventListener('click', ()=>{
                            </div>`;
 
         activityPreviewBox.innerHTML = imageLoader;
+    }
+
+    function showInfo(side, side1){
+        infoDisplay.classList.add(side);
+        infoDisplay.classList.remove(side1);
+        setTimeout(()=>{
+            infoDisplay.classList.add(side1);
+            infoDisplay.classList.remove(side);
+        }, 3000);
     }
 
     // activityTitleInput.addEventListener('keyup', ()=>{
@@ -408,14 +421,10 @@ addActivity.addEventListener('click', ()=>{
             fetch("../api/deleteactivityimage.php")
             .then(res=>res.text())
             .then((data)=>{
-                switch(data){
-                    case "success":
-                        console.log("Success Message");
-                        break;
-                    default:
-                        console.log(data);
-                        e.preventDefault();
-                        break;
+                console.log(data);
+                if(!(data == 'success')){
+                    infoDisplay.innerHTML = `Failed to remove previous image`;
+                    showInfo('moveLeft', 'moveRight');
                 }
             })
             .catch((err)=>{
@@ -438,23 +447,27 @@ addActivity.addEventListener('click', ()=>{
             })
             .then(res=>res.text())
             .then((data)=>{
-                switch(data){
-                    case "Failed":
-                        console.log(data);
-                        break;
-                    case "1x02Size":
-                        console.log("Too Big");
-                        break;
-                    case "1x01Err":
-                        console.log(data);
-                        break;
-                    default:
-                        document.cookie = `__hz_already-storedImage=${data}; path=/`;
-                        const reader = new FileReader();
-                        reader.readAsDataURL(file);
-                        reader.addEventListener('load', function(){
-                            activityPreviewBox.innerHTML = `<img src="${this.result}" alt="Activity Image">`;
-                        });
+                if(data=="Success"){
+                    const reader = new FileReader();
+                    reader.readAsDataURL(file);
+                    reader.addEventListener('load', function(){
+                        activityPreviewBox.innerHTML = `<img src="${this.result}" alt="Activity Image">`;
+                    });
+                }
+                else if(data == "1x02Size"){
+                    activityPreviewBox.innerHTML = `<i class="fa fa-camera"></i>`;
+                    infoDisplay.innerHTML = `Select An Image Of Max 2mb`;
+                    showInfo('moveLeft', 'moveRight');
+                }
+                else if(data == "1x01Err"){
+                    activityPreviewBox.innerHTML = `<i class="fa fa-camera"></i>`;
+                    infoDisplay.innerHTML = `Error Uploading Image`;
+                    showInfo('moveLeft', 'moveRight')
+                }
+                else{
+                    activityPreviewBox.innerHTML = `<i class="fa fa-camera"></i>`;
+                    infoDisplay.innerHTML = `Upload Failed`;
+                    showInfo('moveLeft', 'moveRight');
                 }
             })
             .catch((err)=>{console.log(err)});

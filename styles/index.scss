@@ -20,6 +20,13 @@
 }
 
 // Style changing classes
+.moveRight{
+    transform: translateX(200%);
+}
+
+.moveLeft{
+    transform: translateX(0%);
+}
 
 .openByHeight{
     height: fit-content;
