@@ -105,10 +105,11 @@ function addNewActivity(){
                                         <i class="fa fa-angle-down"></i>
 
                                         <div class="categories closeByHeight">
-                                            <div class="work categories_main">Work</div>
-                                            <div class="school categories_main">School</div>
-                                            <div class="leisure categories_main">Leisure</div>
-                                            <div class="hobby categories_main">Hobby</div>
+                                            <div class="work categories_options categories_main">Work</div>
+                                            <div class="school categories_options categories_main">School</div>
+                                            <div class="home categories_options categories_main">Home</div>
+                                            <div class="leisure categories_options categories_main">Leisure</div>
+                                            <div class="hobby categories_options categories_main">Hobby</div>
                                         </div>
                                     </div>
                                     <div class="activityPreviewBox">
@@ -370,14 +371,17 @@ addActivity.addEventListener('click', ()=>{
     const category = document.querySelector('.category');
     const categories = document.querySelector('.categories');
     const chooseACat = document.querySelector('.chooseACat');
-    const categories_main = document.querySelectorAll('.categories_main');
+    const categories_options = document.querySelectorAll('.categories_options');
     const activityImage = document.getElementById('activityImage');
     const activityTitleInput = document.querySelector('.activityTitleInput');
     const activityImageLabel = document.querySelector('.activityImageLabel');
     const activityPreviewBox = document.querySelector('.activityPreviewBox');
     const infoDisplay = document.querySelector('.infoDisplay');
-
-    let imagePath;
+    const others = document.querySelector('.others');
+    const addActivityForm = document.querySelector('.addActivityForm');
+    const addActivityBoard = document.querySelector('.addActivityBoard');
+    
+    // let imagePath;
 
     function showImageLoader(){
         let imageLoader = `<div class="loading">
@@ -404,10 +408,10 @@ addActivity.addEventListener('click', ()=>{
         dropDown(categories);
     });
 
-    categories_main.forEach((category_main)=>{
-        category_main.addEventListener('click', ()=>{
-            chooseACat.innerHTML = category_main.innerHTML;
-            chosenCategory = category_main.innerHTML;
+    categories_options.forEach((category_option)=>{
+        category_option.addEventListener('click', ()=>{
+            chooseACat.innerHTML = category_option.innerHTML;
+            chosenCategory = category_option.innerHTML;
         });
     });
 
@@ -473,7 +477,10 @@ addActivity.addEventListener('click', ()=>{
             .catch((err)=>{console.log(err)});
         }
         else{
-            console.log("No file");
+            activityPreviewBox.innerHTML = `<i class="fa fa-camera"></i>`;
+            //console.log("No file");
+            infoDisplay.innerHTML = `No File Selected`;
+            showInfo('moveLeft', 'moveRight');
         }
     });
 

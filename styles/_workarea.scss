@@ -347,22 +347,11 @@
                     border: 1px solid var(--mainColor);
                     color: var(--mainColor);
                     border-radius: 5px;
-                    margin: 2% 0;
+                    margin: 17px 0;
                     padding: 5px;
                     font-size: 18px;
                     outline: 0;
                     background-color: transparent;
-                }
-                .chooseText{
-                    font-size: 19px;
-                    margin: 1% 0;
-                    &::after{
-                        content: "";
-                        display: block;
-                        background-color: var(--mainColor);
-                        width: 100%;
-                        height: 2px;
-                    }
                 }
                 .category{
                     width: 40rem;
@@ -375,7 +364,7 @@
                     cursor: pointer;
                     border: 1px solid var(--mainColor);
                     border-radius: 5px;
-                    margin-bottom: 2%;
+                    margin-bottom: 17px;
                     color: #444444dd;
                     .categories{
                         position: absolute;
@@ -400,7 +389,7 @@
                     width: 40rem;
                     height: 20rem;
                     border: 1px solid var(--mainColor);
-                    margin: 0 0 1% 0;
+                    margin: 0 0 17px 0;
                     border-radius: 10px;
                     display: flex;
                     justify-content: center;
@@ -449,7 +438,7 @@
                 .activityNoteAreaDiv{
                     width: 41rem;
                     height: 20rem;
-                    margin: 2% 0;
+                    margin: 17px 0;
                     .activityNoteArea{
                         width: 100%;
                         height: 100%;
@@ -467,7 +456,7 @@
                     display: flex;
                     justify-content: space-around;
                     align-items: center;
-                    margin: 1% 0;
+                    margin: 17px 0;
                     .cancleActivity, .createActivity{
                         padding: 10px;
                         font-size: 17px;
