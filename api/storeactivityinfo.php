@@ -6,7 +6,7 @@
     require_once "connection.php";
 
     $content_type = isset($_SERVER['CONTENT_TYPE']) ? trim($_SERVER["CONTENT_TYPE"]) : "Not Set";
-    $username = null; $ActivityTitle = null; $ActivityCategory = null; $ActivityDueTime = null; $ActivityImage = null;
+    $username = null; $ActivityTitle = null; $ActivityCategory = null; $ActivityStartTime = null; $ActivityDueTime = null; $ActivityImage = null;
     $ActivityNote = null; $isArchived = "false"; $isStarred = "false"; $inTrash = "false"; $isComplete = "false";
     $isDue = "false";
 
@@ -15,15 +15,22 @@
 
         $decoded = json_decode($contents, true);
 
+        $start_time = strtotime($decoded['ActivityStartTime']);
+        $due_time = strtotime($decoded['ActivityDueTime']);
+
+        $mainStart_time = date('Y/m/d', $start_time);
+        $maindue_time = date('Y/m/d', $due_time);
+
         $username = InputTester($decoded["username"]);
         $ActivityTitle = InputTester($decoded["ActivityTitle"]);
         $ActivityCategory = InputTester($decoded["ActivityCategory"]);
-        $ActivityDueTime = InputTester($decoded["ActivityDueTime"]);
+        $ActivityStartTime = $mainStart_time;
+        $ActivityDueTime = $maindue_time;
         $ActivityImage = InputTester($decoded["ActivityImage"]);
         $ActivityNote = InputTester($decoded["ActivityNote"]);
 
         $sql = "SELECT * FROM activities WHERE username=? AND ActivityTitle=?;";
-        $insertSql = "INSERT INTO activities(username, ActivityTitle, ActivityCategory, ActivityDueTime, ActivityImage, ActivityNote, isArchived, isStarred, inTrash, isComplete, isDue) VALUES(?,?,?,?,?,?,?,?,?,?,?);";
+        $insertSql = "INSERT INTO activities(username, ActivityTitle, ActivityCategory, ActivityStartTime, ActivityDueTime, ActivityImage, ActivityNote, isArchived, isStarred, inTrash, isComplete, isDue) VALUES(?,?,?,?,?,?,?,?,?,?,?,?);";
 
         $stmt = $conn->prepare($sql);
         $stmt->bind_param('ss', $username, $ActivityTitle);
@@ -40,7 +47,7 @@
             }
             else{
                 $insertStmt = $conn->prepare($insertSql);
-                $insertStmt->bind_param('sssssssssss', $username, $ActivityTitle, $ActivityCategory, $ActivityDueTime,
+                $insertStmt->bind_param('ssssssssssss', $username, $ActivityTitle, $ActivityCategory, $ActivityStartTime, $ActivityDueTime,
                 $ActivityImage, $ActivityNote, $isArchived, $isStarred, $inTrash, $isComplete, $isDue);
                 if($insertStmt->execute()){
                     echo json_encode([

@@ -115,11 +115,11 @@ function addNewActivity(){
                                     <div class="timeDiv">
                                         <div class="startDate">
                                             <p>Start Date</p>
-                                            <input type="date">
+                                            <input type="date" class="startDateinp">
                                         </div>
                                         <div class="endDate">
                                             <p>Due Date</p>
-                                            <input type="date">
+                                            <input type="date" class="endDateinp">
                                         </div>
                                     </div>
                                     <div class="activityPreviewBox">
@@ -390,8 +390,12 @@ addActivity.addEventListener('click', ()=>{
     const others = document.querySelector('.others');
     const addActivityForm = document.querySelector('.addActivityForm');
     const addActivityBoard = document.querySelector('.addActivityBoard');
+    const createActivity = document.querySelector('.createActivity');
+    const endDateinp = document.querySelector('.endDateinp');
+    const startDateinp = document.querySelector('.startDateinp');
+    const activityNoteArea = document.querySelector('.activityNoteArea');
     
-    // let imagePath;
+    let imagePath;
 
     function showImageLoader(){
         let imageLoader = `<div class="loading">
@@ -461,12 +465,10 @@ addActivity.addEventListener('click', ()=>{
             })
             .then(res=>res.text())
             .then((data)=>{
-                if(data=="Success"){
-                    const reader = new FileReader();
-                    reader.readAsDataURL(file);
-                    reader.addEventListener('load', function(){
-                        activityPreviewBox.innerHTML = `<img src="${this.result}" alt="Activity Image">`;
-                    });
+                if(data=="Failed"){
+                    activityPreviewBox.innerHTML = `<i class="fa fa-camera"></i>`;
+                    infoDisplay.innerHTML = `Upload Failed`;
+                    showInfo('moveLeft', 'moveRight');
                 }
                 else if(data == "1x02Size"){
                     activityPreviewBox.innerHTML = `<i class="fa fa-camera"></i>`;
@@ -479,9 +481,12 @@ addActivity.addEventListener('click', ()=>{
                     showInfo('moveLeft', 'moveRight')
                 }
                 else{
-                    activityPreviewBox.innerHTML = `<i class="fa fa-camera"></i>`;
-                    infoDisplay.innerHTML = `Upload Failed`;
-                    showInfo('moveLeft', 'moveRight');
+                    imagePath = data;
+                    const reader = new FileReader();
+                    reader.readAsDataURL(file);
+                    reader.addEventListener('load', function(){
+                        activityPreviewBox.innerHTML = `<img src="${this.result}" alt="Activity Image">`;
+                    });
                 }
             })
             .catch((err)=>{console.log(err)});
@@ -494,4 +499,73 @@ addActivity.addEventListener('click', ()=>{
         }
     });
 
+    createActivity.addEventListener('click', (e)=>{
+        e.preventDefault();
+        if(!(activityTitleInput.value == "")){
+            if(!(chooseACat.innerHTML == "Choose A Category")){
+                if(!(startDateinp == "")){
+                    if(!(endDateinp == "")){
+                        if(!(imagePath == null)){
+                            if(!(activityNoteArea.value == "")){
+                                let finalObj = {
+                                    'username': users_username,
+                                    'ActivityTitle': activityTitleInput.value,
+                                    'ActivityCategory': chosenCategory,
+                                    'ActivityStartTime': startDateinp.value,
+                                    'ActivityDueTime': endDateinp.value,
+                                    'ActivityImage': imagePath,
+                                    'ActivityNote':  activityNoteArea.value
+                                };
+                                createActivity.disabled = true;
+                                createActivity.innerHTML = "On It..."
+
+                                fetch('../api/storeactivityinfo.php', {
+                                    method: "POST",
+                                    headers: {
+                                        "Content-Type": "application/json"
+                                    },
+                                    body: JSON.stringify(finalObj)
+                                })
+                                .then(res=>res.json())
+                                .then((data)=>{
+                                    if(data == "Success"){
+                                        createActivity.disabled = false;
+                                        createActivity.innerHTML = "Create";
+                                        showSection('dashboard');
+                                    }
+                                })
+                                .catch((err)=>{
+                                    console.log(err);
+                                })
+                            }
+                            else{
+                                infoDisplay.innerHTML = `Please Select An Image`;
+                                showInfo('moveLeft', 'moveRight');
+                            }
+                        }
+                        else{
+                            infoDisplay.innerHTML = `Please Select An Image`;
+                            showInfo('moveLeft', 'moveRight');
+                        }
+                    }
+                    else{
+                        infoDisplay.innerHTML = `Please Select An End Date`;
+                        showInfo('moveLeft', 'moveRight');
+                    }
+                }
+                else{
+                    infoDisplay.innerHTML = `Please Select A Start Date`;
+                    showInfo('moveLeft', 'moveRight');
+                }
+            }
+            else{
+                infoDisplay.innerHTML = `Please Select A Category`;
+                showInfo('moveLeft', 'moveRight');
+            }
+        }
+        else{
+            infoDisplay.innerHTML = `Please Add A Title`;
+            showInfo('moveLeft', 'moveRight');
+        }
+    });
 });

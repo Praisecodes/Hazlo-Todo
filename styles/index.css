@@ -910,7 +910,7 @@ body {
   z-index: 1000;
 }
 .workarea_container .workarea_main .addActivityBoard .addActivityForm .activityTitleInput {
-  width: 41.3rem;
+  width: 39rem;
   height: 35px;
   border: 1px solid var(--mainColor);
   color: var(--mainColor);
@@ -922,7 +922,7 @@ body {
   background-color: transparent;
 }
 .workarea_container .workarea_main .addActivityBoard .addActivityForm .category {
-  width: 40rem;
+  width: 38rem;
   height: 15px;
   padding: 15px;
   display: flex;
@@ -1034,7 +1034,7 @@ body {
   cursor: pointer;
 }
 .workarea_container .workarea_main .addActivityBoard .addActivityForm .activityNoteAreaDiv {
-  width: 41rem;
+  width: 39rem;
   height: 20rem;
   margin: 17px 0;
 }
@@ -1045,7 +1045,7 @@ body {
   border-radius: 3px;
   outline: 0;
   font-size: 14px;
-  padding: 10px;
+  padding: 8px;
   font-family: "Poppins";
   background-color: transparent;
 }
