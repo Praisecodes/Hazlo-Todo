@@ -720,6 +720,17 @@ body {
   background-color: #dddddd;
 }
 
+.infoDisplay {
+  position: fixed;
+  top: 3%;
+  right: 0;
+  padding: 25px;
+  background-color: var(--callToAction);
+  color: white;
+  transition: 0.3s;
+  z-index: 1000;
+}
+
 .workarea_container {
   display: flex;
   width: 100vw;
@@ -883,6 +894,7 @@ body {
   height: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
+  position: relative;
 }
 .workarea_container .workarea_main .addActivityBoard::-webkit-scrollbar {
   width: 5px;
@@ -898,16 +910,6 @@ body {
   flex-direction: column;
   align-items: center;
   position: relative;
-}
-.workarea_container .workarea_main .addActivityBoard .addActivityForm .infoDisplay {
-  position: absolute;
-  top: 3%;
-  right: 0;
-  padding: 25px;
-  background-color: var(--callToAction);
-  color: white;
-  transition: 0.3s;
-  z-index: 1000;
 }
 .workarea_container .workarea_main .addActivityBoard .addActivityForm .activityTitleInput {
   width: 39rem;

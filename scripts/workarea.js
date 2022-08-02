@@ -12,6 +12,7 @@ const completeOptions = document.querySelectorAll('.completeOption');
 const loader = document.querySelector('.loader');
 const workarea_main = document.querySelector('.workarea_main');
 const addActivity = document.querySelector('.addActivity');
+const infoDisplay = document.querySelector('.infoDisplay');
 
 
 let currentTheme = localStorage.getItem('Hazlo_Theme');
@@ -97,8 +98,8 @@ function dropDown(element){
 
 function addNewActivity(){
     let addActivityBoard = `<div class="addActivityBoard">
+                                
                                 <form class="addActivityForm">
-                                    <div class="infoDisplay moveRight"></div>
                                     <input class="activityTitleInput" placeholder="Add A Title For Your Activity">
                                     <div class="category">
                                         <p class="chooseACat">Choose A Category</p>
@@ -386,7 +387,7 @@ addActivity.addEventListener('click', ()=>{
     const activityTitleInput = document.querySelector('.activityTitleInput');
     const activityImageLabel = document.querySelector('.activityImageLabel');
     const activityPreviewBox = document.querySelector('.activityPreviewBox');
-    const infoDisplay = document.querySelector('.infoDisplay');
+    
     const others = document.querySelector('.others');
     const addActivityForm = document.querySelector('.addActivityForm');
     const addActivityBoard = document.querySelector('.addActivityBoard');
