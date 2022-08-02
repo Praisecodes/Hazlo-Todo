@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $targetDir = "https://hazlotodo.herokuapp.com/activityimages/";
+    $targetDir = "hazlotodo.herokuapp.com/activityimages/";
     // $targetDir = "C:\\xampp\\htdocs\\hazlo\\activityimages\\";
     
     
