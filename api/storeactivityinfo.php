@@ -1,4 +1,5 @@
 <?php
+    session_start();
     header("Access-Control-Allow-Origin: *");
     header("Access-Control-Allow-Headers: Content-Type");
     header("Content-Type: application/json");
@@ -50,13 +51,24 @@
                 $insertStmt->bind_param('ssssssssssss', $username, $ActivityTitle, $ActivityCategory, $ActivityStartTime, $ActivityDueTime,
                 $ActivityImage, $ActivityNote, $isArchived, $isStarred, $inTrash, $isComplete, $isDue);
                 if($insertStmt->execute()){
-                    echo json_encode([
-                        "Success"
-                    ]);
-                    $insertStmt->close();
-                    $conn->close();
-                    http_response_code(200);
-                    exit;
+                    if(session_destroy()){
+                        echo json_encode([
+                            "Success"
+                        ]);
+                        $insertStmt->close();
+                        $conn->close();
+                        http_response_code(200);
+                        exit;
+                    }
+                    else{
+                        echo json_encode([
+                            'Failed'
+                        ]);
+                        http_response_code(500);
+                        $stmt->close();
+                        $conn->close();
+                        exit;
+                    }
                 }
                 else{
                     echo json_encode([
