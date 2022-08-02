@@ -3,6 +3,11 @@
     src: url("../assets/Poppins-Medium.ttf");
 }
 
+@font-face {
+    font-family: "Poppins-Light";
+    src: url('../assets/Poppins-Light.ttf');
+}
+
 :root{
     --mainColor: #242c39;
     --callToAction: #3a5155;
