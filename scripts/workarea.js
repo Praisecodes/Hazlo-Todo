@@ -534,6 +534,25 @@ addActivity.addEventListener('click', ()=>{
                                         createActivity.innerHTML = "Create";
                                         showSection('dashboard');
                                     }
+                                    else if(data == "Exists"){
+                                        createActivity.disabled = false;
+                                        createActivity.innerHTML = "Create";
+                                        infoDisplay.innerHTML = `Title Already Exists`;
+                                        showInfo('moveLeft', 'moveRight');
+
+                                    }
+                                    else if(data == '1x02ExecErr' || data == '1x01ExecErr'){
+                                        createActivity.disabled = false;
+                                        createActivity.innerHTML = "Create";
+                                        infoDisplay.innerHTML = `Execution Error (500)`;
+                                        showInfo('moveLeft', 'moveRight');
+                                    }
+                                    else{
+                                        createActivity.disabled = false;
+                                        createActivity.innerHTML = "Create";
+                                        infoDisplay.innerHTML = `Invalid Content Type`;
+                                        showInfo('moveLeft', 'moveRight');
+                                    }
                                 })
                                 .catch((err)=>{
                                     console.log(err);
