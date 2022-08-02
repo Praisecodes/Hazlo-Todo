@@ -515,7 +515,7 @@ addActivity.addEventListener('click', ()=>{
                                     'ActivityStartTime': startDateinp.value,
                                     'ActivityDueTime': endDateinp.value,
                                     'ActivityImage': imagePath,
-                                    'ActivityNote':  activityNoteArea.value
+                                    'ActivityNote':  (activityNoteArea.value).split('\n').join('<br/>')
                                 };
                                 createActivity.disabled = true;
                                 createActivity.innerHTML = "On It..."
