@@ -235,14 +235,72 @@ function showSection(section){
             })
             .then(res=>res.json())
             .then((data)=>{
-                let activitiesContainerHtml  = `<div class="activitiesContainer"></div>`;
+                let activitiesContainerHtml  = `<div class="activitiesContainer">
+                                                    <div class="activitiesTopper addShadow">
+                                                        <p class="AllactivityText">All Activities</p>
+                                                        <button class="filter_btn">
+                                                            <i class="fa fa-filter"></i>
+
+                                                            <div class="buttonDrop closeByHeight">
+                                                                <div class="all filterOptions">All</div>
+                                                                <div class="dueOption filterOptions">Due</div>
+                                                                <div class="unfinished filterOptions">Unfinished</div>
+                                                            </div>
+                                                        </button>
+                                                    </div>
+                                                    <div class="mainactivitiesContainer"></div>
+                                                </div>`;
+
                 workarea_main.innerHTML = activitiesContainerHtml;
-                const activitiesContainer = document.querySelector('.activitiesContainer');
+                const mainactivitiesContainer = document.querySelector('.mainactivitiesContainer');
+                const filter_btn = document.querySelector('.filter_btn');
+                const buttonDrop = document.querySelector('.buttonDrop');
+                const activityNull = document.querySelector('.activityNull');
+
+                function listActivities(A_title, A_cat, A_start, A_finish){
+                    let activityItself = `<div class="activityList">
+                                              <div class="activityList_checkbox">
+                                                  <input type="checkbox">
+                                              </div>
+                                              <div class="activityList_main">
+                                                  <p class="activityList_main_title">${A_title}</p>
+                                                  <p class="activityList_main_category">${A_cat}</p>
+                                                  <p class="activityList_main_startToFinish">
+                                                      ${A_start} - ${A_finish}
+                                                  </p>
+                                              </div>
+                                          </div>`;
+
+                    if(!(mainactivitiesContainer.innerHTML == `<h1 class="activityNull">You Don't Have Any Activities!</h1>`) && !(mainactivitiesContainer.innerHTML == `<h1 class="activityNull">An Execution Error Occured!!</h1>`)){
+                        mainactivitiesContainer.innerHTML += activityItself;
+                    }
+                    else {
+                        activityNull.classList.add('unshow');
+                        mainactivitiesContainer.innerHTML += activityItself;
+                    }
+                }
+                filter_btn.addEventListener('click', ()=>{
+                    dropDown(buttonDrop);
+                })
+
                 if(data == "N/A"){
-                    activitiesContainer.innerHTML = `<h1 class="activityNull">You Don't Have Any Activities!</h1>`;
+                    mainactivitiesContainer.innerHTML = `<h1 class="activityNull">You Don't Have Any Activities!</h1>`;
+                }
+                else if(data == '1x01ExecErr'){
+                    mainactivitiesContainer.innerHTML = `<h1 class="activityNull">An Execution Error Occured!!</h1>`;
                 }
                 else{
-                    console.log(data);
+                    let i = data.length;
+                    if(!(i > 1)){
+                        let {ActivityCategory, ActivityDueTime, ActivityImage, ActivityNote, ActivityStartTime, ActivityTitle, inTrash, isArchived, isComplete, isDue, isStarred} = data;
+                        listActivities(ActivityTitle, ActivityCategory, ActivityStartTime, ActivityDueTime);
+                    }
+                    else{
+                        data.forEach((userActivity)=>{
+                            let {ActivityCategory, ActivityDueTime, ActivityImage, ActivityNote, ActivityStartTime, ActivityTitle, inTrash, isArchived, isComplete, isDue, isStarred} = userActivity;
+                            listActivities(ActivityTitle, ActivityCategory, ActivityStartTime, ActivityDueTime);
+                        });
+                    }
                 }
             })
             .catch((err)=>{console.log(err)});
@@ -271,7 +329,9 @@ function showSection(section){
 }
 
 window.onload = () =>{
-    showSection('dashboard');
+    setTimeout(()=>{
+        showSection('dashboard')
+    }, 500);
 }
 
 function switchScreenMode(){

@@ -883,15 +883,117 @@ body {
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  overflow: hidden;
 }
-.workarea_container .workarea_main .activitiesContainer .activityNull {
+.workarea_container .workarea_main .activitiesContainer .activitiesTopper {
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  background-color: #f5f8ff;
+}
+.workarea_container .workarea_main .activitiesContainer .activitiesTopper p {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+}
+.workarea_container .workarea_main .activitiesContainer .activitiesTopper button {
+  border: 0;
+  background-color: transparent;
+  font-size: 20px;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  color: var(--mainColor);
+  position: relative;
+}
+.workarea_container .workarea_main .activitiesContainer .activitiesTopper button:hover {
+  background-color: #dddddd;
+}
+.workarea_container .workarea_main .activitiesContainer .activitiesTopper button .buttonDrop {
+  width: 13rem;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  overflow: hidden;
+  border-radius: 3px;
+  z-index: 1000;
+}
+.workarea_container .workarea_main .activitiesContainer .activitiesTopper button .buttonDrop .filterOptions {
+  text-align: left;
+  padding: 15px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+.workarea_container .workarea_main .activitiesContainer .activitiesTopper button .buttonDrop .filterOptions:hover {
+  background-color: #eee;
+}
+.workarea_container .workarea_main .activitiesContainer .mainactivitiesContainer {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+}
+.workarea_container .workarea_main .activitiesContainer .mainactivitiesContainer .activityNull {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   color: rgba(136, 136, 136, 0.6666666667);
+}
+.workarea_container .workarea_main .activitiesContainer .mainactivitiesContainer .activityList {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 5rem;
+  background-color: #fefefe;
+  border-bottom: 1px solid #bdbaba;
+  transition: 0.3s;
+}
+.workarea_container .workarea_main .activitiesContainer .mainactivitiesContainer .activityList:hover {
+  background-color: #f5eeee;
+}
+.workarea_container .workarea_main .activitiesContainer .mainactivitiesContainer .activityList .activityList_checkbox {
+  width: 60px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.workarea_container .workarea_main .activitiesContainer .mainactivitiesContainer .activityList .activityList_checkbox input {
+  outline: 0;
+  background-color: transparent;
+  border: 1px solid var(--mainColor);
+}
+.workarea_container .workarea_main .activitiesContainer .mainactivitiesContainer .activityList .activityList_main {
+  width: calc(100% - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  padding: 3px 0 3px 5px;
+}
+.workarea_container .workarea_main .activitiesContainer .mainactivitiesContainer .activityList .activityList_main .activityList_main_title {
+  font-size: 22px;
+  font-family: "Poppins";
+  margin: 0;
+  padding: 0;
+}
+.workarea_container .workarea_main .activitiesContainer .mainactivitiesContainer .activityList .activityList_main .activityList_main_category {
+  font-size: 15px;
+  font-family: "Poppins-Light";
+}
+.workarea_container .workarea_main .activitiesContainer .mainactivitiesContainer .activityList .activityList_main .activityList_main_startToFinish {
+  font-size: 13px;
+  font-family: "Poppins-Light";
 }
 .workarea_container .workarea_main .addActivityBoard {
   width: 100%;
