@@ -220,6 +220,21 @@
 .darkMode .workarea_container .workarea_main .addActivityBoard .addActivityForm .category .categories .categories_main:hover {
   background-color: var(--hoverInDark);
 }
+.darkMode .workarea_container .workarea_main .activitiesContainer .activitiesTopper {
+  background-color: transparent;
+}
+.darkMode .workarea_container .workarea_main .activitiesContainer .activitiesTopper button {
+  color: white;
+}
+.darkMode .workarea_container .workarea_main .activitiesContainer .activitiesTopper button:hover {
+  background-color: var(--hoverInDark);
+}
+.darkMode .workarea_container .workarea_main .activitiesContainer .mainactivitiesContainer .activityList {
+  border-bottom: 1px solid var(--darkModeLight);
+}
+.darkMode .workarea_container .workarea_main .activitiesContainer .mainactivitiesContainer .activityList:hover {
+  background-color: var(--hoverInDark);
+}
 
 body {
   font-size: 16px;
@@ -954,7 +969,6 @@ body {
   align-items: center;
   width: 100%;
   height: 5rem;
-  background-color: #fefefe;
   border-bottom: 1px solid #bdbaba;
   transition: 0.3s;
 }

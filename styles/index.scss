@@ -205,6 +205,25 @@
                     }
                 }
             }
+            .activitiesContainer{
+                .activitiesTopper{
+                    background-color: transparent;
+                    button{
+                        color: white;
+                        &:hover{
+                            background-color: var(--hoverInDark);
+                        }
+                    }
+                }
+                .mainactivitiesContainer{
+                    .activityList{
+                        border-bottom: 1px solid var(--darkModeLight);
+                        &:hover{
+                            background-color: var(--hoverInDark);
+                        }
+                    }
+                }
+            }
         }
     }
 }
