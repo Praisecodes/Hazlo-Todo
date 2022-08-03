@@ -56,17 +56,17 @@
 
                 default:
                     while($rows = $result->fetch_assoc()){
-                        $dataArr[$i]["ActivityTitle"] = $row["ActivityTitle"];
-                        $dataArr[$i]["ActivityCategory"] = $row["ActivityCategory"];
-                        $dataArr[$i]["ActivityStartTitme"] = $row["ActivityStartTitme"];
-                        $dataArr[$i]["ActivityDueTime"] = $row["ActivityDueTime"];
-                        $dataArr[$i]["ActivityImage"] = $row["ActivityImage"];
-                        $dataArr[$i]["ActivityNote"] = $row["ActivityNote"];
-                        $dataArr[$i]["isArchived"] = $row["isArchived"];
-                        $dataArr[$i]["isStarred"] = $row["isStarred"];
-                        $dataArr[$i]["inTrash"] = $row["inTrash"];
-                        $dataArr[$i]["isComplete"] = $row["isComplete"];
-                        $dataArr[$i]["isDue"] = $row["isDue"];
+                        $dataArr[$i]["ActivityTitle"] = $rows["ActivityTitle"];
+                        $dataArr[$i]["ActivityCategory"] = $rows["ActivityCategory"];
+                        $dataArr[$i]["ActivityStartTitme"] = $rows["ActivityStartTitme"];
+                        $dataArr[$i]["ActivityDueTime"] = $rows["ActivityDueTime"];
+                        $dataArr[$i]["ActivityImage"] = $rows["ActivityImage"];
+                        $dataArr[$i]["ActivityNote"] = $rows["ActivityNote"];
+                        $dataArr[$i]["isArchived"] = $rows["isArchived"];
+                        $dataArr[$i]["isStarred"] = $rows["isStarred"];
+                        $dataArr[$i]["inTrash"] = $rows["inTrash"];
+                        $dataArr[$i]["isComplete"] = $rows["isComplete"];
+                        $dataArr[$i]["isDue"] = $rows["isDue"];
 
                         $i++;
                     }
