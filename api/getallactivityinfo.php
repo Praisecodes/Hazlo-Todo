@@ -37,7 +37,7 @@
                     while($row = $result->fetch_assoc()){
                         $dataArr["ActivityTitle"] = $row["ActivityTitle"];
                         $dataArr["ActivityCategory"] = $row["ActivityCategory"];
-                        $dataArr["ActivityStartTitme"] = $row["ActivityStartTitme"];
+                        $dataArr["ActivityStartTime"] = $row["ActivityStartTime"];
                         $dataArr["ActivityDueTime"] = $row["ActivityDueTime"];
                         $dataArr["ActivityImage"] = $row["ActivityImage"];
                         $dataArr["ActivityNote"] = $row["ActivityNote"];
@@ -58,7 +58,7 @@
                     while($rows = $result->fetch_assoc()){
                         $dataArr[$i]["ActivityTitle"] = $rows["ActivityTitle"];
                         $dataArr[$i]["ActivityCategory"] = $rows["ActivityCategory"];
-                        $dataArr[$i]["ActivityStartTitme"] = $rows["ActivityStartTitme"];
+                        $dataArr[$i]["ActivityStartTime"] = $rows["ActivityStartTime"];
                         $dataArr[$i]["ActivityDueTime"] = $rows["ActivityDueTime"];
                         $dataArr[$i]["ActivityImage"] = $rows["ActivityImage"];
                         $dataArr[$i]["ActivityNote"] = $rows["ActivityNote"];
