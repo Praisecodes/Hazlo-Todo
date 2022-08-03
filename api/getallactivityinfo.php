@@ -35,17 +35,17 @@
                 
                 case 1:
                     while($row = $result->fetch_assoc()){
-                        $dataArr["ActivityTitle"] = reverseCharacters($row["ActivityTitle"]);
-                        $dataArr["ActivityCategory"] =reverseCharacters( $row["ActivityCategory"]);
-                        $dataArr["ActivityStartTime"] = reverseCharacters($row["ActivityStartTime"]);
-                        $dataArr["ActivityDueTime"] = reverseCharacters($row["ActivityDueTime"]);
-                        $dataArr["ActivityImage"] = reverseCharacters($row["ActivityImage"]);
-                        $dataArr["ActivityNote"] = reverseCharacters($row["ActivityNote"]);
-                        $dataArr["isArchived"] = reverseCharacters($row["isArchived"]);
-                        $dataArr["isStarred"] = reverseCharacters($row["isStarred"]);
-                        $dataArr["inTrash"] = reverseCharacters($row["inTrash"]);
-                        $dataArr["isComplete"] = reverseCharacters($row["isComplete"]);
-                        $dataArr["isDue"] = reverseCharacters($row["isDue"]);
+                        $dataArr["ActivityTitle"] = $row["ActivityTitle"];
+                        $dataArr["ActivityCategory"] = $row["ActivityCategory"];
+                        $dataArr["ActivityStartTime"] = $row["ActivityStartTime"];
+                        $dataArr["ActivityDueTime"] = $row["ActivityDueTime"];
+                        $dataArr["ActivityImage"] = $row["ActivityImage"];
+                        $dataArr["ActivityNote"] = $row["ActivityNote"];
+                        $dataArr["isArchived"] = $row["isArchived"];
+                        $dataArr["isStarred"] = $row["isStarred"];
+                        $dataArr["inTrash"] = $row["inTrash"];
+                        $dataArr["isComplete"] = $row["isComplete"];
+                        $dataArr["isDue"] = $row["isDue"];
                     }
                     echo json_encode($dataArr);
                     http_response_code(200);
@@ -56,17 +56,17 @@
 
                 default:
                     while($rows = $result->fetch_assoc()){
-                        $dataArr[$i]["ActivityTitle"] = reverseCharacters($rows["ActivityTitle"]);
-                        $dataArr[$i]["ActivityCategory"] = reverseCharacters($rows["ActivityCategory"]);
-                        $dataArr[$i]["ActivityStartTime"] = reverseCharacters($rows["ActivityStartTime"]);
-                        $dataArr[$i]["ActivityDueTime"] = reverseCharacters($rows["ActivityDueTime"]);
-                        $dataArr[$i]["ActivityImage"] = reverseCharacters($rows["ActivityImage"]);
-                        $dataArr[$i]["ActivityNote"] = reverseCharacters($rows["ActivityNote"]);
-                        $dataArr[$i]["isArchived"] = reverseCharacters($rows["isArchived"]);
-                        $dataArr[$i]["isStarred"] = reverseCharacters($rows["isStarred"]);
-                        $dataArr[$i]["inTrash"] = reverseCharacters($rows["inTrash"]);
-                        $dataArr[$i]["isComplete"] = reverseCharacters($rows["isComplete"]);
-                        $dataArr[$i]["isDue"] = reverseCharacters($rows["isDue"]);
+                        $dataArr[$i]["ActivityTitle"] = $rows["ActivityTitle"];
+                        $dataArr[$i]["ActivityCategory"] = $rows["ActivityCategory"];
+                        $dataArr[$i]["ActivityStartTime"] = $rows["ActivityStartTime"];
+                        $dataArr[$i]["ActivityDueTime"] = $rows["ActivityDueTime"];
+                        $dataArr[$i]["ActivityImage"] = $rows["ActivityImage"];
+                        $dataArr[$i]["ActivityNote"] = $rows["ActivityNote"];
+                        $dataArr[$i]["isArchived"] = $rows["isArchived"];
+                        $dataArr[$i]["isStarred"] = $rows["isStarred"];
+                        $dataArr[$i]["inTrash"] = $rows["inTrash"];
+                        $dataArr[$i]["isComplete"] = $rows["isComplete"];
+                        $dataArr[$i]["isDue"] = $rows["isDue"];
 
                         $i++;
                     }
@@ -102,10 +102,5 @@
         $data = htmlspecialchars($data);
 
         return $data;
-    }
-
-    function reverseCharacters($input){
-        $input = htmlspecialchars_decode($input);
-        return $input;
     }
 ?>
