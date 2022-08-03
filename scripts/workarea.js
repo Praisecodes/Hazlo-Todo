@@ -265,7 +265,7 @@ function showSection(section){
                 function listActivities(A_title, A_cat, A_start, A_finish){
                     let activityItself = `<div class="activityList">
                                               <div class="activityList_checkbox">
-                                                  <input type="checkbox">
+                                                  <input type="checkbox" class="selectBox">
                                               </div>
                                               <div class="activityList_main">
                                                   <p class="activityList_main_title">${A_title}</p>
