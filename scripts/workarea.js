@@ -241,6 +241,9 @@ function showSection(section){
                 if(data == "N/A"){
                     activitiesContainer.innerHTML = `<h1 class="activityNull">You Don't Have Any Activities!</h1>`;
                 }
+                else{
+                    console.log(data);
+                }
             })
             .catch((err)=>{console.log(err)});
             break;
