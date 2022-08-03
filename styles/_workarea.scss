@@ -329,14 +329,14 @@
             overflow-y: scroll;
             position: relative;
 
-            &::-webkit-scrollbar{
-                width: 5px;
-                display: block;
-            }
-            &::-webkit-scrollbar-thumb{
-                background-color: #888888aa;
-                border-radius: 50px;
-            }
+            // &::-webkit-scrollbar{
+            //     width: 5px;
+            //     display: block;
+            // }
+            // &::-webkit-scrollbar-thumb{
+            //     background-color: #888888aa;
+            //     border-radius: 50px;
+            // }
             .addActivityForm{
                 width: 100%;
                 display: flex;

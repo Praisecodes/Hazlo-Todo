@@ -900,14 +900,6 @@ body {
   overflow-y: scroll;
   position: relative;
 }
-.workarea_container .workarea_main .addActivityBoard::-webkit-scrollbar {
-  width: 5px;
-  display: block;
-}
-.workarea_container .workarea_main .addActivityBoard::-webkit-scrollbar-thumb {
-  background-color: rgba(136, 136, 136, 0.6666666667);
-  border-radius: 50px;
-}
 .workarea_container .workarea_main .addActivityBoard .addActivityForm {
   width: 100%;
   display: flex;
