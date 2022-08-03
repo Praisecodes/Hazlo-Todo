@@ -127,10 +127,11 @@ signup.addEventListener('submit', (e)=>{
         if(data == "Success"){
             messageBar.style.transform = "translateX(0%)";
 
-            messageBar.innerHTML = "Success!! You've Signed Up, Please Login";
-            setTimeout(() => {
-                messageBar.style.transform = "translateX(200%)";
-            }, 6000);
+            window.location = "../login/";
+            // messageBar.innerHTML = "Success!! You've Signed Up, Please Login";
+            // setTimeout(() => {
+            //     messageBar.style.transform = "translateX(200%)";
+            // }, 6000);
         }
         else if(data == "0x1EX"){
             messageBar.style.transform = "translateX(0%)";
