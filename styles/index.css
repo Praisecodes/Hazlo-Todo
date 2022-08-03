@@ -879,8 +879,8 @@ body {
 }
 .workarea_container .workarea_main .dashBoardContainer .cards .dashboard_cards i {
   position: absolute;
-  top: 3%;
-  right: 3%;
+  top: 12px;
+  right: 12px;
   font-size: 16px;
 }
 .workarea_container .workarea_main .dashBoardContainer .cards .dashboard_cards:hover {
@@ -891,7 +891,7 @@ body {
 }
 .workarea_container .workarea_main .dashBoardContainer .cards .dashboard_cards .tag {
   position: absolute;
-  bottom: 3px;
+  bottom: 12px;
   font-size: 16px;
 }
 .workarea_container .workarea_main .activitiesContainer {
@@ -1207,6 +1207,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-bottom: 2px;
+  border-radius: 5px;
 }
 .container_login .login input {
   width: 75%;
@@ -1333,6 +1334,7 @@ body {
   justify-content: center;
   align-items: center;
   transition: 1s;
+  border-radius: 5px;
 }
 .container_signup .signup input {
   outline: 0;

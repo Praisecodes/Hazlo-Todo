@@ -256,6 +256,11 @@ function showSection(section){
                 const filter_btn = document.querySelector('.filter_btn');
                 const buttonDrop = document.querySelector('.buttonDrop');
                 const activityNull = document.querySelector('.activityNull');
+                const all = document.querySelector('.all');
+
+                all.addEventListener('click', ()=>{
+                    showSection('activities');
+                });
 
                 function listActivities(A_title, A_cat, A_start, A_finish){
                     let activityItself = `<div class="activityList">
