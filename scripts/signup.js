@@ -33,7 +33,7 @@ window.onload = () => {
  */
  const validEmail = /[a-zA-Z_\.\-_0-9]{3,}[@][a-z]{2,}[\.][a-z]{2,}/;
  const validUsername = /^[a-zA-Z_\-]{4,}$/;
- const validPassword = /(?=.*[\W])(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9\W]{8,}/;
+ const validPassword = /(?=.*[\W])(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9\W]{6,}/;
  const validName = /^[a-zA-Z ]+$/;
 
  function disableBtn(buttonEle, condition, Opacity){
