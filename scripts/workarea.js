@@ -547,6 +547,12 @@ addActivity.addEventListener('click', ()=>{
                                         infoDisplay.innerHTML = `Execution Error (500)`;
                                         showInfo('moveLeft', 'moveRight');
                                     }
+                                    else if(data == 'Failed'){
+                                        createActivity.disabled = false;
+                                        createActivity.innerHTML = "Create";
+                                        infoDisplay.innerHTML = `Failed To Create Activity`;
+                                        showInfo('moveLeft', 'moveRight');
+                                    }
                                     else{
                                         createActivity.disabled = false;
                                         createActivity.innerHTML = "Create";
